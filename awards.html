@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awards - FUHSIITHISA Football Tournament</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/awards.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <span class="logo-text">FUHSIITHISA</span>
+                </div>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <div class="menu-content">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="fixtures.html" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Fixtures & Results</span>
+                    </a>
+                    <a href="teams.html" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Teams</span>
+                    </a>
+                    <a href="transactions.html" class="nav-link">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Transactions</span>
+                    </a>
+                    <a href="finale.html" class="nav-link">
+                        <i class="fas fa-flag-checkered"></i>
+                        <span>Finale</span>
+                    </a>
+                    <a href="awards.html" class="nav-link active">
+                        <i class="fas fa-trophy"></i>
+                        <span>Awards</span>
+                    </a>
+                   <a href="statistics.html" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Player Stats</span>
+                    </a>
+                    <a href="news.html" class="nav-link">
+                        <i class="fas fa-newspaper"></i>
+                        <span>News</span>
+                    </a>
+                    <a href="contact.html" class="nav-link">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <div class="theme-switch">
+                        <div class="switch-handle"></div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="awards-badge">Celebrating Excellence</div>
+                <h1 class="page-title">AWARDS 2025</h1>
+                <p class="page-subtitle">Recognizing outstanding performances and achievements throughout the tournament</p>
+                <div class="awards-stats">
+                    <div class="award-stat">
+                        <i class="fas fa-trophy"></i>
+                        <span><strong id="totalAwards">15</strong> Awards</span>
+                    </div>
+                    <div class="award-stat">
+                        <i class="fas fa-medal"></i>
+                        <span><strong id="totalWinners">20</strong> Winners</span>
+                    </div>
+                    <div class="award-stat">
+                        <i class="fas fa-award"></i>
+                        <span><strong id="categories">8</strong> Categories</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Trophy Section -->
+    <section class="main-trophy-section section-hidden">
+        <div class="container">
+            <h2 class="section-title">Championship Trophies</h2>
+            <div class="trophies-grid">
+                <div class="trophy-card champion">
+                    <div class="trophy-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="trophy-content">
+                        <h3>Tournament Champion</h3>
+                        <div class="trophy-winner">
+                            <div class="winner-avatar">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="winner-info">
+                                <div class="winner-name">To Be Decided</div>
+                                <div class="winner-team">Champion Team</div>
+                            </div>
+                        </div>
+                        <p class="trophy-description">Awarded to the team that emerges victorious in the tournament final</p>
+                    </div>
+                </div>
+
+                <div class="trophy-card runner-up">
+                    <div class="trophy-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="trophy-content">
+                        <h3>Runner-Up</h3>
+                        <div class="trophy-winner">
+                            <div class="winner-avatar">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="winner-info">
+                                <div class="winner-name">To Be Decided</div>
+                                <div class="winner-team">Runner-Up Team</div>
+                            </div>
+                        </div>
+                        <p class="trophy-description">Awarded to the team that finishes second in the tournament</p>
+                    </div>
+                </div>
+
+                <div class="trophy-card third-place">
+                    <div class="trophy-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="trophy-content">
+                        <h3>Third Place</h3>
+                        <div class="trophy-winner">
+                            <div class="winner-avatar">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="winner-info">
+                                <div class="winner-name">To Be Decided</div>
+                                <div class="winner-team">Third Place Team</div>
+                            </div>
+                        </div>
+                        <p class="trophy-description">Awarded to the team that wins the third-place playoff</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Individual Awards -->
+    <section class="individual-awards-section section-hidden">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Individual Awards</h2>
+                <div class="awards-filter">
+                    <button class="filter-btn active" data-category="all">All Awards</button>
+                    <button class="filter-btn" data-category="performance">Performance</button>
+                    <button class="filter-btn" data-category="sportsmanship">Sportsmanship</button>
+                    <button class="filter-btn" data-category="special">Special Awards</button>
+                </div>
+            </div>
+
+            <div class="awards-grid" id="awardsGrid">
+                <!-- Awards will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates & Medals Gallery -->
+    <section class="certificates-section section-hidden">
+        <div class="container">
+            <h2 class="section-title">Certificates & Medals</h2>
+            <p class="section-subtitle">Beautifully designed awards for our outstanding performers</p>
+
+            <div class="certificates-grid">
+                <div class="certificate-card">
+                    <div class="certificate-preview">
+                        <i class="fas fa-scroll"></i>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Champion Certificate</h3>
+                        <p>Premium certificate for tournament champions</p>
+                        <div class="certificate-specs">
+                            <span>A4 Premium Paper</span>
+                            <span>Gold Foil Stamping</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-preview">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Gold Medals</h3>
+                        <p>Custom gold medals for championship winners</p>
+                        <div class="certificate-specs">
+                            <span>Gold Plated</span>
+                            <span>Custom Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-preview">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Individual Awards</h3>
+                        <p>Special certificates for individual achievements</p>
+                        <div class="certificate-specs">
+                            <span>Laser Printed</span>
+                            <span>Framed Option</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Winners -->
+    <!-- <section class="past-winners-section section-hidden">
+        <div class="container">
+            <h2 class="section-title">Past Tournament Winners</h2>
+            <div class="winners-timeline">
+                <div class="timeline-year">
+                    <div class="year-badge">2024</div>
+                    <div class="year-winners">
+                        <div class="past-winner">
+                            <div class="winner-category">Champion</div>
+                            <div class="winner-name">300 Level</div>
+                        </div>
+                        <div class="past-winner">
+                            <div class="winner-category">Best Player</div>
+                            <div class="winner-name">Ahmed Musa</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-year">
+                    <div class="year-badge">2023</div>
+                    <div class="year-winners">
+                        <div class="past-winner">
+                            <div class="winner-category">Champion</div>
+                            <div class="winner-name">400 Level</div>
+                        </div>
+                        <div class="past-winner">
+                            <div class="winner-category">Best Player</div>
+                            <div class="winner-name">John Okafor</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-year">
+                    <div class="year-badge">2022</div>
+                    <div class="year-winners">
+                        <div class="past-winner">
+                            <div class="winner-category">Champion</div>
+                            <div class="winner-name">200 Level</div>
+                        </div>
+                        <div class="past-winner">
+                            <div class="winner-category">Best Player</div>
+                            <div class="winner-name">Michael Adebayo</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-year">
+                    <div class="year-badge">2021</div>
+                    <div class="year-winners">
+                        <div class="past-winner">
+                            <div class="winner-category">Champion</div>
+                            <div class="winner-name">100 Level</div>
+                        </div>
+                        <div class="past-winner">
+                            <div class="winner-category">Best Player</div>
+                            <div class="winner-name">David Chukwu</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Finale Photo Highlights -->
+    <section class="highlights-section section-hidden">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Finale Photo Highlights</h2>
+                <p class="section-subtitle">Memorable moments from the awards ceremony</p>
+            </div>
+
+            <div class="highlights-grid" id="highlightsGrid">
+                <!-- Photo highlights will be loaded dynamically -->
+                <div class="highlights-placeholder">
+                    <i class="fas fa-camera"></i>
+                    <h3>Highlights Coming Soon</h3>
+                    <p>Photos from the 2025 awards ceremony will be posted here after the finale</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer section-hidden">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-futbol"></i>
+                        </div>
+                        <span>FUHSIITHISA</span>
+                    </div>
+                    <p class="footer-description">
+                        Bringing together the best of college football talent in an exciting 
+                        inter-departmental tournament.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="fixtures.html">Fixtures</a>
+                        <a href="teams.html">Teams</a>
+                        <a href="transactions.html">Transactions</a>
+                        <a href="finale.html">Finale</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 FUHSIITHISA Football Tournament. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+        <p>Loading awards...</p>
+    </div>
+
+    <script src="js/theme.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/scroll-animations.js"></script>
+    <script src="js/awards.js"></script>
+</body>
+</html>

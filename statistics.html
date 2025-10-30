@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Statistics - FUHSIITHISA Football Tournament</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/statistics.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <span class="logo-text">FUHSIITHISA</span>
+                </div>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <div class="menu-content">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="fixtures.html" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Fixtures & Results</span>
+                    </a>
+                    <a href="teams.html" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Teams</span>
+                    </a>
+                    <a href="transactions.html" class="nav-link">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Transactions</span>
+                    </a>
+                    <a href="finale.html" class="nav-link">
+                        <i class="fas fa-flag-checkered"></i>
+                        <span>Finale</span>
+                    </a>
+                    <a href="awards.html" class="nav-link">
+                        <i class="fas fa-trophy"></i>
+                        <span>Awards</span>
+                    </a>
+                    <a href="statistics.html" class="nav-link active">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Player Stats</span>
+                    </a>
+                   
+                    </a>
+                    <a href="news.html" class="nav-link">
+                        <i class="fas fa-newspaper"></i>
+                        <span>News</span>
+                    </a>
+                    <a href="contact.html" class="nav-link">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <div class="theme-switch">
+                        <div class="switch-handle"></div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="stats-badge">Live Statistics</div>
+                <h1 class="page-title">PLAYER STATISTICS</h1>
+                <p class="page-subtitle">Track player performances with real-time goals, assists, and saves data</p>
+                <div class="stats-overview">
+                    <div class="stat-overview-item">
+                        <i class="fas fa-futbol"></i>
+                        <span><strong id="totalGoals">0</strong> Goals</span>
+                    </div>
+                    <div class="stat-overview-item">
+                        <i class="fas fa-handshake"></i>
+                        <span><strong id="totalAssists">0</strong> Assists</span>
+                    </div>
+                    <div class="stat-overview-item">
+                        <i class="fas fa-hands"></i>
+                        <span><strong id="totalSaves">0</strong> Saves</span>
+                    </div>
+                    <div class="stat-overview-item">
+                        <i class="fas fa-users"></i>
+                        <span><strong id="totalPlayers">0</strong> Players</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Navigation -->
+    <section class="stats-nav-section">
+        <div class="container">
+            <div class="stats-nav">
+                <button class="stat-tab active" data-stat="goals">
+                    <i class="fas fa-futbol"></i>
+                    <span>Top Scorers</span>
+                </button>
+                <button class="stat-tab" data-stat="assists">
+                    <i class="fas fa-handshake"></i>
+                    <span>Top Assists</span>
+                </button>
+                <button class="stat-tab" data-stat="saves">
+                    <i class="fas fa-hands"></i>
+                    <span>Top Saves</span>
+                </button>
+                <button class="stat-tab" data-stat="overall">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Overall Ranking</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="stats-filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="positionFilter">Position</label>
+                    <select id="positionFilter" class="filter-select">
+                        <option value="all">All Positions</option>
+                        <option value="Forward">Forward</option>
+                        <option value="Midfielder">Midfielder</option>
+                        <option value="Defender">Defender</option>
+                        <option value="Goalkeeper">Goalkeeper</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="levelFilter">Level</label>
+                    <select id="levelFilter" class="filter-select">
+                        <option value="all">All Levels</option>
+                        <option value="100L">100 Level</option>
+                        <option value="200L">200 Level</option>
+                        <option value="300L">300 Level</option>
+                        <option value="400L">400 Level</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="teamFilter">Team</label>
+                    <select id="teamFilter" class="filter-select">
+                        <option value="all">All Teams</option>
+                        <option value="100L">100 Level</option>
+                        <option value="200L">200 Level</option>
+                        <option value="300L">300 Level</option>
+                        <option value="400L">400 Level</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="matchesFilter">Min. Matches</label>
+                    <select id="matchesFilter" class="filter-select">
+                        <option value="0">All Players</option>
+                        <option value="1">1+ Matches</option>
+                        <option value="3">3+ Matches</option>
+                        <option value="5">5+ Matches</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="playerStatsSearch" placeholder="Search players by name...">
+                <button class="search-clear" id="clearStatsSearch">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Tables -->
+    <section class="stats-tables-section section-hidden">
+        <div class="container">
+            <!-- Goals Table -->
+            <div class="stats-table active" id="goalsTable">
+                <div class="table-header">
+                    <h2 class="table-title">
+                        <i class="fas fa-futbol"></i>
+                        Top Scorers
+                    </h2>
+                    <div class="table-actions">
+                        <button class="btn btn-outline" onclick="playersManager.exportStats('goals')">
+                            <i class="fas fa-download"></i>
+                            Export
+                        </button>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Player</th>
+                                <th>Team</th>
+                                <th>Goals</th>
+                                <th>Assists</th>
+                                <th>Matches</th>
+                                <th>Goals/Match</th>
+                                <th>Last Goal</th>
+                            </tr>
+                        </thead>
+                        <tbody id="goalsTableBody">
+                            <!-- Goals data will be loaded dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Assists Table -->
+            <div class="stats-table" id="assistsTable">
+                <div class="table-header">
+                    <h2 class="table-title">
+                        <i class="fas fa-handshake"></i>
+                        Top Assists
+                    </h2>
+                    <div class="table-actions">
+                        <button class="btn btn-outline" onclick="playersManager.exportStats('assists')">
+                            <i class="fas fa-download"></i>
+                            Export
+                        </button>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Player</th>
+                                <th>Team</th>
+                                <th>Assists</th>
+                                <th>Goals</th>
+                                <th>Matches</th>
+                                <th>Assists/Match</th>
+                                <th>Key Passes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="assistsTableBody">
+                            <!-- Assists data will be loaded dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Saves Table -->
+            <div class="stats-table" id="savesTable">
+                <div class="table-header">
+                    <h2 class="table-title">
+                        <i class="fas fa-hands"></i>
+                        Top Saves
+                    </h2>
+                    <div class="table-actions">
+                        <button class="btn btn-outline" onclick="playersManager.exportStats('saves')">
+                            <i class="fas fa-download"></i>
+                            Export
+                        </button>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Player</th>
+                                <th>Team</th>
+                                <th>Saves</th>
+                                <th>Clean Sheets</th>
+                                <th>Matches</th>
+                                <th>Saves/Match</th>
+                                <th>Goals Conceded</th>
+                            </tr>
+                        </thead>
+                        <tbody id="savesTableBody">
+                            <!-- Saves data will be loaded dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Overall Ranking Table -->
+            <div class="stats-table" id="overallTable">
+                <div class="table-header">
+                    <h2 class="table-title">
+                        <i class="fas fa-chart-line"></i>
+                        Overall Player Ranking
+                    </h2>
+                    <div class="table-actions">
+                        <button class="btn btn-outline" onclick="playersManager.exportStats('overall')">
+                            <i class="fas fa-download"></i>
+                            Export
+                        </button>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Player</th>
+                                <th>Team</th>
+                                <th>Rating</th>
+                                <th>Goals</th>
+                                <th>Assists</th>
+                                <th>Saves</th>
+                                <th>Matches</th>
+                                <th>Points</th>
+                            </tr>
+                        </thead>
+                        <tbody id="overallTableBody">
+                            <!-- Overall data will be loaded dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Player Spotlight -->
+    <section class="spotlight-section section-hidden">
+        <div class="container">
+            <h2 class="section-title">Player Spotlight</h2>
+            <div class="spotlight-grid" id="spotlightGrid">
+                <!-- Spotlight cards will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Summary -->
+    <section class="stats-summary-section section-hidden">
+        <div class="container">
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <div class="summary-content">
+                        <h3>Goal Analysis</h3>
+                        <div class="summary-stats">
+                            <div class="summary-stat">
+                                <span class="stat-value" id="avgGoals">0.0</span>
+                                <span class="stat-label">Avg Goals per Game</span>
+                            </div>
+                            <div class="summary-stat">
+                                <span class="stat-value" id="topScorerGoals">0</span>
+                                <span class="stat-label">Most Goals</span>
+                            </div>
+                            <div class="summary-stat">
+                                <span class="stat-value" id="hatTricks">0</span>
+                                <span class="stat-label">Hat-tricks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="summary-content">
+                        <h3>Assist Analysis</h3>
+                        <div class="summary-stats">
+                            <div class="summary-stat">
+                                <span class="stat-value" id="avgAssists">0.0</span>
+                                <span class="stat-label">Avg Assists per Game</span>
+                            </div>
+                            <div class="summary-stat">
+                                <span class="stat-value" id="topAssister">0</span>
+                                <span class="stat-label">Most Assists</span>
+                            </div>
+                            <div class="summary-stat">
+                                <span class="stat-value" id="goalContributions">0</span>
+                                <span class="stat-label">Total Contributions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <div class="summary-content">
+                        <h3>Goalkeeping Stats</h3>
+                        <div class="summary-stats">
+                            <div class="summary-stat">
+                                <span class="stat-value" id="avgSaves">0.0</span>
+                                <span class="stat-label">Avg Saves per Game</span>
+                            </div>
+                            <div class="summary-stat">
+                                <span class="stat-value" id="cleanSheets">0</span>
+                                <span class="stat-label">Clean Sheets</span>
+                            </div>
+                            <div class="summary-stat">
+                                <span class="stat-value" id="savePercentage">0%</span>
+                                <span class="stat-label">Save Percentage</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer section-hidden">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-futbol"></i>
+                        </div>
+                        <span>FUHSIITHISA</span>
+                    </div>
+                    <p class="footer-description">
+                        Bringing together the best of college football talent in an exciting 
+                        inter-departmental tournament.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="fixtures.html">Fixtures</a>
+                        <a href="teams.html">Teams</a>
+                        <a href="players.html">Player Stats</a>
+                        <a href="finale.html">Finale</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 FUHSIITHISA Football Tournament. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+        <p>Loading player statistics...</p>
+    </div>
+
+    <script src="js/theme.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/scroll-animations.js"></script>
+    <script src="/js/statistics.js"></script>
+</body>
+</html>

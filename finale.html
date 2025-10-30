@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finale Day - FUHSIITHISA Football Tournament</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/finale.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <span class="logo-text">FUHSIITHISA</span>
+                </div>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <div class="menu-content">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="fixtures.html" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Fixtures & Results</span>
+                    </a>
+                    <a href="teams.html" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Teams</span>
+                    </a>
+                    <a href="transactions.html" class="nav-link">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Transactions</span>
+                    </a>
+                    <a href="finale.html" class="nav-link active">
+                        <i class="fas fa-flag-checkered"></i>
+                        <span>Finale</span>
+                    </a>
+                    <a href="awards.html" class="nav-link">
+                        <i class="fas fa-trophy"></i>
+                        <span>Awards</span>
+                    </a>
+                      <a href="statistics.html" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Player Stats</span>
+                    </a>
+                    <a href="news.html" class="nav-link">
+                        <i class="fas fa-newspaper"></i>
+                        <span>News</span>
+                    </a>
+                    <a href="contact.html" class="nav-link">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <div class="theme-switch">
+                        <div class="switch-handle"></div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="finale-badge">Grand Finale</div>
+                <h1 class="page-title">FINALE DAY 2025</h1>
+                <p class="page-subtitle">Celebrating the climax of an amazing tournament with exciting side attractions</p>
+                <div class="finale-countdown">
+                    <div class="countdown-finale" id="finaleCountdown">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="finaleDays">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="finaleHours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="finaleMinutes">00</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="finaleSeconds">00</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Match Details -->
+    <section class="final-match-section section-hidden">
+        <div class="container">
+            <div class="final-match-card">
+                <div class="match-header-finale">
+                    <div class="tournament-trophy">
+                        <i class="fas fa-trophy"></i>
+                        <span>Championship Final</span>
+                    </div>
+                    <div class="match-venue-finale">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>College Field</span>
+                    </div>
+                </div>
+
+                <div class="final-match-content">
+                    <div class="final-team">
+                        <div class="team-logo-final">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="team-name-final">TBD</div>
+                        <div class="team-level-final">Finalist</div>
+                    </div>
+
+                    <div class="match-center-final">
+                        <div class="match-date-final">
+                            <div class="date-day">2026</div>
+                            <div class="date-month"></div>
+                            <div class="date-year"></div>
+                        </div>
+                        <div class="match-vs">VS</div>
+                        <div class="match-time-final">
+                            <i class="fas fa-clock"></i>
+                            <span>TBA</span>
+                        </div>
+                    </div>
+
+                    <div class="final-team">
+                        <div class="team-logo-final">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="team-name-final">TBD</div>
+                        <div class="team-level-final">Finalist</div>
+                    </div>
+                </div>
+
+                <div class="final-match-actions">
+                    <button class="btn btn-primary" id="remindMe">
+                        <i class="fas fa-bell"></i>
+                        Set Reminder
+                    </button>
+                    <button class="btn btn-outline" id="shareFinal">
+                        <i class="fas fa-share-alt"></i>
+                        Share Event
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Side Attractions -->
+    <section class="side-attractions-section section-hidden">
+        <div class="container">
+            <h2 class="section-title">Side Attractions & Games</h2>
+            <p class="section-subtitle">Exciting activities to keep everyone entertained throughout the day</p>
+
+            <div class="attractions-grid">
+                <div class="attraction-card">
+                    <div class="attraction-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Track Race</h3>
+                    <p>100m and 200m sprint competitions for students and staff</p>
+                    <div class="attraction-time">
+                        <i class="fas fa-clock"></i>
+                        <span>10:00 AM</span>
+                    </div>
+                </div>
+
+                <div class="attraction-card">
+                    <div class="attraction-icon">
+                        <i class="fas fa-sack"></i>
+                    </div>
+                    <h3>Sack Race</h3>
+                    <p>Classic sack race with exciting prizes for winners</p>
+                    <div class="attraction-time">
+                        <i class="fas fa-clock"></i>
+                        <span>11:30 AM</span>
+                    </div>
+                </div>
+
+                <div class="attraction-card">
+                    <div class="attraction-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Relay Race</h4>
+                    <p>4x100m relay competition between departments</p>
+                    <div class="attraction-time">
+                        <i class="fas fa-clock"></i>
+                        <span>12:30 PM</span>
+                    </div>
+                </div>
+
+                <div class="attraction-card">
+                    <div class="attraction-icon">
+                        <i class="fas fa-egg"></i>
+                    </div>
+                    <h3>Egg Race</h3>
+                    <p>Balance and speed challenge with eggs and spoons</p>
+                    <div class="attraction-time">
+                        <i class="fas fa-clock"></i>
+                        <span>1:30 PM</span>
+                    </div>
+                </div>
+
+                <div class="attraction-card">
+                    <div class="attraction-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>Match Past</h3>
+                    <p>Historical exhibition of past tournament highlights</p>
+                    <div class="attraction-time">
+                        <i class="fas fa-clock"></i>
+                        <span>1:40 PM</span>
+                    </div>
+                </div>
+
+                <div class="attraction-card">
+                    <div class="attraction-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Live Music</h3>
+                    <p>Performances by campus artists and DJ sessions</p>
+                    <div class="attraction-time">
+                        <i class="fas fa-clock"></i>
+                        <span>2:00 PM - 5:00 PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Schedule -->
+    <section class="schedule-section section-hidden">
+        <div class="container">
+            <h2 class="section-title">Event Schedule</h2>
+            <div class="schedule-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-time">08:00 AM</div>
+                    <div class="timeline-content">
+                        <h3>Gates Open</h3>
+                        <p>Arrival and seating of guests</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">09:00 AM</div>
+                    <div class="timeline-content">
+                        <h3>Opening Ceremony</h3>
+                        <p>Welcome address and tournament overview</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">10:00 AM</div>
+                    <div class="timeline-content">
+                        <h3>Side Games Begin</h3>
+                        <p>Track race, sack race, and other attractions</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">02:00 PM</div>
+                    <div class="timeline-content">
+                        <h3>Live Music & Entertainment</h3>
+                        <p>Performances and DJ sessions</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item highlight">
+                    <div class="timeline-time">03:00 PM</div>
+                    <div class="timeline-content">
+                        <h3>Championship Final</h3>
+                        <p>Main event: Tournament final match</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">05:00 PM</div>
+                    <div class="timeline-content">
+                        <h3>Awards Ceremony</h3>
+                        <p>Prize distribution and closing remarks</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Gallery -->
+    <section class="gallery-section section-hidden">
+        <div class="container">
+            <div class="gallery-header">
+                <h2 class="section-title">Live Gallery</h2>
+                <p class="section-subtitle">Photos and highlights from the finale day</p>
+                <div class="gallery-actions">
+                    <button class="btn btn-outline" id="refreshGallery">
+                        <i class="fas fa-sync-alt"></i>
+                        Refresh Gallery
+                    </button>
+                </div>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery items will be loaded dynamically -->
+                <div class="gallery-placeholder">
+                    <i class="fas fa-camera"></i>
+                    <h3>Gallery Coming Soon</h3>
+                    <p>Photos will appear here during and after the finale event</p>
+                </div>
+            </div>
+
+            <div class="gallery-upload">
+                <div class="upload-info">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <div>
+                        <h4>Share Your Photos</h4>
+                        <p>Tag us on social media with #FUHSIITHISA2025 to be featured in our gallery</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Preview -->
+    <section class="awards-preview-section section-hidden">
+        <div class="container">
+            <div class="awards-preview-card">
+                <div class="awards-preview-content">
+                    <h2>Awards Ceremony</h2>
+                    <p>Join us for the prestigious awards ceremony where we'll celebrate outstanding performances and achievements throughout the tournament.</p>
+                    <div class="awards-highlights">
+                        <div class="award-highlight">
+                            <i class="fas fa-trophy"></i>
+                            <span>Champion Trophy</span>
+                        </div>
+                        <div class="award-highlight">
+                            <i class="fas fa-medal"></i>
+                            <span>Individual Awards</span>
+                        </div>
+                        <div class="award-highlight">
+                            <i class="fas fa-award"></i>
+                            <span>Special Recognitions</span>
+                        </div>
+                    </div>
+                    <a href="awards.html" class="btn btn-primary">
+                        <i class="fas fa-award"></i>
+                        View All Awards
+                    </a>
+                </div>
+                <div class="awards-preview-image">
+                    <div class="image-placeholder-trophy">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer section-hidden">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-futbol"></i>
+                        </div>
+                        <span>FUHSIITHISA</span>
+                    </div>
+                    <p class="footer-description">
+                        Bringing together the best of college football talent in an exciting 
+                        inter-departmental tournament.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="fixtures.html">Fixtures</a>
+                        <a href="teams.html">Teams</a>
+                        <a href="transactions.html">Transactions</a>
+                        <a href="finale.html">Finale</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 FUHSIITHISA Football Tournament. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+        <p>Loading finale details...</p>
+    </div>
+
+    <script src="js/theme.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/scroll-animations.js"></script>
+    <script src="js/finale.jsS"></script>
+</body>
+</html>
