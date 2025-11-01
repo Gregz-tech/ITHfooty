@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - FUHSIITHISA Football Tournament</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <span class="logo-text">FUHSIITHISA</span>
+                </div>
+            </div>
+
+      <div class="nav-menu" id="navMenu">
+                <div class="menu-content">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="fixtures.html" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Fixtures & Results</span>
+                    </a>
+                    <a href="teams.html" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Teams</span>
+                    </a>
+                    <a href="transactions.html" class="nav-link">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Transactions</span>
+                    </a>
+                    <a href="finale.html" class="nav-link">
+                        <i class="fas fa-flag-checkered"></i>
+                        <span>Finale</span>
+                    </a>
+                    <a href="awards.html" class="nav-link">
+                        <i class="fas fa-trophy"></i>
+                        <span>Awards</span>
+                    </a>
+                    <a href="statistics.html" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Player Stats</span>
+                    </a>
+                    <a href="news.html" class="nav-link">
+                        <i class="fas fa-newspaper"></i>
+                        <span>News</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="#" class="nav-link active">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <div class="theme-switch">
+                        <div class="switch-handle"></div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="contact-badge">Get In Touch</div>
+                <h1 class="page-title">CONTACT US</h1>
+                <p class="page-subtitle">Reach out to the tournament organizers for inquiries, support, or partnership opportunities</p>
+                <div class="contact-stats">
+                    <div class="contact-stat">
+                        <i class="fas fa-clock"></i>
+                        <span><strong>24/7</strong> Support</span>
+                    </div>
+                    <div class="contact-stat">
+                        <i class="fas fa-reply"></i>
+                        <span><strong>2 Hours</strong> Avg Response</span>
+                    </div>
+                    <div class="contact-stat">
+                        <i class="fas fa-users"></i>
+                        <span><strong>50+</strong> Happy Teams</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="contact-methods-section section-hidden">
+        <div class="container">
+            <h2 class="section-title">Ways to Reach Us</h2>
+            <p class="section-subtitle">Choose your preferred method of communication</p>
+
+            <div class="contact-methods-grid">
+                <div class="contact-method-card">
+                    <div class="method-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>Quick responses for urgent inquiries and instant support</p>
+                    <div class="method-details">
+                        <div class="method-info">
+                            <i class="fas fa-phone"></i>
+                            <span>+234 801 234 5678</span>
+                        </div>
+                        <div class="method-info">
+                            <i class="fas fa-user"></i>
+                            <span>Tournament PRO</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary method-action" onclick="contactManager.contactWhatsApp()">
+                        <i class="fab fa-whatsapp"></i>
+                        Message on WhatsApp
+                    </button>
+                </div>
+
+                <div class="contact-method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>Detailed inquiries, official communications, and documentation</p>
+                    <div class="method-details">
+                        <div class="method-info">
+                            <i class="fas fa-at"></i>
+                            <span>info@fuhsiithisa.com</span>
+                        </div>
+                        <div class="method-info">
+                            <i class="fas fa-clock"></i>
+                            <span>Response within 4 hours</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline method-action" onclick="contactManager.contactEmail()">
+                        <i class="fas fa-envelope"></i>
+                        Send Email
+                    </button>
+                </div>
+
+                <div class="contact-method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone Call</h3>
+                    <p>Direct conversations for complex discussions and immediate assistance</p>
+                    <div class="method-details">
+                        <div class="method-info">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+234 802 345 6789</span>
+                        </div>
+                        <div class="method-info">
+                            <i class="fas fa-clock"></i>
+                            <span>9AM - 6PM Daily</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline method-action" onclick="contactManager.contactPhone()">
+                        <i class="fas fa-phone"></i>
+                        Call Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section section-hidden">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2 class="form-title">Send us a Message</h2>
+                    <p class="form-subtitle">Fill out the form below and we'll get back to you as soon as possible</p>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                            <div class="error-message" id="firstNameError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                            <div class="error-message" id="lastNameError"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="error-message" id="emailError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+234 XXX XXX XXXX">
+                            <div class="error-message" id="phoneError"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="registration">Team Registration</option>
+                            <option value="sponsorship">Sponsorship</option>
+                            <option value="technical">Technical Support</option>
+                            <option value="media">Media Inquiry</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div class="error-message" id="subjectError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Please describe your inquiry in detail..." required></textarea>
+                        <div class="char-count">
+                            <span id="charCount">0</span> / 1000 characters
+                        </div>
+                        <div class="error-message" id="messageError"></div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                        <button type="reset" class="btn btn-outline">
+                            <i class="fas fa-redo"></i>
+                            Clear Form
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tournament Committee -->
+    <section class="committee-section section-hidden">
+        <div class="container">
+            <h2 class="section-title">Tournament Committee</h2>
+            <p class="section-subtitle">Meet the organizing team behind the tournament</p>
+
+            <div class="committee-grid">
+                <div class="committee-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3>Dr. Adekunle Johnson</h3>
+                        <p class="member-role">Chairperson</p>
+                        <p class="member-contact">
+                            <i class="fas fa-envelope"></i>
+                            adekunle.j@fuhsi.edu
+                        </p>
+                    </div>
+                </div>
+
+                <div class="committee-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3>Prof. Bola Ahmed</h3>
+                        <p class="member-role">Vice Chairperson</p>
+                        <p class="member-contact">
+                            <i class="fas fa-envelope"></i>
+                            bola.ahmed@fuhsi.edu
+                        </p>
+                    </div>
+                </div>
+
+                <div class="committee-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3>Mr. Chinedu Okoro</h3>
+                        <p class="member-role">Sports Director</p>
+                        <p class="member-contact">
+                            <i class="fas fa-phone"></i>
+                            +234 803 456 7890
+                        </p>
+                    </div>
+                </div>
+
+                <div class="committee-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3>Sarah Mohammed</h3>
+                        <p class="member-role">Student Representative</p>
+                        <p class="member-contact">
+                            <i class="fab fa-whatsapp"></i>
+                            +234 804 567 8901
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section section-hidden">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Quick answers to common questions</p>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How can my team register for the tournament?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Team registration is done through your department's sports representative. Contact your level coordinator or send us a message through the contact form above.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What are the tournament rules and regulations?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Complete tournament rules are available in the official tournament handbook. You can request a digital copy by emailing info@fuhsiithisa.com.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How can I become a sponsor?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We welcome sponsorship inquiries! Please select "Sponsorship" as your subject in the contact form, and our partnership team will reach out with available opportunities.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Where are the matches played?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>All matches are played at the College Field. The venue is equipped with proper facilities for players and spectators.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How are player transfers handled?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Player transfers are managed through the Player Market system. Contact player agents directly via WhatsApp for transfer negotiations.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I volunteer for the tournament?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We welcome volunteers. Please contact the Sports Director or use the contact form to express your interest in volunteering opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Map -->
+    <section class="location-section section-hidden">
+        <div class="container">
+            <div class="location-content">
+                <div class="location-info">
+                    <h2 class="section-title">Visit Us</h2>
+                    <div class="address-card">
+                        <div class="address-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="address-details">
+                            <h3>Tournament Venue</h3>
+                            <p>College Field<br>
+                            Federal University of Health Sciences<br>
+                            Ilishan-Remo, Ogun State<br>
+                            Nigeria</p>
+                        </div>
+                    </div>
+
+                    <div class="operating-hours">
+                        <h4>Operating Hours</h4>
+                        <div class="hours-grid">
+                            <div class="hours-item">
+                                <span class="hours-day">Monday - Friday</span>
+                                <span class="hours-time">8:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="hours-day">Saturday</span>
+                                <span class="hours-time">9:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="hours-day">Sunday</span>
+                                <span class="hours-time">10:00 AM - 2:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="emergency-contact">
+                        <h4>Emergency Contact</h4>
+                        <div class="emergency-info">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <strong>+234 805 678 9012</strong>
+                                <span>For urgent match-related issues only</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map"></i>
+                        <h3>Interactive Map</h3>
+                        <p>Tournament venue location will be displayed here</p>
+                        <button class="btn btn-outline" onclick="contactManager.openMaps()">
+                            <i class="fas fa-directions"></i>
+                            Get Directions
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer section-hidden">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-futbol"></i>
+                        </div>
+                        <span>FUHSIITHISA</span>
+                    </div>
+                    <p class="footer-description">
+                        Bringing together the best of college football talent in an exciting 
+                        inter-departmental tournament.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="fixtures.html">Fixtures</a>
+                        <a href="teams.html">Teams</a>
+                        <a href="players.html">Player Stats</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 FUHSIITHISA Football Tournament. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+        <p>Loading contact information...</p>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Message Sent Successfully!</h3>
+            <p>Thank you for contacting us. We'll get back to you within 2 hours.</p>
+            <button class="btn btn-primary" onclick="contactManager.closeModal()">
+                Continue
+            </button>
+        </div>
+    </div>
+
+    <script src="js/theme.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/scroll-animations.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

@@ -1,4 +1,9 @@
 /* News Page Header */
+.page-header{
+        padding-top: 6rem !important; /* Force increased padding */
+
+}
+
 .news-header {
     position: relative;
     background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));

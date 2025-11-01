@@ -32,7 +32,7 @@ class AwardsManager {
                     stats: { goals: 0, assists: 0, matches: 0 }
                 },
                 description: 'Awarded to the most outstanding player throughout the entire tournament',
-                prize: 'Gold Medal + Certificate',
+                prize: 'Certificate',
                 stats: { goals: 0, assists: 0 }
             },
             {
@@ -47,7 +47,7 @@ class AwardsManager {
                     stats: { goals: 0, assists: 0, matches: 0 }
                 },
                 description: 'Awarded to the player who scores the most goals in the tournament',
-                prize: 'Golden Boot Trophy',
+                prize: 'Certificate',
                 stats: { goals: 0, assists: 0 }
             },
             {
@@ -62,7 +62,7 @@ class AwardsManager {
                     stats: { saves: 0, cleanSheets: 0 }
                 },
                 description: 'Awarded to the goalkeeper with the most clean sheets and outstanding performances',
-                prize: 'Golden Glove Trophy',
+                prize: 'Certificate',
                 stats: { saves: 0, cleanSheets: 0 }
             },
             {
@@ -77,54 +77,11 @@ class AwardsManager {
                     stats: { tackles: 0, interceptions: 0 }
                 },
                 description: 'Awarded to the defender with the most consistent and impactful performances',
-                prize: 'Defender of the Tournament Award',
+                prize: 'Defender of the Tournament certificate',
                 stats: { tackles: 0, interceptions: 0 }
-            },
+            }, 
             {
                 id: 5,
-                name: 'Best Midfielder',
-                category: 'performance',
-                winner: {
-                    name: 'To Be Decided',
-                    team: 'TBD',
-                    level: 'TBD',
-                    image: null,
-                    stats: { passes: 0, assists: 0 }
-                },
-                description: 'Awarded to the midfielder who controls the game and creates most opportunities',
-                prize: 'Playmaker Award',
-                stats: { passes: 0, assists: 0 }
-            },
-            {
-                id: 6,
-                name: 'Fair Play Award',
-                category: 'sportsmanship',
-                winner: {
-                    name: 'To Be Decided',
-                    team: 'TBD',
-                    level: 'TBD',
-                    image: null
-                },
-                description: 'Awarded to the team with the best sportsmanship and fair play record',
-                prize: 'Fair Play Trophy',
-                stats: {}
-            },
-            {
-                id: 7,
-                name: 'Most Disciplined Player',
-                category: 'sportsmanship',
-                winner: {
-                    name: 'To Be Decided',
-                    team: 'TBD',
-                    level: 'TBD',
-                    image: null
-                },
-                description: 'Awarded to the player with the best disciplinary record and sportsmanship',
-                prize: 'Sportsmanship Award',
-                stats: {}
-            },
-            {
-                id: 8,
                 name: 'Emerging Talent',
                 category: 'special',
                 winner: {
@@ -134,11 +91,11 @@ class AwardsManager {
                     image: null
                 },
                 description: 'Awarded to the most promising young player in the tournament',
-                prize: 'Young Player Award',
+                prize: 'Young Player of the Tournament certificate',
                 stats: {}
             },
             {
-                id: 9,
+                id: 6,
                 name: 'Coach of the Tournament',
                 category: 'special',
                 winner: {
@@ -148,11 +105,11 @@ class AwardsManager {
                     image: null
                 },
                 description: 'Awarded to the coach with the best tactical decisions and team management',
-                prize: 'Best Coach Award',
+                prize: 'Best Coach certificate',
                 stats: {}
             },
             {
-                id: 10,
+                id: 7,
                 name: 'Fan Favorite Player',
                 category: 'special',
                 winner: {
@@ -163,6 +120,20 @@ class AwardsManager {
                 },
                 description: 'Awarded to the player who receives the most votes from fans and supporters',
                 prize: "People's Choice Award",
+                stats: {}
+            },
+               {
+                id: 8,
+                name: 'Female Team of the Tournament',
+                category: 'performance',
+                winner: {
+                    name: 'To Be Decided',
+                    team: 'TBD',
+                    level: 'TBD',
+                    image: null
+                },
+                description: 'Awarded to the outstanding female team in the tournament',
+                prize: "Certificate",
                 stats: {}
             }
         ];

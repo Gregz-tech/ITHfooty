@@ -28,20 +28,42 @@ class FixturesManager {
                 id: 1,
                 matchDay: 1,
                 date: '2025-11-26',
-                time: '10:00',
-                teamA: { name: '100 Level', level: '100L', score: 2 },
-                teamB: { name: '200 Level', level: '200L', score: 1 },
+                time: '03:00',
+                teamA: { name: '200 Level', level: 'ASH', score: null },
+                teamB: { name: '400 Level', level: 'BLUE', score: null },
                 venue: 'College Field',
-                status: 'completed',
+                status: 'upcoming',
+                group: 'A'
+            },
+            {
+               id: 1,
+                matchDay: 1,
+                date: '2025-11-28',
+                time: '03:00',
+                teamA: { name: '100 Level', level: '---', score: null },
+                teamB: { name: '300 Level', level: 'BLACK', score: null },
+                venue: 'College Field',
+                status: 'upcoming',
                 group: 'A'
             },
             {
                 id: 2,
                 matchDay: 2,
-                date: '2025-11-28',
+                date: '2025-12-03',
+                time: '3:00',
+                teamA: { name: '300 Level', level: 'BLACK', score: null },
+                teamB: { name: '200 Level', level: 'ASH', score: null },
+                venue: 'College Field',
+                status: 'upcoming',
+                group: 'A'
+            },
+             {
+                id: 2,
+                matchDay: 2,
+                date: '2025-12-05',
                 time: '10:00',
-                teamA: { name: '100 Level', level: '100L', score: null },
-                teamB: { name: '300 Level', level: '300L', score: null },
+                teamA: { name: '400 Level', level: 'BLUE', score: null },
+                teamB: { name: '100 Level', level: '---', score: null },
                 venue: 'College Field',
                 status: 'upcoming',
                 group: 'A'
@@ -49,24 +71,36 @@ class FixturesManager {
             {
                 id: 3,
                 matchDay: 3,
-                date: '2025-12-01',
+                date: '2025-12-10',
                 time: '11:00',
-                teamA: { name: '100 Level', level: '100L', score: null },
-                teamB: { name: '400 Level', level: '400L', score: null },
+                teamA: { name: '300 Level', level: 'BLACK', score: null },
+                teamB: { name: '400 Level', level: 'BLUE', score: null },
                 venue: 'College Field',
                 status: 'upcoming',
                 group: 'A'
             },
+             {
+                id: 3,
+                matchDay: 3,
+                date: '2025-12-12',
+                time: '11:00',
+                teamA: { name: '100 Level', level: '---', score: null },
+                teamB: { name: '200 Level', level: 'ASH', score: null },
+                venue: 'College Field',
+                status: 'upcoming',
+                group: 'A'
+            },
+         
          
         ];
 
         // Sample standings data
         this.standings = {
             A: [
-                { position: 1, team: '100 Level', level: '100L', played: 1, won: 1, drawn: 0, lost: 0, goalsFor: 2, goalsAgainst: 1, goalDifference: 1, points: 3, form: ['W'] },
-                { position: 2, team: '200 Level', level: '200L', played: 1, won: 0, drawn: 0, lost: 1, goalsFor: 1, goalsAgainst: 2, goalDifference: -1, points: 0, form: ['L'] },
-                { position: 3, team: '300 Level', level: '300L', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },
-                { position: 4, team: '400 Level', level: '400L', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] }
+                { position: 1, team: '100 Level', level: '---', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: ['W'] },
+                { position: 2, team: '200 Level', level: 'ASH', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: ['L'] },
+                { position: 3, team: '300 Level', level: 'BLACK', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },
+                { position: 4, team: '400 Level', level: 'BLUE', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] }
             ],
             // B: [
             //     { position: 1, team: '300 Level', level: '300L', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },

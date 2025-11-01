@@ -2,7 +2,7 @@ class PlayersManager {
     constructor() {
         this.players = [];
         this.filteredPlayers = [];
-        this.currentStat = 'goals';
+        this.currentStat = 'all';
         this.currentFilters = {
             position: 'all',
             level: 'all',
@@ -226,11 +226,90 @@ class PlayersManager {
                     lastGoal: null,
                     rating: 7.5
                 }
+            },
+            {
+                id: 11,
+                name: 'James Wilson',
+                position: 'Forward',
+                level: '200L',
+                team: '200 Level',
+                image: null,
+                stats: {
+                    matches: 4,
+                    goals: 3,
+                    assists: 1,
+                    saves: 0,
+                    cleanSheets: 0,
+                    goalsConceded: 0,
+                    keyPasses: 5,
+                    tackles: 1,
+                    lastGoal: 'MD3 vs 100L',
+                    rating: 7.2
+                }
+            },
+            {
+                id: 12,
+                name: 'Lisa Brown',
+                position: 'Midfielder',
+                level: '300L',
+                team: '300 Level',
+                image: null,
+                stats: {
+                    matches: 4,
+                    goals: 1,
+                    assists: 2,
+                    saves: 0,
+                    cleanSheets: 0,
+                    goalsConceded: 0,
+                    keyPasses: 8,
+                    tackles: 4,
+                    lastGoal: 'MD2 vs 400L',
+                    rating: 7.0
+                }
+            },
+            {
+                id: 13,
+                name: 'Robert Garcia',
+                position: 'Midfielder',
+                level: '100L',
+                team: '100 Level',
+                image: null,
+                stats: {
+                    matches: 5,
+                    goals: 1,
+                    assists: 4,
+                    saves: 0,
+                    cleanSheets: 0,
+                    goalsConceded: 0,
+                    keyPasses: 11,
+                    tackles: 5,
+                    lastGoal: 'MD4 vs 200L',
+                    rating: 7.4
+                }
+            },
+            {
+                id: 14,
+                name: 'Maria Rodriguez',
+                position: 'Forward',
+                level: '200L',
+                team: '200 Level',
+                image: null,
+                stats: {
+                    matches: 5,
+                    goals: 2,
+                    assists: 3,
+                    saves: 0,
+                    cleanSheets: 0,
+                    goalsConceded: 0,
+                    keyPasses: 7,
+                    tackles: 2,
+                    lastGoal: 'MD5 vs 400L',
+                    rating: 7.3
+                }
             }
         ];
 
-        this.filterPlayers();
-        this.renderCurrentTable();
+        this.renderAllTables();
         this.renderSpotlight();
         this.updateSummaryStats();
         this.hideLoading();
@@ -240,7 +319,7 @@ class PlayersManager {
         // Stat tabs
         document.querySelectorAll('.stat-tab').forEach(tab => {
             tab.addEventListener('click', (e) => {
-                this.switchStatTab(e.target.dataset.stat);
+                this.switchStatTab(e.target.closest('.stat-tab').dataset.stat);
             });
         });
 
@@ -300,7 +379,11 @@ class PlayersManager {
         });
         document.getElementById(`${stat}Table`).classList.add('active');
 
-        this.renderCurrentTable();
+        if (stat === 'all') {
+            this.renderAllTables();
+        } else {
+            this.renderCurrentTable();
+        }
     }
 
     filterPlayers() {
@@ -354,8 +437,37 @@ class PlayersManager {
         }
     }
 
+    renderAllTables() {
+        // Render top 10 scorers
+        const topScorers = [...this.players]
+            .sort((a, b) => b.stats.goals - a.stats.goals)
+            .slice(0, 10);
+        
+        document.getElementById('goalsTableBody').innerHTML = topScorers.map((player, index) => 
+            this.createTableRow(player, index + 1, 'goals')
+        ).join('');
+
+        // Render top 10 assists
+        const topAssists = [...this.players]
+            .sort((a, b) => b.stats.assists - a.stats.assists)
+            .slice(0, 10);
+        
+        document.getElementById('assistsTableBody').innerHTML = topAssists.map((player, index) => 
+            this.createTableRow(player, index + 1, 'assists')
+        ).join('');
+    }
+
     renderCurrentTable() {
-        const tableBody = document.getElementById(`${this.currentStat}TableBody`);
+        if (this.currentStat === 'all') {
+            this.renderAllTables();
+            return;
+        }
+
+        const tableBodyId = this.currentStat === 'goals' ? 'goalsTableBodySingle' : 
+                           this.currentStat === 'assists' ? 'assistsTableBodySingle' : 
+                           `${this.currentStat}TableBody`;
+        
+        const tableBody = document.getElementById(tableBodyId);
         
         if (this.filteredPlayers.length === 0) {
             tableBody.innerHTML = `
@@ -370,12 +482,18 @@ class PlayersManager {
             return;
         }
 
-        tableBody.innerHTML = this.filteredPlayers.map((player, index) => 
-            this.createTableRow(player, index + 1)
+        // For individual table views, show filtered results
+        let playersToDisplay = this.filteredPlayers;
+        if (this.currentStat === 'goals' || this.currentStat === 'assists') {
+            playersToDisplay = playersToDisplay.slice(0, 10);
+        }
+
+        tableBody.innerHTML = playersToDisplay.map((player, index) => 
+            this.createTableRow(player, index + 1, this.currentStat)
         ).join('');
     }
 
-    createTableRow(player, rank) {
+    createTableRow(player, rank, statType) {
         const stats = player.stats;
         const rankClass = rank <= 3 ? 'top-3' : '';
         
@@ -386,7 +504,7 @@ class PlayersManager {
         
         const avatarClass = player.image ? 'player-avatar-small has-image' : 'player-avatar-small';
 
-        switch (this.currentStat) {
+        switch (statType) {
             case 'goals':
                 return `
                     <tr class="player-row">
@@ -644,29 +762,171 @@ class PlayersManager {
     }
 
     exportStats(type) {
-        // In a real app, this would generate and download a CSV file
-        const data = this.filteredPlayers.map(player => ({
-            Name: player.name,
-            Team: player.team,
-            Position: player.position,
-            ...player.stats
-        }));
+        let data = [];
+        let filename = '';
+        let headers = [];
 
-        console.log(`Exporting ${type} data:`, data);
-        alert(`Exporting ${type} statistics data...`);
+        switch (type) {
+            case 'goals':
+                data = this.players
+                    .sort((a, b) => b.stats.goals - a.stats.goals)
+                    .slice(0, 10)
+                    .map((player, index) => ({
+                        Rank: index + 1,
+                        Name: player.name,
+                        Team: player.team,
+                        Position: player.position,
+                        Goals: player.stats.goals,
+                        Assists: player.stats.assists,
+                        Matches: player.stats.matches,
+                        GoalsPerMatch: (player.stats.goals / player.stats.matches).toFixed(2),
+                        LastGoal: player.stats.lastGoal || 'N/A'
+                    }));
+                filename = 'top_scorers.csv';
+                headers = ['Rank', 'Name', 'Team', 'Position', 'Goals', 'Assists', 'Matches', 'Goals/Match', 'Last Goal'];
+                break;
+
+            case 'assists':
+                data = this.players
+                    .sort((a, b) => b.stats.assists - a.stats.assists)
+                    .slice(0, 10)
+                    .map((player, index) => ({
+                        Rank: index + 1,
+                        Name: player.name,
+                        Team: player.team,
+                        Position: player.position,
+                        Assists: player.stats.assists,
+                        Goals: player.stats.goals,
+                        Matches: player.stats.matches,
+                        AssistsPerMatch: (player.stats.assists / player.stats.matches).toFixed(2),
+                        KeyPasses: player.stats.keyPasses
+                    }));
+                filename = 'top_assists.csv';
+                headers = ['Rank', 'Name', 'Team', 'Position', 'Assists', 'Goals', 'Matches', 'Assists/Match', 'Key Passes'];
+                break;
+
+            case 'saves':
+                data = this.players
+                    .filter(p => p.position === 'Goalkeeper')
+                    .sort((a, b) => b.stats.saves - a.stats.saves)
+                    .slice(0, 10)
+                    .map((player, index) => ({
+                        Rank: index + 1,
+                        Name: player.name,
+                        Team: player.team,
+                        Saves: player.stats.saves,
+                        CleanSheets: player.stats.cleanSheets,
+                        Matches: player.stats.matches,
+                        SavesPerMatch: (player.stats.saves / player.stats.matches).toFixed(1),
+                        GoalsConceded: player.stats.goalsConceded,
+                        SavePercentage: player.stats.saves > 0 ? 
+                            ((player.stats.saves / (player.stats.saves + player.stats.goalsConceded)) * 100).toFixed(1) + '%' : '0%'
+                    }));
+                filename = 'top_saves.csv';
+                headers = ['Rank', 'Name', 'Team', 'Saves', 'Clean Sheets', 'Matches', 'Saves/Match', 'Goals Conceded', 'Save Percentage'];
+                break;
+
+            case 'overall':
+                data = this.players
+                    .sort((a, b) => b.stats.rating - a.stats.rating)
+                    .slice(0, 10)
+                    .map((player, index) => ({
+                        Rank: index + 1,
+                        Name: player.name,
+                        Team: player.team,
+                        Position: player.position,
+                        Rating: player.stats.rating.toFixed(1),
+                        Goals: player.stats.goals,
+                        Assists: player.stats.assists,
+                        Saves: player.stats.saves,
+                        Matches: player.stats.matches,
+                        Points: this.calculatePlayerPoints(player)
+                    }));
+                filename = 'overall_ranking.csv';
+                headers = ['Rank', 'Name', 'Team', 'Position', 'Rating', 'Goals', 'Assists', 'Saves', 'Matches', 'Points'];
+                break;
+        }
+
+        this.downloadCSV(data, headers, filename);
+    }
+
+    downloadCSV(data, headers, filename) {
+        if (data.length === 0) {
+            alert('No data available to export.');
+            return;
+        }
+
+        // Create CSV content
+        let csvContent = headers.join(',') + '\n';
         
-        // Here you would typically:
-        // 1. Convert data to CSV
-        // 2. Create download link
-        // 3. Trigger download
+        data.forEach(row => {
+            const rowData = headers.map(header => {
+                const value = row[header];
+                // Handle values that might contain commas or quotes
+                if (typeof value === 'string' && (value.includes(',') || value.includes('"'))) {
+                    return `"${value.replace(/"/g, '""')}"`;
+                }
+                return value;
+            });
+            csvContent += rowData.join(',') + '\n';
+        });
+
+        // Create and trigger download
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        const url = URL.createObjectURL(blob);
+        
+        link.setAttribute('href', url);
+        link.setAttribute('download', filename);
+        link.style.visibility = 'hidden';
+        
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // Show success message
+        this.showExportSuccess(filename);
+    }
+
+    showExportSuccess(filename) {
+        // Create a temporary success message
+        const successMsg = document.createElement('div');
+        successMsg.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--pitch-green);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-lg);
+            z-index: 10000;
+            font-weight: 500;
+            animation: slideInRight 0.3s ease;
+        `;
+        
+        successMsg.innerHTML = `
+            <i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i>
+            ${filename} downloaded successfully!
+        `;
+        
+        document.body.appendChild(successMsg);
+        
+        // Remove after 3 seconds
+        setTimeout(() => {
+            successMsg.style.animation = 'slideOutRight 0.3s ease';
+            setTimeout(() => {
+                document.body.removeChild(successMsg);
+            }, 300);
+        }, 3000);
     }
 
     showLoading() {
-        document.getElementById('loadingSpinner').classList.remove('hidden');
+        document.getElementById('loadingSpinner').style.display = 'flex';
     }
 
     hideLoading() {
-        document.getElementById('loadingSpinner').classList.add('hidden');
+        document.getElementById('loadingSpinner').style.display = 'none';
     }
 
     // Method to update player stats (for live updates)
@@ -689,11 +949,29 @@ document.addEventListener('DOMContentLoaded', () => {
     playersManager = new PlayersManager();
 });
 
-// Example of how to update stats live:
-/*
-playersManager.updatePlayerStats(1, {
-    goals: 9,
-    assists: 4,
-    matches: 7
-});
-*/
+// Add CSS animations for export success message
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideInRight {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideOutRight {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
