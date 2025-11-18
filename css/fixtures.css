@@ -557,6 +557,61 @@
     }
 }
 
+/* Color styling for team levels */
+.team-level[data-level="Red"],
+.team-level[data-level="RED"] {
+    color: #ff0000 !important;
+    font-weight: bold;
+}
+
+.team-level[data-level="Blue"],
+.team-level[data-level="BLUE"] {
+    color: #0000ff !important;
+    font-weight: bold;
+}
+
+.team-level[data-level="Black"],
+.team-level[data-level="BLACK"] {
+    color: #000000 !important;
+    font-weight: bold;
+    background-color: #f0f0f0 !important; /* Add background for better visibility */
+}
+
+.team-level[data-level="Ash"],
+.team-level[data-level="ASH"] {
+    color: #b2beb5 !important;
+    font-weight: bold;
+}
+
+/* Alternative: Background colors with white text */
+.team-level.bg-red {
+    background-color: #ff0000 !important;
+    color: white !important;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+}
+
+.team-level.bg-blue {
+    background-color: #0000ff !important;
+    color: white !important;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+}
+
+.team-level.bg-black {
+    background-color: #000000 !important;
+    color: white !important;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+}
+
+.team-level.bg-ash {
+    background-color: #b2beb5 !important;
+    color: black !important;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+}
+
 @media (max-width: 480px) {
     .page-title {
         font-size: 2rem;

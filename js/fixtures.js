@@ -40,7 +40,7 @@ class FixturesManager {
                 matchDay: 1,
                 date: '2025-11-28',
                 time: '03:00',
-                teamA: { name: '100 Level', level: '---', score: null },
+                teamA: { name: '100 Level', level: 'Red', score: null },
                 teamB: { name: '300 Level', level: 'BLACK', score: null },
                 venue: 'College Field',
                 status: 'upcoming',
@@ -61,9 +61,9 @@ class FixturesManager {
                 id: 2,
                 matchDay: 2,
                 date: '2025-12-05',
-                time: '10:00',
+                time: '3:00',
                 teamA: { name: '400 Level', level: 'BLUE', score: null },
-                teamB: { name: '100 Level', level: '---', score: null },
+                teamB: { name: '100 Level', level: 'Red', score: null },
                 venue: 'College Field',
                 status: 'upcoming',
                 group: 'A'
@@ -72,7 +72,7 @@ class FixturesManager {
                 id: 3,
                 matchDay: 3,
                 date: '2025-12-10',
-                time: '11:00',
+                time: '3:00',
                 teamA: { name: '300 Level', level: 'BLACK', score: null },
                 teamB: { name: '400 Level', level: 'BLUE', score: null },
                 venue: 'College Field',
@@ -83,8 +83,8 @@ class FixturesManager {
                 id: 3,
                 matchDay: 3,
                 date: '2025-12-12',
-                time: '11:00',
-                teamA: { name: '100 Level', level: '---', score: null },
+                time: '3:00',
+                teamA: { name: '100 Level', level: 'Red', score: null },
                 teamB: { name: '200 Level', level: 'ASH', score: null },
                 venue: 'College Field',
                 status: 'upcoming',
@@ -97,7 +97,7 @@ class FixturesManager {
         // Sample standings data
         this.standings = {
             A: [
-                { position: 1, team: '100 Level', level: '---', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: ['W'] },
+                { position: 1, team: '100 Level', level: 'RED', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: ['W'] },
                 { position: 2, team: '200 Level', level: 'ASH', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: ['L'] },
                 { position: 3, team: '300 Level', level: 'BLACK', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },
                 { position: 4, team: '400 Level', level: 'BLUE', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] }
@@ -206,64 +206,64 @@ class FixturesManager {
         });
     }
 
-    createMatchCard(fixture) {
-        const matchDate = new Date(fixture.date);
-        const formattedDate = matchDate.toLocaleDateString('en-US', { 
-            weekday: 'short', 
-            month: 'short', 
-            day: 'numeric' 
-        });
+   createMatchCard(fixture) {
+    const matchDate = new Date(fixture.date);
+    const formattedDate = matchDate.toLocaleDateString('en-US', { 
+        weekday: 'short', 
+        month: 'short', 
+        day: 'numeric' 
+    });
 
-        return `
-            <div class="match-card ${fixture.status}">
-                <div class="match-header">
-                    <div class="match-meta">
-                        <span class="match-day">Match Day ${fixture.matchDay}</span>
-                        <span class="match-date">${formattedDate}</span>
-                        <span class="match-status status-${fixture.status}">
-                            ${fixture.status.charAt(0).toUpperCase() + fixture.status.slice(1)}
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="match-content">
-                    <div class="team">
-                        <div class="team-logo">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="team-name">${fixture.teamA.name}</div>
-                        <div class="team-level">${fixture.teamA.level}</div>
-                    </div>
-                    
-                    <div class="match-score">
-                        <span class="score-team-a">${fixture.teamA.score !== null ? fixture.teamA.score : '-'}</span>
-                        <span class="score-divider">:</span>
-                        <span class="score-team-b">${fixture.teamB.score !== null ? fixture.teamB.score : '-'}</span>
-                        <div class="match-time">${fixture.time}</div>
-                    </div>
-                    
-                    <div class="team">
-                        <div class="team-logo">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="team-name">${fixture.teamB.name}</div>
-                        <div class="team-level">${fixture.teamB.level}</div>
-                    </div>
-                </div>
-                
-                <div class="match-info">
-                    <div class="match-venue">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>${fixture.venue}</span>
-                    </div>
-                    <div class="match-group">
-                        <i class="fas fa-layer-group"></i>
-                        <span>Group ${fixture.group}</span>
-                    </div>
+    return `
+        <div class="match-card ${fixture.status}">
+            <div class="match-header">
+                <div class="match-meta">
+                    <span class="match-day">Match Day ${fixture.matchDay}</span>
+                    <span class="match-date">${formattedDate}</span>
+                    <span class="match-status status-${fixture.status}">
+                        ${fixture.status.charAt(0).toUpperCase() + fixture.status.slice(1)}
+                    </span>
                 </div>
             </div>
-        `;
-    }
+            
+            <div class="match-content">
+                <div class="team">
+                    <div class="team-logo">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="team-name">${fixture.teamA.name}</div>
+                    <div class="team-level" data-level="${fixture.teamA.level}">${fixture.teamA.level}</div>
+                </div>
+                
+                <div class="match-score">
+                    <span class="score-team-a">${fixture.teamA.score !== null ? fixture.teamA.score : '-'}</span>
+                    <span class="score-divider">:</span>
+                    <span class="score-team-b">${fixture.teamB.score !== null ? fixture.teamB.score : '-'}</span>
+                    <div class="match-time">${fixture.time}</div>
+                </div>
+                
+                <div class="team">
+                    <div class="team-logo">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="team-name">${fixture.teamB.name}</div>
+                    <div class="team-level" data-level="${fixture.teamB.level}">${fixture.teamB.level}</div>
+                </div>
+            </div>
+            
+            <div class="match-info">
+                <div class="match-venue">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>${fixture.venue}</span>
+                </div>
+                <div class="match-group">
+                    <i class="fas fa-layer-group"></i>
+                    <span>Group ${fixture.group}</span>
+                </div>
+            </div>
+        </div>
+    `;
+}
 
     renderStandings() {
         Object.keys(this.standings).forEach(group => {
@@ -300,8 +300,7 @@ class FixturesManager {
                                             </div>
                                             <div>
                                                 <div class="team-name">${team.team}</div>
-                                                <div class="team-level">${team.level}</div>
-                                            </div>
+                                                <div class="team-level" data-level="${team.level}">${team.level}</div>                                            </div>
                                         </div>
                                     </td>
                                     <td class="stats-cell">${team.played}</td>
