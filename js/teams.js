@@ -81,12 +81,12 @@ class TeamsManager {
                         number: 2,
                         position: 'Defender',
                         level: '200L',
-                        image: 'images/players/david-johnson.jpg',
+                        image: 'images/players/greatness.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Speed', 'Dribbling', 'Finishing'],
                         available: true,
                         // transferValue: '₦15,000',
-                        isCaptain: true
+                        isCaptain: false
                     },
                     {
                         id: 3,
@@ -94,7 +94,7 @@ class TeamsManager {
                         number: 3,
                         position: 'Defender',
                         level: '200L',
-                        image: null, // No image available
+                        image:  'images/players/ayodeji.jpg',
                         stats: { tackles: 0, interceptions: 0, matches: 0 },
                         // skills: ['Tackling', 'Strength', 'Aerial'],
                         available: true,
@@ -120,7 +120,7 @@ class TeamsManager {
                         number: 5,
                         position: 'Defender',
                         level: '200L',
-                        image: null, // No image available
+                        image:  'images/players/tripleA.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
@@ -133,7 +133,7 @@ class TeamsManager {
                         number: 14,
                         position: 'Defender',
                         level: '200L',
-                        image: null, // No image available
+                        image: 'images/players/joshua.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
@@ -146,7 +146,7 @@ class TeamsManager {
                         number: 18,
                         position: 'Defender',
                         level: '200L',
-                        image: null, // No image available
+                        image:  'images/players/delsquare.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
@@ -159,7 +159,7 @@ class TeamsManager {
                         number: 29,
                         position: 'Defender',
                         level: '200L',
-                        image: null, // No image available
+                        image:  'images/players/addmore.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
@@ -168,16 +168,16 @@ class TeamsManager {
                     },
                      {
                         id: 9,
-                        name: 'ABDULLAH',
+                        name: 'ABU',
                         number: 26,
                         position: 'Defender',
                         level: '200L',
-                        image: null, // No image available
+                        image:  'images/players/abu.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
                         // transferValue: '₦1,000',
-                        isCaptain: false
+                        isCaptain: true
                     },
                      {
                         id: 10,
@@ -185,7 +185,7 @@ class TeamsManager {
                         number: 6,
                         position: 'Midfielder',
                         level: '200L',
-                        image: null, // No image available
+                        image:  'images/players/ben.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
@@ -198,7 +198,7 @@ class TeamsManager {
                         number: 8,
                         position: 'Midfielder',
                         level: '200L',
-                        image: null, // No image available
+                        image:  'images/players/java.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
@@ -211,7 +211,7 @@ class TeamsManager {
                         number: 10,
                         position: 'Midfielder',
                         level: '200L',
-                        image: null, // No image available
+                        image:  'images/players/timi.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
@@ -224,7 +224,7 @@ class TeamsManager {
                         number: 30,
                         position: 'Midfielder',
                         level: '200L',
-                        image: null, // No image available
+                        image:  'images/players/adewale.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
@@ -237,7 +237,7 @@ class TeamsManager {
                         number: 27,
                         position: 'Midfielder',
                         level: '200L',
-                        image: null, // No image available
+                        image:  'images/players/fahd.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
@@ -250,7 +250,7 @@ class TeamsManager {
                         number: 7,
                         position: 'STRIKER',
                         level: '200L',
-                        image: null, // No image available
+                        image: 'images/players/posi.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
@@ -263,7 +263,7 @@ class TeamsManager {
                         number: 9,
                         position: 'STRIKER',
                         level: '200L',
-                        image: null, // No image available
+                        image: 'images/players/ope.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
@@ -276,10 +276,10 @@ class TeamsManager {
                         number: 17,
                         position: 'STRIKER',
                         level: '200L',
-                        image: null, // No image available
+                        image:  'images/players/tendo.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
-                        available: true,
+                        available: false,
                         // transferValue: '₦1,000',
                         isCaptain: false
                     },
@@ -289,10 +289,10 @@ class TeamsManager {
                         number: 19,
                         position: 'STRIKER',
                         level: '200L',
-                        image: null, // No image available
+                        image:  'images/players/damnex.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
-                        available: true,
+                        available: false,
                         // transferValue: '₦1,000',
                         isCaptain: false
                     }
@@ -304,7 +304,7 @@ class TeamsManager {
                 level: '300L',
                 name: '300 Level',
                 color: '#000',
-                logo: 'images/teams/300l -logo.jpg', // Add team logos later
+                logo: 'images/300Lplayers/logo.jpg', 
                 players: [
                     {
                        id: 1,
@@ -312,7 +312,7 @@ class TeamsManager {
                         number: 1,
                         position: 'Goalkeeper',
                         level: '300L',
-                        image: 'images/players/muhammed.jpg',
+                        image: 'images/300Lplayers/ayomide.jpg',
                         stats: { saves: 0, cleanSheets: 0, matches: 0},
                         // skills: ['Reflexes', 'Save', 'Leadership'],
                         available: true,
@@ -325,12 +325,12 @@ class TeamsManager {
                         number: 6,
                         position: 'Defender',
                         level: '300L',
-                        image: 'images/players/david-johnson.jpg',
+                        image: '/images/300Lplayers/teslim.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Speed', 'Dribbling', 'Finishing'],
                         available: true,
                         // transferValue: '₦15,000',
-                        isCaptain: true
+                        isCaptain: false
                     },
                     {
                         id: 3,
@@ -338,7 +338,7 @@ class TeamsManager {
                         number: 2,
                         position: 'Defender',
                         level: '300L',
-                        image: null, // No image available
+                        image: '/images/300Lplayers/ridwan.jpg',
                         stats: { tackles: 0, interceptions: 0, matches: 0 },
                         // skills: ['Tackling', 'Strength', 'Aerial'],
                         available: true,
@@ -351,7 +351,7 @@ class TeamsManager {
                         number: 3,
                         position: 'Denfender',
                         level: '300L',
-                        image: 'images/players/jamal.jpg',
+                        image: 'images/300Lplayers/favour.jpg',
                         stats: { passes: 0, assists: 0, matches: 0 },
                         // skills: ['Passing', 'Vision', 'Creativity'],
                         available: true,
@@ -364,7 +364,7 @@ class TeamsManager {
                         number: 5,
                         position: 'Defender',
                         level: '300L',
-                        image: null, // No image available
+                        image: '/images/300Lplayers/tomzy.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
@@ -377,7 +377,7 @@ class TeamsManager {
                         number: 14,
                         position: 'Defender',
                         level: '300L',
-                        image: null, // No image available
+                        image: '/images/300Lplayers/ajakaye.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
@@ -391,7 +391,7 @@ class TeamsManager {
                         number: 4,
                         position: 'Midfielder',
                         level: '300L',
-                        image: null, // No image available
+                        image: '/images/300Lplayers/m17.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
@@ -404,12 +404,12 @@ class TeamsManager {
                         number: 10,
                         position: 'Midfielder',
                         level: '300L',
-                        image: null, // No image available
+                         image: '/images/300Lplayers/ayobami.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
                         // transferValue: '₦1,000',
-                        isCaptain: false
+                        isCaptain: true
                     },
                      {
                         id: 9,
@@ -417,7 +417,7 @@ class TeamsManager {
                         number: 8,
                         position: 'Midfielder',
                         level: '300L',
-                        image: null, // No image available
+                         image: '/images/300Lplayers/kayode.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
@@ -430,7 +430,7 @@ class TeamsManager {
                         number: 17,
                         position: 'Midfielder',
                         level: '300L',
-                        image: null, // No image available
+                         image: '/images/300Lplayers/kamaldeen.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
@@ -444,7 +444,7 @@ class TeamsManager {
                         number: 9,
                         position: 'STRIKER',
                         level: '300L',
-                        image: null, // No image available
+                         image: '/images/300Lplayers/victor.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
@@ -457,7 +457,7 @@ class TeamsManager {
                         number: 19,
                         position: 'STRIKER',
                         level: '300L',
-                        image: null, // No image available
+                        image: '/images/300Lplayers/abiodun.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
@@ -470,7 +470,7 @@ class TeamsManager {
                         number: 11,
                         position: 'STRIKER',
                         level: '300L',
-                       image: '/images/greg.jpg',
+                       image: '/images/300Lplayers/greg.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
@@ -483,7 +483,7 @@ class TeamsManager {
                         number: 7,
                         position: 'STRIKER',
                         level: '300L',
-                        image: '/images/thaoban.jpg',
+                        image: '/images/300Lplayers/thaoban.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
                         available: true,
@@ -497,61 +497,204 @@ class TeamsManager {
             {
                 level: '400L',
                 name: '400 Level',
-                color: '#f59e0b',
+                color: '#00ff',
                 logo: 'images/teams/400l-logo.jpg',
                 players: [
-                    // {
-                    //     id: 12,
-                    //     name: 'Grace Okafor',
-                    //     number: 9,
-                    //     position: 'Forward',
-                    //     level: '400L',
-                    //     image: 'images/players/grace-okafor.jpg',
-                    //     stats: { goals: 6, assists: 1, matches: 5 },
-                    //     skills: ['Finishing', 'Movement', 'Composure'],
-                    //     available: true,
-                    //     transferValue: '₦22,000',
-                    //     isCaptain: true
-                    // },
-                    // {
-                    //     id: 13,
-                    //     name: 'Daniel White',
-                    //     number: 4,
-                    //     position: 'Defender',
-                    //     level: '400L',
-                    //     image: 'images/players/daniel-white.jpg',
-                    //     stats: { tackles: 11, interceptions: 9, matches: 5 },
-                    //     skills: ['Leadership', 'Tackling', 'Positioning'],
-                    //     available: true,
-                    //     transferValue: '₦15,000',
-                    //     isCaptain: false
-                    // },
-                    // {
-                    //     id: 14,
-                    //     name: 'Kevin Lee',
-                    //     number: 7,
-                    //     position: 'Forward',
-                    //     level: '400L',
-                    //     image: 'images/players/kevin-lee.jpg',
-                    //     stats: { goals: 3, assists: 4, matches: 5 },
-                    //     skills: ['Speed', 'Crossing', 'Dribbling'],
-                    //     available: true,
-                    //     transferValue: '₦16,000',
-                    //     isCaptain: false
-                    // },
-                    // {
-                    //     id: 15,
-                    //     name: 'Tom Harris',
-                    //     number: 1,
-                    //     position: 'Goalkeeper',
-                    //     level: '400L',
-                    //     image: null, // No image available
-                    //     stats: { saves: 18, cleanSheets: 4, matches: 5 },
-                    //     skills: ['Reflexes', 'Positioning', 'Distribution'],
-                    //     available: true,
-                    //     transferValue: '₦19,000',
-                    //     isCaptain: false
-                    // }
+                    {
+                        id: 1,
+                        name: 'ADU',
+                        number: 1,
+                        position: 'Goalkeeper',
+                        level: '400L',
+                        image: 'images/400Lplayers/adu.jpg',
+                        stats: { goals: 0, assists: 0, matches: 0 },
+                        // skills: ['Finishing', 'Movement', 'Composure'],
+                        available: true,
+                        // transferValue: '₦22,000',
+                        isCaptain: false
+                    },
+                    {
+                        id: 2,
+                        name: 'PEEPEE',
+                        number: 2,
+                        position: 'Defender',
+                        level: '400L',
+                        image: 'images/400Lplayers/peepee.jpg',
+                        stats: { tackles: 0, interceptions: 0, matches: 0 },
+                        // skills: ['Leadership', 'Tackling', 'Positioning'],
+                        available: true,
+                        // transferValue: '₦15,000',
+                        isCaptain: false
+                    },
+                      {
+                        id: 3,
+                        name: 'QUANTUM',
+                        number: 3,
+                        position: 'Defender',
+                        level: '400L',
+                        image: 'images/400Lplayers/quantum.jpg',
+                        stats: { tackles: 0, interceptions: 0, matches: 0 },
+                        // skills: ['Leadership', 'Tackling', 'Positioning'],
+                        available: true,
+                        // transferValue: '₦15,000',
+                        isCaptain: false
+                    },
+                        {
+                        id: 4,
+                        name: 'OSHA',
+                        number: 4,
+                        position: 'Defender',
+                        level: '400L',
+                        image: 'images/400Lplayers/osha.jpg',
+                        stats: { tackles: 0, interceptions: 0, matches: 0 },
+                        // skills: ['Leadership', 'Tackling', 'Positioning'],
+                        available: true,
+                        // transferValue: '₦15,000',
+                        isCaptain: false
+                    },
+                        {
+                        id: 5,
+                        name: 'ARAB',
+                        number: 5,
+                        position: 'Defender',
+                        level: '400L',
+                        image: 'images/400Lplayers/arab.jpg',
+                        stats: { tackles: 0, interceptions: 0, matches: 0 },
+                        // skills: ['Leadership', 'Tackling', 'Positioning'],
+                        available: true,
+                        // transferValue: '₦15,000',
+                        isCaptain: false
+                    },
+                        {
+                        id: 6,
+                        name: 'FERANMI',
+                        number: 14,
+                        position: 'Defender',
+                        level: '400L',
+                        image: 'images/400Lplayers/feranmi.jpg',
+                        stats: { tackles: 0, interceptions: 0, matches: 0 },
+                        // skills: ['Leadership', 'Tackling', 'Positioning'],
+                        available: true,
+                        // transferValue: '₦15,000',
+                        isCaptain: false
+                    },
+                        {
+                        id: 7,
+                        name: 'MARVEL',
+                        number: 18,
+                        position: 'Defender',
+                        level: '400L',
+                        image: 'images/400Lplayers/marvel.jpg',
+                        stats: { tackles: 0, interceptions: 0, matches: 0 },
+                        // skills: ['Leadership', 'Tackling', 'Positioning'],
+                        available: true,
+                        // transferValue: '₦15,000',
+                        isCaptain: false
+                    },
+                        {
+                        id: 8,
+                        name: 'LEKKY SAM',
+                        number: 90,
+                        position: 'Defender',
+                        level: '400L',
+                        image: 'images/400Lplayers/lekky-sam.jpg',
+                        stats: { tackles: 0, interceptions: 0, matches: 0 },
+                        // skills: ['Leadership', 'Tackling', 'Positioning'],
+                        available: true,
+                        // transferValue: '₦15,000',
+                        isCaptain: false
+                    },
+                        {
+                        id: 9,
+                        name: 'JAMIKE',
+                        number: 6,
+                        position: 'Midfielder',
+                        level: '400L',
+                        image: 'images/400Lplayers/jamike.jpg',
+                        stats: { tackles: 0, interceptions: 0, matches: 0 },
+                        // skills: ['Leadership', 'Tackling', 'Positioning'],
+                        available: true,
+                        // transferValue: '₦15,000',
+                        isCaptain: true
+                    },
+                    {
+                        id: 10,
+                        name: 'KAYODE',
+                        number: 8,
+                        position: 'Midfielder',
+                        level: '400L',
+                        image: 'images/400Lplayers/kayode.jpg',
+                        stats: { tackles: 0, interceptions: 0, matches: 0 },
+                        // skills: ['Leadership', 'Tackling', 'Positioning'],
+                        available: true,
+                        // transferValue: '₦15,000',
+                        isCaptain: false
+                    },
+                    {
+                        id: 11,
+                        name: 'YASEER',
+                        number: 10,
+                        position: 'Midfielder',
+                        level: '400L',
+                        image: 'images/400Lplayers/yaseer.jpg',
+                        stats: { tackles: 0, interceptions: 0, matches: 0 },
+                        // skills: ['Leadership', 'Tackling', 'Positioning'],
+                        available: true,
+                        // transferValue: '₦15,000',
+                        isCaptain: false
+                    },
+                    {
+                        id: 12,
+                        name: 'JOBA',
+                        number: 30,
+                        position: 'Midfielder',
+                        level: '400L',
+                        image: 'images/400Lplayers/joba.jpg',
+                        stats: { tackles: 0, interceptions: 0, matches: 0 },
+                        // skills: ['Leadership', 'Tackling', 'Positioning'],
+                        available: true,
+                        // transferValue: '₦15,000',
+                        isCaptain: false
+                    },
+                     {
+                        id: 13,
+                        name: 'VINCENT',
+                        number: 7,
+                        position: 'STRIKER',
+                        level: '400L',
+                        image: 'images/400Lplayers/striker.jpg',
+                        stats: { tackles: 0, interceptions: 0, matches: 0 },
+                        // skills: ['Leadership', 'Tackling', 'Positioning'],
+                        available: true,
+                        // transferValue: '₦15,000',
+                        isCaptain: false
+                    },
+                     {
+                        id: 14,
+                        name: 'IFE',
+                        number: 11,
+                        position: 'STRIKER',
+                        level: '400L',
+                        image: 'images/400Lplayers/ife.jpg',
+                        stats: { tackles: 0, interceptions: 0, matches: 0 },
+                        // skills: ['Leadership', 'Tackling', 'Positioning'],
+                        available: true,
+                        // transferValue: '₦15,000',
+                        isCaptain: false
+                    },
+                    {
+                        id: 15,
+                        name: 'ELOYCE',
+                        number: 9,
+                        position: 'STRIKER',
+                        level: '400L',
+                        image: 'images/400Lplayers/eloyce.jpg',
+                        stats: { tackles: 0, interceptions: 0, matches: 0 },
+                        // skills: ['Leadership', 'Tackling', 'Positioning'],
+                        available: true,
+                        // transferValue: '₦15,000',
+                        isCaptain: false
+                    },
                 ]
             }
         ];
@@ -661,7 +804,6 @@ class TeamsManager {
         `;
     }
 
-    // ... rest of the methods remain the same
     setupEventListeners() {
         // Team filter buttons
         document.querySelectorAll('.team-filter-btn').forEach(btn => {
