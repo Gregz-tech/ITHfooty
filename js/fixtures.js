@@ -7,121 +7,239 @@ class FixturesManager {
             status: 'all',
             team: 'all'
         };
-        this.init();
+        this.isInitialized = false;
     }
 
-    init() {
-        this.loadFixturesData();
-        this.setupEventListeners();
-        this.updateLastUpdated();
+    async init() {
+        try {
+            await this.loadFixturesData();
+            this.setupEventListeners();
+            this.setupModal();
+            this.updateLastUpdated();
+            this.isInitialized = true;
+            
+            setTimeout(() => {
+                this.revealSections();
+            }, 100);
+            
+        } catch (error) {
+            console.error('Failed to initialize fixtures manager:', error);
+            this.showError('Failed to load fixtures data');
+        }
+    }
+
+    revealSections() {
+        document.querySelectorAll('.section-hidden').forEach(section => {
+            section.classList.remove('section-hidden');
+            section.classList.add('section-visible');
+        });
     }
 
     async loadFixturesData() {
         this.showLoading();
         
-        // Simulate API call delay
         await new Promise(resolve => setTimeout(resolve, 1500));
         
-        // Sample fixtures data
+        // Enhanced fixtures data with statistics
         this.fixtures = [
             {
                 id: 1,
                 matchDay: 1,
                 date: '2025-11-26',
-                time: '03:00',
-                teamA: { name: '200 Level', level: 'ASH', score: null },
-                teamB: { name: '400 Level', level: 'BLUE', score: null },
+                time: '15:00',
+                teamA: { 
+                    name: '200 Level', 
+                    level: 'ASH', 
+                    score: null,
+                    shortName: '200L',
+                    logo: null,
+                    stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
+                },
+                teamB: { 
+                    name: '400 Level', 
+                    level: 'BLUE', 
+                    score: null,
+                    shortName: '400L',
+                    logo: null,
+                    stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
+                },
                 venue: 'College Field',
                 status: 'upcoming',
-                group: 'A'
+                group: 'A',
+                referee: '',
+                statistics: {
+                    attendance: 0,
+                    temperature: '',
+                    condition: ''
+                }
             },
             {
-               id: 1,
+                id: 2,
                 matchDay: 1,
                 date: '2025-11-28',
-                time: '03:00',
-                teamA: { name: '100 Level', level: 'Red', score: null },
-                teamB: { name: '300 Level', level: 'BLACK', score: null },
-                venue: 'College Field',
+                time: '15:00',
+                teamA: { 
+                    name: '100 Level', 
+                    level: 'RED', 
+                    score: null,
+                    shortName: '100L',
+                    logo: null,
+                    stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
+                },
+                teamB: { 
+                    name: '300 Level', 
+                    level: 'BLACK', 
+                    score: null,
+                    shortName: '300L',
+                    logo: null,
+                    stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
+                },
+               venue: 'College Field',
                 status: 'upcoming',
-                group: 'A'
+                group: 'A',
+                referee: '',
+                statistics: {
+                    attendance: 0,
+                    temperature: '',
+                    condition: ''
+                }
             },
             {
-                id: 2,
+                id: 3,
                 matchDay: 2,
                 date: '2025-12-03',
-                time: '3:00',
-                teamA: { name: '300 Level', level: 'BLACK', score: null },
-                teamB: { name: '200 Level', level: 'ASH', score: null },
+                time: '15:00',
+                teamA: { 
+                    name: '300 Level', 
+                    level: 'BLACK', 
+                    score: null,
+                    shortName: '300L',
+                    logo: null,
+                    stats: { possession: 50, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
+                },
+                teamB: { 
+                    name: '200 Level', 
+                    level: 'ASH', 
+                    score: null,
+                    shortName: '200L',
+                    logo: null,
+                    stats: { possession: 50, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
+                },
                 venue: 'College Field',
                 status: 'upcoming',
-                group: 'A'
-            },
-             {
-                id: 2,
-                matchDay: 2,
-                date: '2025-12-05',
-                time: '3:00',
-                teamA: { name: '400 Level', level: 'BLUE', score: null },
-                teamB: { name: '100 Level', level: 'Red', score: null },
-                venue: 'College Field',
-                status: 'upcoming',
-                group: 'A'
+                group: 'A',
+                referee: '',
+                statistics: {
+                    attendance: 0,
+                    temperature: '',
+                    condition: ''
+                }
             },
             {
-                id: 3,
+                id: 4,
+                matchDay: 2,
+                date: '2025-12-05',
+                time: '15:00',
+                teamA: { 
+                    name: '400 Level', 
+                    level: 'BLUE', 
+                    score: null,
+                    shortName: '400L',
+                    logo: null,
+                    stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
+                },
+                teamB: { 
+                    name: '100 Level', 
+                    level: 'RED', 
+                    score: null,
+                    shortName: '100L',
+                    logo: null,
+                    stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
+                },
+                venue: 'College Field',
+                status: 'upcoming',
+                group: 'A',
+                referee: '',
+                statistics: {
+                    attendance: 0,
+                    temperature: '',
+                    condition: ''
+                }
+            },
+            {
+                id: 5,
                 matchDay: 3,
                 date: '2025-12-10',
-                time: '3:00',
-                teamA: { name: '300 Level', level: 'BLACK', score: null },
-                teamB: { name: '400 Level', level: 'BLUE', score: null },
+                time: '15:00',
+                teamA: { 
+                    name: '300 Level', 
+                    level: 'BLACK', 
+                    score: null,
+                    shortName: '300L',
+                    logo: null,
+                    stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
+                },
+                teamB: { 
+                    name: '400 Level', 
+                    level: 'BLUE', 
+                    score: null,
+                    shortName: '400L',
+                    logo: null,
+                    stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
+                },
                 venue: 'College Field',
                 status: 'upcoming',
-                group: 'A'
+                group: 'A',
+                referee: '',
+                statistics: {
+                    attendance: 0,
+                    temperature: '',
+                    condition: ''
+                }
             },
-             {
-                id: 3,
+            {
+                id: 6,
                 matchDay: 3,
                 date: '2025-12-12',
-                time: '3:00',
-                teamA: { name: '100 Level', level: 'Red', score: null },
-                teamB: { name: '200 Level', level: 'ASH', score: null },
+                time: '15:00',
+                teamA: { 
+                    name: '100 Level', 
+                    level: 'RED', 
+                    score: null,
+                    shortName: '100L',
+                    logo: null,
+                    stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
+                },
+                teamB: { 
+                    name: '200 Level', 
+                    level: 'ASH', 
+                    score: null,
+                    shortName: '200L',
+                    logo: null,
+                    stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
+                },
                 venue: 'College Field',
                 status: 'upcoming',
-                group: 'A'
-            },
-         
-         
+                group: 'A',
+                referee: '',
+                statistics: {
+                    attendance: 0,
+                    temperature: '',
+                    condition: ''
+                }
+            }
         ];
 
-        // Sample standings data
+        // Standings data
         this.standings = {
             A: [
-                { position: 1, team: '100 Level', level: 'RED', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: ['W'] },
-                { position: 2, team: '200 Level', level: 'ASH', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: ['L'] },
+                { position: 1, team: '100 Level', level: 'RED', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },
+                { position: 2, team: '200 Level', level: 'ASH', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },
                 { position: 3, team: '300 Level', level: 'BLACK', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },
                 { position: 4, team: '400 Level', level: 'BLUE', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] }
             ],
-            // B: [
-            //     { position: 1, team: '300 Level', level: '300L', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },
-            //     { position: 2, team: '400 Level', level: '400L', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },
-            //     { position: 3, team: '100 Level', level: '100L', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },
-            //     { position: 4, team: '200 Level', level: '200L', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] }
-            // ],
-            // C: [
-            //     { position: 1, team: '100 Level', level: '100L', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },
-            //     { position: 2, team: '200 Level', level: '200L', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },
-            //     { position: 3, team: '300 Level', level: '300L', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },
-            //     { position: 4, team: '400 Level', level: '400L', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] }
-            // ],
-            // D: [
-            //     { position: 1, team: '100 Level', level: '100L', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },
-            //     { position: 2, team: '200 Level', level: '200L', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },
-            //     { position: 3, team: '300 Level', level: '300L', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },
-            //     { position: 4, team: '400 Level', level: '400L', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] }
-            // ]
         };
-
+        
         this.renderFixtures();
         this.renderStandings();
         this.hideLoading();
@@ -156,20 +274,34 @@ class FixturesManager {
                 this.switchGroupTab(e.target.dataset.group);
             });
         });
+
+        window.addEventListener('resize', () => {
+            this.debounce(() => {
+                this.renderFixtures();
+            }, 250)();
+        });
     }
 
-    switchGroupTab(group) {
-        // Update active tab
-        document.querySelectorAll('.group-tab').forEach(tab => {
-            tab.classList.remove('active');
-        });
-        document.querySelector(`[data-group="${group}"]`).classList.add('active');
+    setupModal() {
+        const modal = document.getElementById('matchModal');
+        const closeBtn = document.getElementById('closeModal');
 
-        // Show corresponding standings
-        document.querySelectorAll('.standings-table').forEach(table => {
-            table.classList.add('hidden');
+        closeBtn.addEventListener('click', () => {
+            this.closeModal();
         });
-        document.getElementById(`group${group}Standings`).classList.remove('hidden');
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                this.closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                this.closeModal();
+            }
+        });
     }
 
     renderFixtures() {
@@ -188,6 +320,13 @@ class FixturesManager {
         }
 
         container.innerHTML = filteredFixtures.map(fixture => this.createMatchCard(fixture)).join('');
+        
+        // Add click listeners to match cards
+        container.querySelectorAll('.match-card').forEach((card, index) => {
+            card.addEventListener('click', () => {
+                this.showMatchStatistics(filteredFixtures[index]);
+            });
+        });
     }
 
     filterFixtures() {
@@ -206,64 +345,176 @@ class FixturesManager {
         });
     }
 
-   createMatchCard(fixture) {
-    const matchDate = new Date(fixture.date);
-    const formattedDate = matchDate.toLocaleDateString('en-US', { 
-        weekday: 'short', 
-        month: 'short', 
-        day: 'numeric' 
-    });
+    createMatchCard(fixture) {
+        const matchDate = new Date(fixture.date);
+        const formattedDate = matchDate.toLocaleDateString('en-US', { 
+            weekday: 'short', 
+            month: 'short', 
+            day: 'numeric' 
+        });
 
-    return `
-        <div class="match-card ${fixture.status}">
-            <div class="match-header">
-                <div class="match-meta">
-                    <span class="match-day">Match Day ${fixture.matchDay}</span>
-                    <span class="match-date">${formattedDate}</span>
-                    <span class="match-status status-${fixture.status}">
-                        ${fixture.status.charAt(0).toUpperCase() + fixture.status.slice(1)}
-                    </span>
-                </div>
-            </div>
-            
-            <div class="match-content">
-                <div class="team">
-                    <div class="team-logo">
-                        <i class="fas fa-users"></i>
+        const isMobile = window.innerWidth <= 768;
+        const teamNameClass = isMobile ? 'team-name mobile' : 'team-name';
+        const matchDayText = isMobile ? `MD${fixture.matchDay}` : `Match Day ${fixture.matchDay}`;
+
+        // Team logo or placeholder
+        const teamALogo = this.getTeamLogo(fixture.teamA);
+        const teamBLogo = this.getTeamLogo(fixture.teamB);
+
+        return `
+            <div class="match-card ${fixture.status}" data-match-id="${fixture.id}">
+                <div class="match-header">
+                    <div class="match-meta">
+                        <span class="match-day">${matchDayText}</span>
+                        <span class="match-date">${formattedDate}</span>
+                        <span class="match-status status-${fixture.status}">
+                            ${this.getStatusText(fixture.status)}
+                        </span>
                     </div>
-                    <div class="team-name">${fixture.teamA.name}</div>
-                    <div class="team-level" data-level="${fixture.teamA.level}">${fixture.teamA.level}</div>
                 </div>
                 
-                <div class="match-score">
-                    <span class="score-team-a">${fixture.teamA.score !== null ? fixture.teamA.score : '-'}</span>
-                    <span class="score-divider">:</span>
-                    <span class="score-team-b">${fixture.teamB.score !== null ? fixture.teamB.score : '-'}</span>
-                    <div class="match-time">${fixture.time}</div>
+                <div class="match-content">
+                    <div class="team">
+                        <div class="team-logo">
+                            ${teamALogo}
+                        </div>
+                        <div class="${teamNameClass}">${fixture.teamA.name}</div>
+                        <div class="team-level ${fixture.teamA.level.toLowerCase()}">${fixture.teamA.level}</div>
+                    </div>
+                    
+                    <div class="match-score">
+                        <span class="score-team-a">${fixture.teamA.score !== null ? fixture.teamA.score : '-'}</span>
+                        <span class="score-divider">:</span>
+                        <span class="score-team-b">${fixture.teamB.score !== null ? fixture.teamB.score : '-'}</span>
+                        <div class="match-time">${fixture.time}</div>
+                    </div>
+                    
+                    <div class="team">
+                        <div class="team-logo">
+                            ${teamBLogo}
+                        </div>
+                        <div class="${teamNameClass}">${fixture.teamB.name}</div>
+                        <div class="team-level ${fixture.teamB.level.toLowerCase()}">${fixture.teamB.level}</div>
+                    </div>
                 </div>
                 
-                <div class="team">
-                    <div class="team-logo">
-                        <i class="fas fa-users"></i>
+                <div class="match-info">
+                    <div class="match-venue">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>${fixture.venue}</span>
                     </div>
-                    <div class="team-name">${fixture.teamB.name}</div>
-                    <div class="team-level" data-level="${fixture.teamB.level}">${fixture.teamB.level}</div>
+                    <div class="match-group">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Group ${fixture.group}</span>
+                    </div>
+                    <div class="match-referee">
+                        <i class="material-icons">sports</i>
+                        <span>${fixture.referee || 'TBA'}</span>
+                    </div>
                 </div>
             </div>
-            
-            <div class="match-info">
-                <div class="match-venue">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>${fixture.venue}</span>
+        `;
+    }
+
+    getTeamLogo(team) {
+        // If you have actual logo images, use this:
+        // if (team.logo) {
+        //     return `<img src="${team.logo}" alt="${team.name}" class="team-logo-img">`;
+        // }
+        
+        // Otherwise use colored placeholder with initials
+        const initials = team.shortName || team.name.split(' ').map(word => word[0]).join('');
+        const colorClass = team.level.toLowerCase();
+        return `<div class="team-logo-placeholder ${colorClass}">${initials}</div>`;
+    }
+
+    showMatchStatistics(fixture) {
+        const modal = document.getElementById('matchModal');
+        const title = document.getElementById('modalTitle');
+        const body = document.getElementById('modalBody');
+
+        title.textContent = `${fixture.teamA.name} vs ${fixture.teamB.name}`;
+        
+        body.innerHTML = `
+            <div class="stats-overview">
+                <div class="match-score-large">
+                    <span class="score">${fixture.teamA.score !== null ? fixture.teamA.score : '-'}</span>
+                    <span class="divider">-</span>
+                    <span class="score">${fixture.teamB.score !== null ? fixture.teamB.score : '-'}</span>
                 </div>
-                <div class="match-group">
-                    <i class="fas fa-layer-group"></i>
-                    <span>Group ${fixture.group}</span>
+                <div class="match-status-badge status-${fixture.status}">
+                    ${this.getStatusText(fixture.status)}
                 </div>
             </div>
-        </div>
-    `;
-}
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">${fixture.teamA.stats.possession}%</div>
+                    <div class="stat-label">Possession</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${fixture.teamB.stats.possession}%</div>
+                    <div class="stat-label">Possession</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${fixture.teamA.stats.shots}</div>
+                    <div class="stat-label">Shots</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${fixture.teamB.stats.shots}</div>
+                    <div class="stat-label">Shots</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${fixture.teamA.stats.shotsOnTarget}</div>
+                    <div class="stat-label">Shots on Target</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${fixture.teamB.stats.shotsOnTarget}</div>
+                    <div class="stat-label">Shots on Target</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${fixture.teamA.stats.fouls}</div>
+                    <div class="stat-label">Fouls</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${fixture.teamB.stats.fouls}</div>
+                    <div class="stat-label">Fouls</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${fixture.teamA.stats.corners}</div>
+                    <div class="stat-label">Corners</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${fixture.teamB.stats.corners}</div>
+                    <div class="stat-label">Corners</div>
+                </div>
+            </div>
+
+            <div class="match-details">
+                <div class="detail-item">
+                    <strong>Venue:</strong> ${fixture.venue}
+                </div>
+                <div class="detail-item">
+                    <strong>Referee:</strong> ${fixture.referee}
+                </div>
+                <div class="detail-item">
+                    <strong>Attendance:</strong> ${fixture.statistics.attendance}
+                </div>
+                <div class="detail-item">
+                    <strong>Weather:</strong> ${fixture.statistics.temperature}, ${fixture.statistics.condition}
+                </div>
+            </div>
+        `;
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    closeModal() {
+        const modal = document.getElementById('matchModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 
     renderStandings() {
         Object.keys(this.standings).forEach(group => {
@@ -300,7 +551,8 @@ class FixturesManager {
                                             </div>
                                             <div>
                                                 <div class="team-name">${team.team}</div>
-                                                <div class="team-level" data-level="${team.level}">${team.level}</div>                                            </div>
+                                                <div class="team-level" data-level="${team.level}">${team.level}</div>
+                                            </div>
                                         </div>
                                     </td>
                                     <td class="stats-cell">${team.played}</td>
@@ -327,6 +579,20 @@ class FixturesManager {
         });
     }
 
+    switchGroupTab(group) {
+        // Update active tab
+        document.querySelectorAll('.group-tab').forEach(tab => {
+            tab.classList.remove('active');
+        });
+        document.querySelector(`[data-group="${group}"]`).classList.add('active');
+
+        // Show corresponding standings
+        document.querySelectorAll('.standings-table').forEach(table => {
+            table.classList.add('hidden');
+        });
+        document.getElementById(`group${group}Standings`).classList.remove('hidden');
+    }
+
     updateLastUpdated() {
         const now = new Date();
         const timeString = now.toLocaleTimeString('en-US', { 
@@ -345,6 +611,21 @@ class FixturesManager {
         document.getElementById('lastUpdateDate').textContent = dateString;
     }
 
+    showError(message) {
+        const container = document.getElementById('fixturesContainer');
+        container.innerHTML = `
+            <div class="no-matches">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Error Loading Data</h3>
+                <p>${message}</p>
+                <button class="btn btn-outline" onclick="location.reload()">
+                    <i class="fas fa-redo"></i>
+                    Try Again
+                </button>
+            </div>
+        `;
+    }
+
     showLoading() {
         document.getElementById('loadingSpinner').classList.remove('hidden');
     }
@@ -352,9 +633,32 @@ class FixturesManager {
     hideLoading() {
         document.getElementById('loadingSpinner').classList.add('hidden');
     }
+
+    getStatusText(status) {
+        const statusMap = {
+            'upcoming': 'UPCOMING',
+            'live': 'LIVE',
+            'completed': 'FT',
+            'postponed': 'PPD'
+        };
+        return statusMap[status] || status.toUpperCase();
+    }
+
+    debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
 }
 
 // Initialize fixtures manager when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    new FixturesManager();
+    const fixturesManager = new FixturesManager();
+    fixturesManager.init();
 });
