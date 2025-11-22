@@ -26,169 +26,81 @@ class TransactionsManager {
         await new Promise(resolve => setTimeout(resolve, 1500));
         
         // Sample players data for market
-        // this.players = [
-        //     {
-        //         id: 1,
-        //         name: 'David Johnson',
-        //         number: 7,
-        //         position: 'Forward',
-        //         level: '100L',
-        //         image: 'images/players/david-johnson.jpg',
-        //         stats: { goals: 3, assists: 2, matches: 5, rating: 4.5 },
-        //         skills: ['Speed', 'Dribbling', 'Finishing'],
-        //         transferValue: 15000,
-        //         status: 'available',
-        //         agent: { name: 'Mike Agent', phone: '2348012345678' },
-        //         isHot: true
-        //     },
-        //     {
-        //         id: 2,
-        //         name: 'Mike Chen',
-        //         number: 1,
-        //         position: 'Goalkeeper',
-        //         level: '100L',
-        //         image: 'images/players/mike-chen.jpg',
-        //         stats: { saves: 12, cleanSheets: 2, matches: 5, rating: 4.2 },
-        //         skills: ['Reflexes', 'Positioning', 'Leadership'],
-        //         transferValue: 12000,
-        //         status: 'available',
-        //         agent: { name: 'Sarah Rep', phone: '2348012345679' }
-        //     },
-        //     {
-        //         id: 3,
-        //         name: 'James Wilson',
-        //         number: 4,
-        //         position: 'Defender',
-        //         level: '100L',
-        //         image: null,
-        //         stats: { tackles: 8, interceptions: 6, matches: 5, rating: 4.0 },
-        //         skills: ['Tackling', 'Strength', 'Aerial'],
-        //         transferValue: 10000,
-        //         status: 'sold',
-        //         agent: { name: 'John Manager', phone: '2348012345680' }
-        //     },
-        //     {
-        //         id: 4,
-        //         name: 'Alex Rodriguez',
-        //         number: 10,
-        //         position: 'Midfielder',
-        //         level: '100L',
-        //         image: 'images/players/alex-rodriguez.jpg',
-        //         stats: { passes: 45, assists: 4, matches: 5, rating: 4.7 },
-        //         skills: ['Passing', 'Vision', 'Creativity'],
-        //         transferValue: 18000,
-        //         status: 'negotiating',
-        //         agent: { name: 'Emma Agent', phone: '2348012345681' },
-        //         isHot: true
-        //     },
-        //     {
-        //         id: 5,
-        //         name: 'Ben Thompson',
-        //         number: 9,
-        //         position: 'Forward',
-        //         level: '100L',
-        //         image: null,
-        //         stats: { goals: 2, assists: 1, matches: 5, rating: 3.8 },
-        //         skills: ['Shooting', 'Movement', 'Strength'],
-        //         transferValue: 11000,
-        //         status: 'available',
-        //         agent: { name: 'David Rep', phone: '2348012345682' }
-        //     },
-        //     {
-        //         id: 6,
-        //         name: 'Sarah Mohammed',
-        //         number: 10,
-        //         position: 'Midfielder',
-        //         level: '200L',
-        //         image: 'images/players/sarah-mohammed.jpg',
-        //         stats: { goals: 4, assists: 3, matches: 5, rating: 4.6 },
-        //         skills: ['Technique', 'Passing', 'Leadership'],
-        //         transferValue: 20000,
-        //         status: 'available',
-        //         agent: { name: 'Michael Agent', phone: '2348012345683' },
-        //         isHot: true
-        //     },
-        //     {
-        //         id: 7,
-        //         name: 'Emma Davis',
-        //         number: 1,
-        //         position: 'Goalkeeper',
-        //         level: '200L',
-        //         image: 'images/players/emma-davis.jpg',
-        //         stats: { saves: 15, cleanSheets: 3, matches: 5, rating: 4.4 },
-        //         skills: ['Reflexes', 'Command', 'Distribution'],
-        //         transferValue: 14000,
-        //         status: 'available',
-        //         agent: { name: 'Lisa Rep', phone: '2348012345684' }
-        //     },
-        //     {
-        //         id: 8,
-        //         name: 'Lisa Brown',
-        //         number: 5,
-        //         position: 'Defender',
-        //         level: '200L',
-        //         image: null,
-        //         stats: { tackles: 10, interceptions: 8, matches: 5, rating: 4.1 },
-        //         skills: ['Tackling', 'Positioning', 'Recovery'],
-        //         transferValue: 13000,
-        //         status: 'available',
-        //         agent: { name: 'Chris Manager', phone: '2348012345685' }
-        //     },
-        //     {
-        //         id: 9,
-        //         name: 'Michael Adekunle',
-        //         number: 8,
-        //         position: 'Midfielder',
-        //         level: '300L',
-        //         image: 'images/players/michael-adekunle.jpg',
-        //         stats: { goals: 2, assists: 5, matches: 5, rating: 4.8 },
-        //         skills: ['Vision', 'Passing', 'Work Rate'],
-        //         transferValue: 16000,
-        //         status: 'available',
-        //         agent: { name: 'Grace Agent', phone: '2348012345686' },
-        //         isHot: true
-        //     },
-        //     {
-        //         id: 10,
-        //         name: 'Chris Evans',
-        //         number: 11,
-        //         position: 'Forward',
-        //         level: '300L',
-        //         image: 'images/players/chris-evans.jpg',
-        //         stats: { goals: 5, assists: 2, matches: 5, rating: 4.3 },
-        //         skills: ['Pace', 'Dribbling', 'Finishing'],
-        //         transferValue: 17000,
-        //         status: 'sold',
-        //         agent: { name: 'Daniel Rep', phone: '2348012345687' }
-        //     },
-        //     {
-        //         id: 11,
-        //         name: 'Ryan Miller',
-        //         number: 6,
-        //         position: 'Defender',
-        //         level: '300L',
-        //         image: null,
-        //         stats: { tackles: 9, interceptions: 7, matches: 5, rating: 4.0 },
-        //         skills: ['Strength', 'Heading', 'Tackling'],
-        //         transferValue: 12000,
-        //         status: 'available',
-        //         agent: { name: 'Kevin Manager', phone: '2348012345688' }
-        //     },
-        //     {
-        //         id: 12,
-        //         name: 'Grace Okafor',
-        //         number: 9,
-        //         position: 'Forward',
-        //         level: '400L',
-        //         image: 'images/players/grace-okafor.jpg',
-        //         stats: { goals: 6, assists: 1, matches: 5, rating: 4.9 },
-        //         skills: ['Finishing', 'Movement', 'Composure'],
-        //         transferValue: 22000,
-        //         status: 'available',
-        //         agent: { name: 'Tom Agent', phone: '2348012345689' },
-        //         isHot: true
-        //     }
-        // ];
+        this.players = [
+
+             {
+                id: 1,
+                name: 'FERANMI',
+                number: 13,
+                position: 'Defender',
+                level: '100L',
+                image: 'images/100Lplayers/feranmi.jpg',
+                stats: { goals: 0, assists: 0, matches: 0, rating: 0.0 },
+                skills: [],
+                transferValue: 700,
+                status: 'available',
+                agent: { name: 'XAVI', phone: '+2349024566872' },
+                isHot: true
+            },
+
+             {
+                id: 2,
+                name: 'OLAMIDE',
+                number: 10,
+                position: 'Midfielder',
+                level: '100L',
+                image: 'images/100Lplayers/olamide.jpg',
+                stats: { goals: 0, assists: 0, matches: 0, rating: 0.0 },
+                skills: [],
+                transferValue: 650,
+                status: 'available',
+                agent: { name: 'XAVI', phone: '+2349024566872' },
+               
+            },
+
+             {
+                id: 3,
+                name: 'ABDULWARIS',
+                number: 20,
+                position: 'STRIKER',
+                level: '100L',
+                image: 'images/100Lplayers/waris.jpg',
+                stats: { goals: 0, assists: 0, matches: 0, rating: 0.0 },
+                skills: [],
+                transferValue: 600,
+                status: 'available',
+                agent: { name: 'XAVI', phone: '+2349024566872' },
+               
+            },
+            {
+                id: 4,
+                name: 'DAMEX',
+                number: 19,
+                position: 'Forward',
+                level: '200L',
+                image: 'images/players/damnex.jpg',
+                stats: { goals: 0, assists: 0, matches: 0, rating: 0.0 },
+                skills: [],
+                transferValue: 1000,
+                status: 'available',
+                agent: { name: 'SULTAN', phone: '+2348145254507' },
+                isHot: true
+            },
+            {
+                id: 5,
+                name: 'AYODEJI',
+                number: 3,
+                position: 'Defender',
+                level: '200L',
+                image: 'images/players/ayodeji.jpg',
+                stats: { saves: 0, cleanSheets: 0, matches: 0, rating: 0.0 },
+                skills: [],
+                transferValue: 600,
+                status: 'available',
+                 agent: { name: 'SULTAN', phone: '+2348145254507' },
+            },
+          
+        ];
 
         this.filterPlayers();
         this.renderMarket();
