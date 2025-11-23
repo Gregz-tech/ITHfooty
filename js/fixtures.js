@@ -66,7 +66,7 @@ class FixturesManager {
                 venue: 'College Field',
                 status: 'upcoming',
                 group: 'A',
-                referee: '',
+                referee: 'FINISHER (BMB)',
                 statistics: {
                     attendance: 0,
                     temperature: '',
@@ -97,7 +97,7 @@ class FixturesManager {
                venue: 'College Field',
                 status: 'upcoming',
                 group: 'A',
-                referee: '',
+                referee: 'BEN (NUR)',
                 statistics: {
                     attendance: 0,
                     temperature: '',
