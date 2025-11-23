@@ -8,16 +8,19 @@ class TeamsManager {
     }
 
     init() {
-        this.loadTeamsData();
         this.setupEventListeners();
-        this.updateStats();
+        this.loadTeamsData();
+        this.setupImageObserver();
     }
 
     async loadTeamsData() {
         this.showLoading();
         
-        // Simulate API call delay
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        // Show page header and filter immediately for better UX
+        this.showContentSections();
+        
+        // Load teams data with a shorter delay
+        await new Promise(resolve => setTimeout(resolve, 800));
         
         // Sample teams data with image support
         this.teams = [
@@ -922,6 +925,7 @@ class TeamsManager {
                     },
                 ]
             }
+
         ];
 
         this.filterTeams();
@@ -929,12 +933,33 @@ class TeamsManager {
         this.hideLoading();
     }
 
+    setupImageObserver() {
+        // Lazy load images for better performance
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.add('loaded');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            // Observe all lazy images
+            document.querySelectorAll('.lazy-image').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    }
+
     createPlayerCard(player) {
         const stats = player.stats || {};
         
-        // Determine avatar content based on image availability
+        // Use data-src for lazy loading
         const avatarContent = player.image 
-            ? `<img src="${player.image}" alt="${player.name}" onerror="this.style.display='none'; this.parentElement.classList.remove('has-image');">`
+            ? `<img data-src="${player.image}" alt="${player.name}" class="lazy-image" onerror="this.style.display='none'; this.parentElement.classList.remove('has-image');">`
             : `<i class="fas fa-user"></i>`;
         
         const avatarClass = player.image ? 'player-avatar has-image' : 'player-avatar';
@@ -992,7 +1017,7 @@ class TeamsManager {
 
     createTeamSection(team) {
         const teamLogo = team.logo 
-            ? `<img src="${team.logo}" alt="${team.name} Logo" onerror="this.style.display='none';">`
+            ? `<img data-src="${team.logo}" alt="${team.name} Logo" class="lazy-image" onerror="this.style.display='none';">`
             : `<i class="fas fa-users"></i>`;
 
         return `
@@ -1119,6 +1144,9 @@ class TeamsManager {
 
         container.innerHTML = this.filteredTeams.map(team => this.createTeamSection(team)).join('');
         this.updateStats();
+        
+        // Re-initialize image observer for new content
+        this.setupImageObserver();
     }
 
     getTeamGoals(team) {
@@ -1145,6 +1173,20 @@ class TeamsManager {
 
     hideLoading() {
         document.getElementById('loadingSpinner').classList.add('hidden');
+    }
+
+    showContentSections() {
+        // Show header and filter immediately
+        document.getElementById('pageHeader').classList.add('content-visible');
+        document.getElementById('filterSection').classList.add('content-visible');
+        
+        // Show other sections with slight delay for better UX
+        setTimeout(() => {
+            document.getElementById('teamsGridSection').classList.add('content-visible');
+            document.getElementById('captainsSection').classList.add('content-visible');
+            document.getElementById('coachesSection').classList.add('content-visible');
+            document.getElementById('footerSection').classList.add('content-visible');
+        }, 300);
     }
 }
 

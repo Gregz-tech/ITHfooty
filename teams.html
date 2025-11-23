@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teams - FUHSIITHISA Football Tournament</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="/css/teams.css">
+    <link rel="stylesheet" href="css/teams.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-         <div class="nav-menu" id="navMenu">
+            <div class="nav-menu" id="navMenu">
                 <div class="menu-content">
                     <a href="index.html" class="nav-link">
                         <i class="fas fa-home"></i>
@@ -82,8 +82,14 @@
         </div>
     </nav>
 
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+        <p class="loading-text">Loading teams...</p>
+    </div>
+
     <!-- Page Header -->
-    <section class="page-header">
+    <section class="page-header content-hidden" id="pageHeader">
         <div class="container">
             <div class="header-content">
                 <h1 class="page-title">Teams & Players</h1>
@@ -93,7 +99,7 @@
     </section>
 
     <!-- Team Filter -->
-    <section class="teams-filter-section">
+    <section class="teams-filter-section content-hidden" id="filterSection">
         <div class="container">
             <div class="filter-header">
                 <h2 class="filter-title">Select Team</h2>
@@ -143,7 +149,7 @@
     </section>
 
     <!-- Teams Grid -->
-    <section class="teams-grid-section section-hidden">
+    <section class="teams-grid-section content-hidden" id="teamsGridSection">
         <div class="container">
             <div class="teams-container" id="teamsContainer">
                 <!-- Teams will be loaded dynamically -->
@@ -152,11 +158,10 @@
     </section>
 
     <!-- Team Captains -->
-    <section class="captains-section section-hidden">
+    <section class="captains-section content-hidden" id="captainsSection">
         <div class="container">
             <h2 class="section-title">Team Captains</h2>
             <div class="captains-grid">
-              
                 <div class="captain-card">
                     <div class="captain-avatar">
                         <i class="fas fa-crown"></i>
@@ -173,10 +178,7 @@
                 
                 <div class="captain-card">
                     <div class="captain-avatar">
-                      <img src="/images/players/abu.jpg" alt="">
-                        <!-- <i class="fas fa-crown">
-                              
-                        </i> -->
+                        <img src="/images/players/abu.jpg" alt="Captain Abu" class="lazy-image">
                     </div>
                     <div class="captain-info">
                         <h3>ABU</h3>
@@ -188,9 +190,9 @@
                     </div>
                 </div>
 
-                 <div class="captain-card">
+                <div class="captain-card">
                     <div class="captain-avatar">
-                     <img src="/images/300Lplayers/ayobami.jpg" alt="">
+                        <img src="/images/300Lplayers/ayobami.jpg" alt="Captain Ayobami" class="lazy-image">
                     </div>
                     <div class="captain-info">
                         <h3>AYOBAMI</h3>
@@ -202,10 +204,9 @@
                     </div>
                 </div>
 
-                 <div class="captain-card">
+                <div class="captain-card">
                     <div class="captain-avatar">
-                       
-                      <img src="/images/400Lplayers/jamike.jpg" alt="">
+                        <img src="/images/400Lplayers/jamike.jpg" alt="Captain Jamike" class="lazy-image">
                     </div>
                     <div class="captain-info">
                         <h3>JAMIKE</h3>
@@ -216,23 +217,12 @@
                         </div>
                     </div>
                 </div>
-
-        
-            </div>
-        </div>
-    </section>
-
-    <!-- Teams Grid -->
-    <section class="teams-grid-section section-hidden">
-        <div class="container">
-            <div class="teams-container" id="teamsContainer">
-                <!-- Teams will be loaded dynamically -->
             </div>
         </div>
     </section>
 
     <!-- Team Coaches -->
-    <section class="captains-section section-hidden">
+    <section class="captains-section content-hidden" id="coachesSection">
         <div class="container">
             <h2 class="section-title">Team Coaches</h2>
             <div class="captains-grid">
@@ -252,7 +242,7 @@
 
                 <div class="captain-card">
                     <div class="captain-avatar">
-                        <img src="/images/coaches/sultan.jpg" alt="200L Coach Sultan">
+                        <img src="/images/coaches/sultan.jpg" alt="Coach Sultan" class="lazy-image">
                     </div>
                     <div class="captain-info">
                         <h3>SULTAN</h3>
@@ -266,7 +256,7 @@
 
                 <div class="captain-card">
                     <div class="captain-avatar">
-                        <img src="/images/coaches/ayomide.jpg" alt="ayomide">
+                        <img src="/images/coaches/ayomide.jpg" alt="Coach Ayomide" class="lazy-image">
                     </div>
                     <div class="captain-info">
                         <h3>AYOMIDE</h3>
@@ -280,7 +270,7 @@
 
                 <div class="captain-card">
                     <div class="captain-avatar">
-                        <img src="/images/coaches/bigzam.jpg" alt="BigZam">
+                        <img src="/images/coaches/bigzam.jpg" alt="Coach BigZam" class="lazy-image">
                     </div>
                     <div class="captain-info">
                         <h3>BIG ZAM</h3>
@@ -296,7 +286,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer section-hidden">
+    <footer class="footer content-hidden" id="footerSection">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -341,20 +331,12 @@
                 </div>
             </div>
 
-        <div class="footer-bottom">
-    <p>&copy; 2025/2026 ITH Football Tournament. All rights reserved.</p>
-    <p class="powered-by">Powered by Gregztech</p>
-</div>
-</div>
-</div>
+            <div class="footer-bottom">
+                <p>&copy; 2025/2026 ITH Football Tournament. All rights reserved.</p>
+                <p class="powered-by">Powered by Gregztech</p>
+            </div>
         </div>
     </footer>
-
-    <!-- Loading Spinner -->
-    <div class="loading-spinner" id="loadingSpinner">
-        <div class="spinner"></div>
-        <!-- <p>Loading teams...</p> -->
-    </div>
 
     <script src="js/theme.js"></script>
     <script src="js/navigation.js"></script>
