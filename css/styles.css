@@ -145,6 +145,7 @@ body {
     linear-gradient(rgba(26, 18, 0, 0.7), rgba(42, 31, 0, 0.8)),
     url('/images/background.jpg') center/cover fixed no-repeat;
   position: relative;
+
 }
 
 .hero-badge {
@@ -614,7 +615,7 @@ select:focus {
   justify-content: center;
   color: white;
   text-align: center;
-  margin-top: 70px;
+  margin-top: 20px;
   overflow: hidden;
 }
 
@@ -1301,6 +1302,12 @@ select:focus {
     gap: 2rem;
   }
 
+.powered-by {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    opacity: 0.8;
+}
   .countdown-item {
     min-width: 80px;
     padding: 1rem;
