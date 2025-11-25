@@ -46,7 +46,7 @@ class FixturesManager {
                 id: 1,
                 matchDay: 1,
                 date: '2025-11-26',
-                time: '15:00',
+                time: '10:30',
                 teamA: { 
                     name: '200 Level', 
                     level: 'ASH', 
@@ -63,7 +63,7 @@ class FixturesManager {
                     logo: null,
                     stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
                 },
-                venue: 'College Field',
+                venue: 'Bisi Akande',
                 status: 'upcoming',
                 group: 'A',
                 referee: 'FINISHER (BMB)',
