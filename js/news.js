@@ -6,6 +6,7 @@ class NewsManager {
         this.currentSearch = '';
         this.currentPage = 1;
         this.articlesPerPage = 6;
+        this.currentArticleId = null;
         this.init();
     }
 
@@ -13,6 +14,7 @@ class NewsManager {
         this.loadNewsData();
         this.setupEventListeners();
         this.updateNewsStats();
+        this.setupModalEvents();
     }
 
     async loadNewsData() {
@@ -21,112 +23,259 @@ class NewsManager {
         // Simulate API call delay
         await new Promise(resolve => setTimeout(resolve, 1500));
         
-        // Sample news data
+        // Sample news data with full content
         this.articles = [
             {
-                id: 1,
-                title: 'Tournament Kickoff: Exciting Matches Ahead',
-                excerpt: 'The FUHSIITHISA Football Tournament officially begins with thrilling opening matches that set the tone for an exciting competition.',
-                content: 'Full article content would go here...',
-                category: 'announcements',
-                image: 'images/news/tournament-kickoff.jpg',
-                date: '2025-11-20',
-                views: 245,
-                readTime: '3 min read',
-                author: 'Tournament Committee',
-                featured: true
-            },
-            {
-                id: 2,
-                title: '100 Level Stuns 200 Level in Opening Match',
-                excerpt: 'David Johnson scores twice as 100 Level secures a surprising 2-1 victory over favorites 200 Level.',
-                content: 'Full match report content would go here...',
-                category: 'matches',
-                image: 'images/news/100l-vs-200l.jpg',
-                date: '2025-11-21',
-                views: 189,
-                readTime: '4 min read',
-                author: 'Sports Reporter',
-                featured: false
-            },
-            {
-                id: 3,
-                title: 'Sarah Mohammed Completes Transfer to 300 Level',
-                excerpt: 'Star midfielder Sarah Mohammed makes shock move to 300 Level in record-breaking transfer deal.',
-                content: 'Full transfer news content would go here...',
-                category: 'transfers',
-                image: 'images/news/sarah-transfer.jpg',
-                date: '2025-11-22',
-                views: 312,
-                readTime: '2 min read',
-                author: 'Transfer Analyst',
-                featured: false
-            },
-            {
-                id: 4,
-                title: 'Week 1 Highlights: Top Goals and Saves',
-                excerpt: 'Relive the best moments from the first week of matches, including spectacular goals and incredible saves.',
-                content: 'Full highlights content would go here...',
-                category: 'highlights',
-                image: 'images/news/week1-highlights.jpg',
-                date: '2025-11-23',
-                views: 167,
-                readTime: '5 min read',
-                author: 'Highlights Team',
-                featured: false
-            },
-            {
-                id: 5,
-                title: 'New Rule Changes for Quarter-Finals',
-                excerpt: 'Important updates to tournament rules and regulations ahead of the knockout stages.',
-                content: 'Full rules content would go here...',
-                category: 'announcements',
-                image: 'images/news/rule-changes.jpg',
-                date: '2025-11-24',
-                views: 98,
-                readTime: '2 min read',
-                author: 'Tournament Committee',
-                featured: false
-            },
-            {
-                id: 6,
-                title: 'Mike Chen Sets New Save Record',
-                excerpt: '100 Level goalkeeper Mike Chen makes 8 incredible saves in single match, setting new tournament record.',
-                content: 'Full record content would go here...',
-                category: 'highlights',
-                image: 'images/news/save-record.jpg',
-                date: '2025-11-25',
-                views: 201,
-                readTime: '3 min read',
-                author: 'Sports Analyst',
-                featured: false
-            },
-            {
-                id: 7,
-                title: 'Semi-Final Draw Results Announced',
-                excerpt: 'The matchups for the semi-final round have been determined. See who faces who in the next stage.',
-                content: 'Full draw content would go here...',
-                category: 'announcements',
-                image: 'images/news/semi-final-draw.jpg',
-                date: '2025-11-26',
-                views: 156,
-                readTime: '2 min read',
-                author: 'Tournament Committee',
-                featured: false
-            },
-            {
-                id: 8,
-                title: 'Player of the Week: Grace Okafor',
-                excerpt: '400 Level forward Grace Okafor wins Player of the Week after scoring hat-trick in crucial match.',
-                content: 'Full player feature content would go here...',
-                category: 'highlights',
-                image: 'images/news/player-of-week.jpg',
-                date: '2025-11-27',
-                views: 178,
-                readTime: '4 min read',
-                author: 'Player Features',
-                featured: false
-            }
+    id: 1,
+    title: '⚽ Official Tournament Rules & Regulations Released',
+    excerpt: 'Complete guide to the 2025/2026 Intra-Departmental Football Tournament rules. All players and teams must read and adhere to these regulations.',
+    content: `
+                <div class="article-modal-header">
+    <h1 class="article-modal-title">⚽ Tournament Rules & Regulations</h1>
+    <div class="article-modal-meta">
+        <span><i class="fas fa-calendar-alt"></i> Tournament Guidelines</span>
+        <span><i class="fas fa-user"></i> Tournament Committee</span>
+        <span><i class="fas fa-eye"></i> Official Document</span>
+        <span><i class="fas fa-clock"></i> 5 min read</span>
+    </div>
+</div>
+<div class="article-modal-body">
+    <p class="rules-intro">Below are the official rules guiding the 2025/2026 Intra-Departmental Football Tournament. All players, teams and supporters are expected to adhere strictly.</p>
+
+    <div class="rules-section">
+        <h2>1. Eligibility & Team Requirements</h2>
+        <ul>
+            <li>Only registered students of the department are allowed to participate.</li>
+            <li>A player can represent <strong>only one level</strong> throughout the tournament.</li>
+            <li>Each team must submit:
+                <ul>
+                    <li>Full squad list</li>
+                    <li>Pitch names</li>
+                    <li>Jersey numbers</li>
+                    <li>Playing positions</li>
+                    <li>A passport/photo</li>
+                </ul>
+            </li>
+            <li>Any team that fields an ineligible player automatically loses the match (3–0).</li>
+        </ul>
+    </div>
+
+    <div class="rules-section">
+        <h2>2. Match Duration</h2>
+        <ul>
+            <li><strong>Group Stage:</strong> 90 minutes (45 mins each half) + 15 mins halftime.</li>
+            <li>No extra time in group stage.</li>
+           
+        </ul>
+    </div>
+
+    <div class="rules-section">
+        <h2>3. Points System</h2>
+        <ul>
+            <li><strong>Win – 3 points</strong></li>
+            <li><strong>Draw – 1 point</strong></li>
+            <li><strong>Loss – 0 points</strong></li>
+            <li>Table ranking is based on:
+                <ol>
+                    <li>Points</li>
+                    <li>Goal Difference</li>
+                    <li>Goals Scored</li>
+                    <li>Head-to-head</li>
+                    <li>Fair Play (fewest cards)</li>
+                    
+                </ol>
+            </li>
+        </ul>
+    </div>
+
+    <div class="rules-section">
+        <h2>4. Substitutions</h2>
+        <ul>
+            <li>Maximum of <strong>5 substitutions</strong> per match.</li>
+            <li>Substitution can only be made during a stoppage and with the referee's permission.</li>
+            <li>A substituted player <strong>cannot</strong> return to the match.</li>
+        </ul>
+    </div>
+
+    <div class="rules-section">
+        <h2>5. Player Equipment</h2>
+        <ul>
+            <li>All players must wear:
+                <ul>
+                    <li>Matching jerseys</li>
+                    <li>Shin guards (Not mandatory)</li>
+                    <li>Proper football boots</li>
+                </ul>
+            </li>
+            <li>No jewelry (chains, rings, wristwatches) allowed.</li>
+            <li>Goalkeeper must wear a different color from both teams.</li>
+        </ul>
+    </div>
+
+    <div class="rules-section">
+        <h2>6. Kick-Off & Ball Rules</h2>
+        <ul>
+            <li>A coin toss determines the team that starts the match.</li>
+            <li>Standard size 5 ball will be used.</li>
+            <li>If the ball bursts, play restarts with a dropped ball.</li>
+        </ul>
+    </div>
+
+    <div class="rules-section">
+        <h2>7. Fouls & Misconduct</h2>
+        
+        <h3>Yellow Card Offences:</h3>
+        <ul>
+            <li>Reckless play</li>
+            <li>Time wasting</li>
+            <li>Removing shirt in celebration</li>
+            <li>Arguing with officials</li>
+            <li>Delaying restart</li>
+        </ul>
+
+        <h3>Red Card Offences:</h3>
+        <ul>
+            <li>Violent conduct</li>
+            <li>Serious foul play</li>
+            <li>Use of abusive language</li>
+            <li>Second yellow card</li>
+            <li>Deliberate handball to stop a clear goal-scoring chance</li>
+        </ul>
+
+        <p><strong>A red-carded player is suspended for the next match.</strong></p>
+    </div>
+
+    <div class="rules-section">
+        <h2>8. Offside Rule</h2>
+        <p>A player is offside if:</p>
+        <ul>
+            <li>They are beyond the last defender <strong>and</strong></li>
+            <li>Actively involved in play (receiving the ball or interfering)</li>
+        </ul>
+        
+        <p>No offside from:</p>
+        <ul>
+            <li>Goal kick</li>
+            <li>Throw-in</li>
+            <li>Corner kick</li>
+        </ul>
+    </div>
+
+    <div class="rules-section">
+        <h2>9. Free Kicks</h2>
+        <ul>
+            <li><strong>Direct Free Kick:</strong> Can be scored directly (for serious fouls).</li>
+            <li><strong>Indirect Free Kick:</strong> Ball must touch another player before scoring.</li>
+            <li>Opponents must stand <strong>7 steps</strong> away.</li>
+        </ul>
+    </div>
+
+    <div class="rules-section">
+        <h2>10. Penalty Kicks</h2>
+        <ul>
+            <li>Awarded inside the penalty box.</li>
+            <li>Only the taker and goalkeeper are allowed inside the box until the kick is taken.</li>
+        </ul>
+    </div>
+
+    <div class="rules-section">
+        <h2>11. Throw-ins</h2>
+        <ul>
+            <li>Both feet on the ground</li>
+            <li>Ball thrown from behind the head</li>
+            <li>Opponent must be 2 meters away</li>
+        </ul>
+        <p>Incorrect throw → given to the opposing team.</p>
+    </div>
+
+    <div class="rules-section">
+        <h2>12. Goal Kicks & Corner Kicks</h2>
+        <ul>
+            <li><strong>Goal Kick:</strong> If opponents last touched the ball before it crossed the goal line.</li>
+            <li><strong>Corner Kick:</strong> If defenders last touched it before crossing their own goal line.</li>
+        </ul>
+    </div>
+
+    <div class="rules-section">
+        <h2>13. Discipline & Fair Play</h2>
+        <p>Zero tolerance for:</p>
+        <ul>
+            <li>Fighting</li>
+            <li>Threatening referees</li>
+            <li>Racism or abusive speech</li>
+            <li>Pitch invasion</li>
+            <li>Unregistered players</li>
+        </ul>
+        
+        <p>Any team guilty may face:</p>
+        <ul>
+            <li>Suspension</li>
+            <li>Loss of match</li>
+            <li>Disqualification</li>
+        </ul>
+    </div>
+
+    <div class="rules-section">
+        <h2>14. Referee Authority</h2>
+        <ul>
+            <li>The referee's decision is <strong>final and must be respected</strong>.</li>
+            <li>Only the captain may approach the referee for clarification.</li>
+        </ul>
+    </div>
+
+    <div class="rules-section">
+        <h2>15. Supporters' Conduct</h2>
+        <ul>
+            <li>No insults, harassment, or violence.</li>
+            <li>No encroaching onto the pitch.</li>
+            <li>Supporters should encourage fair and peaceful support of their level.</li>
+        </ul>
+    </div>
+
+    <div class="rules-section">
+        <h2>16. Photography & Media</h2>
+        <ul>
+            <li>Official photographers may enter the pitch before and after the match.</li>
+            <li>Players should cooperate for group photos and media coverage.</li>
+        </ul>
+    </div>
+
+    <div class="rules-section">
+        <h2>17. Match Forfeiture</h2>
+        <p>A team forfeits a match if:</p>
+        <ul>
+            <li>They arrive <strong>more than 15 minutes late</strong></li>
+            <li>They cannot provide at least <strong>7 players</strong></li>
+            <li>They field an unregistered player</li>
+        </ul>
+        <p><strong>Forfeit score: 3–0 loss.</strong></p>
+    </div>
+
+     <div class="rules-section">
+        <h2>18. Loan Player Participation</h2>
+        <ul>
+            <li>Players listed for loan but not successfully loaned can participate in the tournament.</li>
+            <li>Such players are eligible to play for their original levels after completing their first match.</li>
+            <li>Loan listing status must be verified by the Tournament Committee.</li>
+            <li>Once a player participates for their level after the loan window closes, they cannot transfer to another level for the remainder of the tournament.</li>
+        </ul>
+    </div>
+
+
+    <div class="rules-notice">
+        <p><strong>Note:</strong> These rules are binding for all participants. Any disputes will be resolved by the Tournament Committee.</p>
+    </div>
+</div>`,
+    category: 'announcements',
+    image: 'images/news/rules.png',
+    date: '2025-11-26',
+    views: '',
+    readTime: '5 min read',
+    author: 'Tournament Committee',
+    featured: true
+},
+
+           
         ];
 
         this.filterArticles();
@@ -177,6 +326,58 @@ class NewsManager {
         document.getElementById('newsletterForm').addEventListener('submit', (e) => {
             e.preventDefault();
             this.handleNewsletterSubscription();
+        });
+    }
+
+    setupModalEvents() {
+        // Share modal events
+        document.getElementById('closeShareModal').addEventListener('click', () => {
+            this.closeShareModal();
+        });
+
+        // Article modal events
+        document.getElementById('closeArticleModal').addEventListener('click', () => {
+            this.closeArticleModal();
+        });
+
+        document.getElementById('closeArticleBtn').addEventListener('click', () => {
+            this.closeArticleModal();
+        });
+
+        document.getElementById('shareArticleBtn').addEventListener('click', () => {
+            this.closeArticleModal();
+            setTimeout(() => {
+                this.openShareModal(this.currentArticleId);
+            }, 300);
+        });
+
+        // Share options
+        document.querySelectorAll('.share-option').forEach(option => {
+            option.addEventListener('click', (e) => {
+                const platform = e.currentTarget.dataset.platform;
+                this.shareToPlatform(platform, this.currentArticleId);
+            });
+        });
+
+        // Copy link button
+        document.getElementById('copyLinkBtn').addEventListener('click', () => {
+            this.copyArticleLink(this.currentArticleId);
+        });
+
+        // Close modals when clicking outside
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                this.closeShareModal();
+                this.closeArticleModal();
+            }
+        });
+
+        // Close modals with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                this.closeShareModal();
+                this.closeArticleModal();
+            }
         });
     }
 
@@ -257,7 +458,7 @@ class NewsManager {
                             <i class="fas fa-book-open"></i>
                             Read Full Article
                         </button>
-                        <button class="btn btn-outline" onclick="newsManager.shareArticle(${featuredArticle.id})">
+                        <button class="btn btn-outline" onclick="newsManager.openShareModal(${featuredArticle.id})">
                             <i class="fas fa-share-alt"></i>
                             Share
                         </button>
@@ -333,10 +534,10 @@ class NewsManager {
                     <p class="article-excerpt">${article.excerpt}</p>
                     <div class="article-actions">
                         <div class="article-read-time">${article.readTime}</div>
-                        <a href="#" class="btn-read-more" onclick="newsManager.readArticle(${article.id})">
+                        <button class="btn-read-more" onclick="newsManager.readArticle(${article.id})">
                             Read More
                             <i class="fas fa-arrow-right"></i>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -361,32 +562,125 @@ class NewsManager {
     readArticle(articleId) {
         const article = this.articles.find(a => a.id === articleId);
         if (article) {
-            // In a real app, this would navigate to article page or show modal
-            alert(`Reading: ${article.title}\n\n${article.content || 'Full article content would be displayed here.'}`);
+            this.currentArticleId = articleId;
             
-            // Simulate view count increase
+            // Update view count
             article.views++;
             this.updateNewsStats();
+
+            // Show article in modal
+            this.openArticleModal(article);
         }
     }
 
-    shareArticle(articleId) {
+    openArticleModal(article) {
+        document.getElementById('articleModalTitle').textContent = article.title;
+        document.getElementById('articleModalContent').innerHTML = article.content;
+        document.getElementById('articleModal').classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+
+    closeArticleModal() {
+        document.getElementById('articleModal').classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+
+    openShareModal(articleId) {
         const article = this.articles.find(a => a.id === articleId);
         if (article) {
-            const shareUrl = window.location.href;
-            const shareText = `Check out this article: ${article.title}`;
+            this.currentArticleId = articleId;
+            
+            // Generate shareable link
+            const shareableLink = this.generateShareableLink(articleId);
+            document.getElementById('shareableLink').value = shareableLink;
+            
+            document.getElementById('shareModal').classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+    }
 
-            if (navigator.share) {
-                navigator.share({
-                    title: article.title,
-                    text: article.excerpt,
-                    url: shareUrl
-                });
-            } else {
-                // Fallback: Copy to clipboard
-                navigator.clipboard.writeText(`${shareText} - ${shareUrl}`);
-                this.showNotification('Article link copied to clipboard!');
-            }
+    closeShareModal() {
+        document.getElementById('shareModal').classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+        
+        // Reset copy button
+        const copyBtn = document.getElementById('copyLinkBtn');
+        copyBtn.classList.remove('copied');
+        copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy';
+    }
+
+    generateShareableLink(articleId) {
+        const baseUrl = window.location.origin + window.location.pathname;
+        return `${baseUrl}?article=${articleId}`;
+    }
+
+    shareToPlatform(platform, articleId) {
+        const article = this.articles.find(a => a.id === articleId);
+        if (!article) return;
+
+        const shareUrl = this.generateShareableLink(articleId);
+        const shareText = `Check out this article: ${article.title}`;
+
+        const shareUrls = {
+            whatsapp: `https://wa.me/?text=${encodeURIComponent(shareText + ' - ' + shareUrl)}`,
+            facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
+            twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`,
+            telegram: `https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`,
+            instagram: `https://www.instagram.com/?url=${encodeURIComponent(shareUrl)}`,
+            tiktok: `https://www.tiktok.com/share?url=${encodeURIComponent(shareUrl)}`
+        };
+
+        if (shareUrls[platform]) {
+            window.open(shareUrls[platform], '_blank', 'width=600,height=400');
+        } else {
+            // Fallback for platforms without specific share URLs
+            this.fallbackShare(article);
+        }
+    }
+
+    copyArticleLink(articleId) {
+        const shareableLink = this.generateShareableLink(articleId);
+        
+        navigator.clipboard.writeText(shareableLink).then(() => {
+            const copyBtn = document.getElementById('copyLinkBtn');
+            copyBtn.classList.add('copied');
+            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            
+            setTimeout(() => {
+                copyBtn.classList.remove('copied');
+                copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy';
+            }, 2000);
+        }).catch(() => {
+            // Fallback for older browsers
+            const input = document.getElementById('shareableLink');
+            input.select();
+            document.execCommand('copy');
+            
+            const copyBtn = document.getElementById('copyLinkBtn');
+            copyBtn.classList.add('copied');
+            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            
+            setTimeout(() => {
+                copyBtn.classList.remove('copied');
+                copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy';
+            }, 2000);
+        });
+    }
+
+    fallbackShare(article) {
+        const shareUrl = this.generateShareableLink(article.id);
+        const shareText = `Check out this article: ${article.title} - ${shareUrl}`;
+
+        if (navigator.share) {
+            navigator.share({
+                title: article.title,
+                text: article.excerpt,
+                url: shareUrl
+            });
+        } else {
+            // Final fallback - copy to clipboard
+            this.copyArticleLink(article.id);
+            this.showNotification('Article link copied to clipboard!');
         }
     }
 
@@ -515,9 +809,9 @@ class NewsManager {
     }
 }
 
-// Add CSS for toast animations
-const toastStyles = document.createElement('style');
-toastStyles.textContent = `
+// Add CSS for toast animations and modal styles
+const additionalStyles = document.createElement('style');
+additionalStyles.textContent = `
     @keyframes slideIn {
         from { transform: translateX(100%); opacity: 0; }
         to { transform: translateX(0); opacity: 1; }
@@ -526,8 +820,16 @@ toastStyles.textContent = `
         from { transform: translateX(0); opacity: 1; }
         to { transform: translateX(100%); opacity: 0; }
     }
+    
+    .hidden {
+        display: none !important;
+    }
+    
+    body.modal-open {
+        overflow: hidden;
+    }
 `;
-document.head.appendChild(toastStyles);
+document.head.appendChild(additionalStyles);
 
 // Initialize news manager when DOM is loaded
 let newsManager;
@@ -535,12 +837,18 @@ document.addEventListener('DOMContentLoaded', () => {
     newsManager = new NewsManager();
 });
 
-// Example of how to add new article:
-/*
-newsManager.addArticle({
-    title: 'Breaking: New Tournament Sponsor',
-    excerpt: 'Exciting announcement about new tournament sponsorship deal.',
-    category: 'announcements',
-    featured: true
+// Handle URL parameters for direct article sharing
+window.addEventListener('load', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const articleId = urlParams.get('article');
+    
+    if (articleId && newsManager) {
+        // Small delay to ensure newsManager is fully initialized
+        setTimeout(() => {
+            const article = newsManager.articles.find(a => a.id === parseInt(articleId));
+            if (article) {
+                newsManager.readArticle(parseInt(articleId));
+            }
+        }, 500);
+    }
 });
-*/

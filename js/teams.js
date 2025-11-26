@@ -325,7 +325,7 @@ class TeamsManager {
                         image:  'images/players/ayodeji.jpg',
                         stats: { tackles: 0, interceptions: 0, matches: 0 },
                         // skills: ['Tackling', 'Strength', 'Aerial'],
-                        available: false,
+                        available: true,
                         transferValue: '₦600',
                         isCaptain: false
                     },
@@ -390,7 +390,7 @@ class TeamsManager {
                         image:  'images/players/addmore.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
-                        available: true,
+                        available: false,
                         // transferValue: '₦1,000',
                         isCaptain: false
                     },
@@ -507,7 +507,7 @@ class TeamsManager {
                         image:  'images/players/tendo.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
-                        available: true,
+                        available: false,
                         // transferValue: '₦1,000',
                         isCaptain: false
                     },
@@ -520,7 +520,7 @@ class TeamsManager {
                         image:  'images/players/damnex.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
-                        available: false,
+                        available: true,
                         transferValue: '₦1,000',
                         isCaptain: false
                     }

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News & Updates - FUHSIITHISA Football Tournament</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="/css/news.css">
+    <link rel="stylesheet" href="css/news.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-     <div class="nav-menu" id="navMenu">
+            <div class="nav-menu" id="navMenu">
                 <div class="menu-content">
                     <a href="index.html" class="nav-link">
                         <i class="fas fa-home"></i>
@@ -340,14 +340,88 @@
                 </div>
             </div>
 
-        <div class="footer-bottom">
-    <p>&copy; 2025/2026 ITH Football Tournament. All rights reserved.</p>
-    <p class="powered-by">Powered by Gregztech</p>
-</div>
-</div>
-</div>
+            <div class="footer-bottom">
+                <p>&copy; 2025/2026 ITH Football Tournament. All rights reserved.</p>
+                <p class="powered-by">Powered by Gregztech</p>
+            </div>
         </div>
     </footer>
+
+    <!-- Share Modal -->
+    <div class="modal share-modal" id="shareModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Share Article</h3>
+                <button class="modal-close" id="closeShareModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="share-options">
+                    <button class="share-option" data-platform="whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </button>
+                    <button class="share-option" data-platform="instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </button>
+                    <button class="share-option" data-platform="tiktok">
+                        <i class="fab fa-tiktok"></i>
+                        <span>TikTok</span>
+                    </button>
+                    <button class="share-option" data-platform="twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </button>
+                    <button class="share-option" data-platform="facebook">
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook</span>
+                    </button>
+                    <button class="share-option" data-platform="telegram">
+                        <i class="fab fa-telegram"></i>
+                        <span>Telegram</span>
+                    </button>
+                </div>
+                <div class="copy-link-section">
+                    <div class="link-input-group">
+                        <input type="text" id="shareableLink" readonly>
+                        <button class="btn-copy-link" id="copyLinkBtn">
+                            <i class="fas fa-copy"></i>
+                            Copy
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article Popup Modal -->
+    <div class="modal article-modal" id="articleModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="articleModalTitle">Article Title</h3>
+                <button class="modal-close" id="closeArticleModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="article-modal-content" id="articleModalContent">
+                    <!-- Article content will be loaded here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="shareArticleBtn">
+                    <i class="fas fa-share-alt"></i>
+                    Share Article
+                </button>
+                <button class="btn btn-primary" id="closeArticleBtn">
+                    <i class="fas fa-times"></i>
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Loading Spinner -->
     <div class="loading-spinner" id="loadingSpinner">
@@ -358,6 +432,6 @@
     <script src="js/theme.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/scroll-animations.js"></script>
-    <script src="js/news.jss"></script>
+    <script src="js/news.js"></script>
 </body>
 </html>
