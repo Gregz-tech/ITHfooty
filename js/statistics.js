@@ -1,6 +1,8 @@
 class PlayersManager {
     constructor() {
-        this.players = [];
+        this.topScorers = [];
+        this.topAssists = [];
+        this.allPlayers = [];
         this.filteredPlayers = [];
         this.currentStat = 'all';
         this.currentFilters = {
@@ -13,10 +15,10 @@ class PlayersManager {
         this.init();
     }
 
-    init() {
-        this.loadPlayersData();
+    async init() {
+        await this.loadPlayersData(); // Wait for data to load first
         this.setupEventListeners();
-        this.updateOverviewStats();
+        this.updateOverviewStats(); // Now call this AFTER data is loaded
     }
 
     async loadPlayersData() {
@@ -25,294 +27,99 @@ class PlayersManager {
         // Simulate API call delay
         await new Promise(resolve => setTimeout(resolve, 1500));
         
-        // Sample players statistics data
-        this.players = [
-            {
+        // Top scorer statistics data
+        this.topScorers = [
+            {   
                 id: 1,
-                name: 'David Johnson',
+                name: 'OPE',
                 position: 'Forward',
-                level: '100L',
-                team: '100 Level',
-                image: 'images/players/david-johnson.jpg',
+                level: '200L',
+                team: '200 Level',
+                image: 'images/players/ope.jpg',
                 stats: {
-                    matches: 6,
-                    goals: 8,
-                    assists: 3,
-                    saves: 0,
-                    cleanSheets: 0,
-                    goalsConceded: 0,
-                    keyPasses: 12,
-                    tackles: 4,
-                    lastGoal: 'MD5 vs 300L',
+                    matches: 1,
+                    goals: 2,
+                    assists: 0,
+                    lastGoal: 'MD1 vs 400L',
                     rating: 8.7
                 }
             },
             {
                 id: 2,
-                name: 'Sarah Mohammed',
-                position: 'Midfielder',
-                level: '200L',
-                team: '200 Level',
-                image: 'images/players/sarah-mohammed.jpg',
+                name: 'IFE',
+                position: 'Forward',
+                level: '400L',
+                team: '400 Level',
+                image: 'images/400Lplayers/ife.jpg',
                 stats: {
-                    matches: 6,
-                    goals: 4,
-                    assists: 7,
-                    saves: 0,
-                    cleanSheets: 0,
-                    goalsConceded: 0,
-                    keyPasses: 18,
-                    tackles: 8,
-                    lastGoal: 'MD4 vs 400L',
-                    rating: 8.9
-                }
+                    matches: 1,
+                    goals: 1,
+                    assists: 1,
+                    lastGoal: 'MD1 vs 200L',
+                    rating: 8.5
+                }  
             },
             {
                 id: 3,
-                name: 'Mike Chen',
-                position: 'Goalkeeper',
-                level: '100L',
-                team: '100 Level',
-                image: 'images/players/mike-chen.jpg',
-                stats: {
-                    matches: 6,
-                    goals: 0,
-                    assists: 1,
-                    saves: 24,
-                    cleanSheets: 3,
-                    goalsConceded: 5,
-                    keyPasses: 3,
-                    tackles: 2,
-                    lastGoal: null,
-                    rating: 8.5
-                }
-            },
-            {
-                id: 4,
-                name: 'Grace Okafor',
+                name: 'VINCENT',
                 position: 'Forward',
                 level: '400L',
                 team: '400 Level',
-                image: 'images/players/grace-okafor.jpg',
+                image: 'images/400Lplayers/vincent.jpg',
                 stats: {
-                    matches: 5,
-                    goals: 6,
-                    assists: 2,
-                    saves: 0,
-                    cleanSheets: 0,
-                    goalsConceded: 0,
-                    keyPasses: 8,
-                    tackles: 3,
-                    lastGoal: 'MD5 vs 200L',
-                    rating: 8.3
-                }
-            },
-            {
-                id: 5,
-                name: 'Michael Adekunle',
-                position: 'Midfielder',
-                level: '300L',
-                team: '300 Level',
-                image: 'images/players/michael-adekunle.jpg',
-                stats: {
-                    matches: 5,
-                    goals: 2,
-                    assists: 5,
-                    saves: 0,
-                    cleanSheets: 0,
-                    goalsConceded: 0,
-                    keyPasses: 15,
-                    tackles: 6,
-                    lastGoal: 'MD3 vs 100L',
-                    rating: 8.1
-                }
-            },
-            {
-                id: 6,
-                name: 'Emma Davis',
-                position: 'Goalkeeper',
-                level: '200L',
-                team: '200 Level',
-                image: 'images/players/emma-davis.jpg',
-                stats: {
-                    matches: 6,
-                    goals: 0,
-                    assists: 0,
-                    saves: 19,
-                    cleanSheets: 2,
-                    goalsConceded: 8,
-                    keyPasses: 2,
-                    tackles: 1,
-                    lastGoal: null,
-                    rating: 7.8
-                }
-            },
-            {
-                id: 7,
-                name: 'Chris Evans',
-                position: 'Forward',
-                level: '300L',
-                team: '300 Level',
-                image: 'images/players/chris-evans.jpg',
-                stats: {
-                    matches: 5,
-                    goals: 5,
-                    assists: 2,
-                    saves: 0,
-                    cleanSheets: 0,
-                    goalsConceded: 0,
-                    keyPasses: 7,
-                    tackles: 2,
-                    lastGoal: 'MD4 vs 400L',
-                    rating: 7.9
-                }
-            },
-            {
-                id: 8,
-                name: 'Daniel White',
-                position: 'Defender',
-                level: '400L',
-                team: '400 Level',
-                image: 'images/players/daniel-white.jpg',
-                stats: {
-                    matches: 5,
+                    matches: 1,
                     goals: 1,
-                    assists: 3,
-                    saves: 0,
-                    cleanSheets: 0,
-                    goalsConceded: 0,
-                    keyPasses: 6,
-                    tackles: 14,
-                    lastGoal: 'MD2 vs 100L',
-                    rating: 7.7
-                }
-            },
-            {
-                id: 9,
-                name: 'Kevin Lee',
-                position: 'Forward',
-                level: '400L',
-                team: '400 Level',
-                image: 'images/players/kevin-lee.jpg',
-                stats: {
-                    matches: 5,
-                    goals: 3,
-                    assists: 4,
-                    saves: 0,
-                    cleanSheets: 0,
-                    goalsConceded: 0,
-                    keyPasses: 9,
-                    tackles: 3,
-                    lastGoal: 'MD3 vs 300L',
-                    rating: 7.6
-                }
-            },
-            {
-                id: 10,
-                name: 'Tom Harris',
-                position: 'Goalkeeper',
-                level: '400L',
-                team: '400 Level',
-                image: null,
-                stats: {
-                    matches: 5,
-                    goals: 0,
                     assists: 0,
-                    saves: 17,
-                    cleanSheets: 2,
-                    goalsConceded: 6,
-                    keyPasses: 1,
-                    tackles: 0,
-                    lastGoal: null,
+                    lastGoal: 'MD1 vs 200L',
                     rating: 7.5
-                }
-            },
-            {
-                id: 11,
-                name: 'James Wilson',
-                position: 'Forward',
-                level: '200L',
-                team: '200 Level',
-                image: null,
-                stats: {
-                    matches: 4,
-                    goals: 3,
-                    assists: 1,
-                    saves: 0,
-                    cleanSheets: 0,
-                    goalsConceded: 0,
-                    keyPasses: 5,
-                    tackles: 1,
-                    lastGoal: 'MD3 vs 100L',
-                    rating: 7.2
-                }
-            },
-            {
-                id: 12,
-                name: 'Lisa Brown',
-                position: 'Midfielder',
-                level: '300L',
-                team: '300 Level',
-                image: null,
-                stats: {
-                    matches: 4,
-                    goals: 1,
-                    assists: 2,
-                    saves: 0,
-                    cleanSheets: 0,
-                    goalsConceded: 0,
-                    keyPasses: 8,
-                    tackles: 4,
-                    lastGoal: 'MD2 vs 400L',
-                    rating: 7.0
-                }
-            },
-            {
-                id: 13,
-                name: 'Robert Garcia',
-                position: 'Midfielder',
-                level: '100L',
-                team: '100 Level',
-                image: null,
-                stats: {
-                    matches: 5,
-                    goals: 1,
-                    assists: 4,
-                    saves: 0,
-                    cleanSheets: 0,
-                    goalsConceded: 0,
-                    keyPasses: 11,
-                    tackles: 5,
-                    lastGoal: 'MD4 vs 200L',
-                    rating: 7.4
-                }
-            },
-            {
-                id: 14,
-                name: 'Maria Rodriguez',
-                position: 'Forward',
-                level: '200L',
-                team: '200 Level',
-                image: null,
-                stats: {
-                    matches: 5,
-                    goals: 2,
-                    assists: 3,
-                    saves: 0,
-                    cleanSheets: 0,
-                    goalsConceded: 0,
-                    keyPasses: 7,
-                    tackles: 2,
-                    lastGoal: 'MD5 vs 400L',
-                    rating: 7.3
                 }
             }
         ];
+
+        // Top assists statistics data
+        this.topAssists = [
+            {   
+                id: 1,
+                name: 'Eloyce',
+                position: 'Forward',
+                level: '400L',
+                team: '400 Level',
+                image: 'images/players/eloyce.jpg',
+                stats: {
+                    matches: 1,
+                    goals: 0,
+                    assists: 1,
+                    ga: 1,
+                    rating: 6.2
+                }
+            },
+            {   
+                id: 2,
+                name: 'IFE',
+                position: 'Forward',
+                level: '400L',
+                team: '400 Level',
+                image: 'images/400Lplayers/ife.jpg',
+                stats: {
+                    matches: 1,
+                    goals: 1,
+                    assists: 1,
+                    ga: 2,
+                    rating: 8.5
+                }
+            }
+        ];
+
+        // Combine all players for overall stats
+        this.allPlayers = [...this.topScorers, ...this.topAssists];
 
         this.renderAllTables();
         this.renderSpotlight();
         this.updateSummaryStats();
         this.hideLoading();
+        
+        // Return the data to ensure the async operation completes
+        return this.allPlayers;
     }
 
     setupEventListeners() {
@@ -387,7 +194,23 @@ class PlayersManager {
     }
 
     filterPlayers() {
-        this.filteredPlayers = this.players.filter(player => {
+        let sourceArray = [];
+        
+        switch (this.currentStat) {
+            case 'goals':
+                sourceArray = this.topScorers;
+                break;
+            case 'assists':
+                sourceArray = this.topAssists;
+                break;
+            case 'all':
+                // For all view, we need to handle both scorers and assists separately
+                return; // We'll handle filtering in renderAllTables
+            default:
+                sourceArray = this.allPlayers;
+        }
+
+        this.filteredPlayers = sourceArray.filter(player => {
             // Filter by position
             if (this.currentFilters.position !== 'all' && player.position !== this.currentFilters.position) {
                 return false;
@@ -438,23 +261,52 @@ class PlayersManager {
     }
 
     renderAllTables() {
-        // Render top 10 scorers
-        const topScorers = [...this.players]
-            .sort((a, b) => b.stats.goals - a.stats.goals)
-            .slice(0, 10);
+        // Filter top scorers for the goals table
+        const filteredScorers = this.applyFiltersToArray(this.topScorers);
         
-        document.getElementById('goalsTableBody').innerHTML = topScorers.map((player, index) => 
+        // Render top scorers with requested format: RANK, PLAYER, TEAM, GOALS, ASSIST, G&A
+        document.getElementById('goalsTableBody').innerHTML = filteredScorers.map((player, index) => 
             this.createTableRow(player, index + 1, 'goals')
         ).join('');
 
-        // Render top 10 assists
-        const topAssists = [...this.players]
-            .sort((a, b) => b.stats.assists - a.stats.assists)
-            .slice(0, 10);
+        // Filter top assists for the assists table
+        const filteredAssists = this.applyFiltersToArray(this.topAssists);
         
-        document.getElementById('assistsTableBody').innerHTML = topAssists.map((player, index) => 
+        // Render top assists with requested format: RANK, PLAYER, TEAM, ASSIST, GOALS
+        document.getElementById('assistsTableBody').innerHTML = filteredAssists.map((player, index) => 
             this.createTableRow(player, index + 1, 'assists')
         ).join('');
+    }
+
+    applyFiltersToArray(array) {
+        return array.filter(player => {
+            // Filter by position
+            if (this.currentFilters.position !== 'all' && player.position !== this.currentFilters.position) {
+                return false;
+            }
+
+            // Filter by level
+            if (this.currentFilters.level !== 'all' && player.level !== this.currentFilters.level) {
+                return false;
+            }
+
+            // Filter by team
+            if (this.currentFilters.team !== 'all' && player.team !== this.currentFilters.team) {
+                return false;
+            }
+
+            // Filter by minimum matches
+            if (parseInt(this.currentFilters.matches) > 0 && player.stats.matches < parseInt(this.currentFilters.matches)) {
+                return false;
+            }
+
+            // Filter by search query
+            if (this.currentFilters.search && !player.name.toLowerCase().includes(this.currentFilters.search)) {
+                return false;
+            }
+
+            return true;
+        });
     }
 
     renderCurrentTable() {
@@ -472,7 +324,7 @@ class PlayersManager {
         if (this.filteredPlayers.length === 0) {
             tableBody.innerHTML = `
                 <tr>
-                    <td colspan="8" style="text-align: center; padding: 3rem; color: var(--text-secondary);">
+                    <td colspan="6" style="text-align: center; padding: 3rem; color: var(--text-secondary);">
                         <i class="fas fa-search" style="font-size: 2rem; margin-bottom: 1rem; display: block; opacity: 0.5;"></i>
                         <h3>No players found</h3>
                         <p>Try adjusting your filters or search terms.</p>
@@ -482,13 +334,7 @@ class PlayersManager {
             return;
         }
 
-        // For individual table views, show filtered results
-        let playersToDisplay = this.filteredPlayers;
-        if (this.currentStat === 'goals' || this.currentStat === 'assists') {
-            playersToDisplay = playersToDisplay.slice(0, 10);
-        }
-
-        tableBody.innerHTML = playersToDisplay.map((player, index) => 
+        tableBody.innerHTML = this.filteredPlayers.map((player, index) => 
             this.createTableRow(player, index + 1, this.currentStat)
         ).join('');
     }
@@ -520,7 +366,6 @@ class PlayersManager {
                                     <div class="player-name-small">${player.name}</div>
                                     <div class="player-details-small">
                                         <span class="player-position-badge">${player.position}</span>
-                                        <span class="team-badge-small">${player.level}</span>
                                     </div>
                                 </div>
                             </div>
@@ -528,9 +373,7 @@ class PlayersManager {
                         <td>${player.team}</td>
                         <td class="stat-cell high">${stats.goals}</td>
                         <td class="stat-cell">${stats.assists}</td>
-                        <td class="stat-cell">${stats.matches}</td>
-                        <td class="stat-cell">${(stats.goals / stats.matches).toFixed(2)}</td>
-                        <td>${stats.lastGoal || '-'}</td>
+                        <td class="stat-cell">${stats.goals + stats.assists}</td>
                     </tr>
                 `;
             
@@ -549,7 +392,6 @@ class PlayersManager {
                                     <div class="player-name-small">${player.name}</div>
                                     <div class="player-details-small">
                                         <span class="player-position-badge">${player.position}</span>
-                                        <span class="team-badge-small">${player.level}</span>
                                     </div>
                                 </div>
                             </div>
@@ -557,9 +399,6 @@ class PlayersManager {
                         <td>${player.team}</td>
                         <td class="stat-cell high">${stats.assists}</td>
                         <td class="stat-cell">${stats.goals}</td>
-                        <td class="stat-cell">${stats.matches}</td>
-                        <td class="stat-cell">${(stats.assists / stats.matches).toFixed(2)}</td>
-                        <td class="stat-cell">${stats.keyPasses}</td>
                     </tr>
                 `;
             
@@ -656,8 +495,8 @@ class PlayersManager {
     renderSpotlight() {
         const container = document.getElementById('spotlightGrid');
         
-        // Get top 3 players for spotlight
-        const topPlayers = [...this.players]
+        // Get top 3 players for spotlight from all players
+        const topPlayers = [...this.allPlayers]
             .sort((a, b) => this.calculatePlayerPoints(b) - this.calculatePlayerPoints(a))
             .slice(0, 3);
 
@@ -726,39 +565,53 @@ class PlayersManager {
     }
 
     updateOverviewStats() {
-        const totalGoals = this.players.reduce((sum, player) => sum + player.stats.goals, 0);
-        const totalAssists = this.players.reduce((sum, player) => sum + player.stats.assists, 0);
-        const totalSaves = this.players.reduce((sum, player) => sum + player.stats.saves, 0);
+        console.log('Updating overview stats with:', this.allPlayers.length, 'players');
+        
+        const totalGoals = this.allPlayers.reduce((sum, player) => sum + player.stats.goals, 0);
+        const totalAssists = this.allPlayers.reduce((sum, player) => sum + player.stats.assists, 0);
+        const totalSaves = this.allPlayers.reduce((sum, player) => sum + (player.stats.saves || 0), 0);
+
+        console.log('Calculated stats:', { totalGoals, totalAssists, totalSaves });
 
         document.getElementById('totalGoals').textContent = totalGoals;
         document.getElementById('totalAssists').textContent = totalAssists;
         document.getElementById('totalSaves').textContent = totalSaves;
-        document.getElementById('totalPlayers').textContent = this.players.length;
+        document.getElementById('totalPlayers').textContent = this.allPlayers.length;
     }
 
     updateSummaryStats() {
-        const totalMatches = this.players.reduce((sum, player) => sum + player.stats.matches, 0);
-        const totalGoals = this.players.reduce((sum, player) => sum + player.stats.goals, 0);
-        const totalAssists = this.players.reduce((sum, player) => sum + player.stats.assists, 0);
-        const totalSaves = this.players.reduce((sum, player) => sum + player.stats.saves, 0);
-        const totalCleanSheets = this.players.reduce((sum, player) => sum + player.stats.cleanSheets, 0);
-        const totalGoalsConceded = this.players.reduce((sum, player) => sum + player.stats.goalsConceded, 0);
+        const totalMatches = this.allPlayers.reduce((sum, player) => sum + player.stats.matches, 0);
+        const totalGoals = this.allPlayers.reduce((sum, player) => sum + player.stats.goals, 0);
+        const totalAssists = this.allPlayers.reduce((sum, player) => sum + player.stats.assists, 0);
+        const totalSaves = this.allPlayers.reduce((sum, player) => sum + (player.stats.saves || 0), 0);
+        const totalCleanSheets = this.allPlayers.reduce((sum, player) => sum + (player.stats.cleanSheets || 0), 0);
+        const totalGoalsConceded = this.allPlayers.reduce((sum, player) => sum + (player.stats.goalsConceded || 0), 0);
 
-        const topScorer = Math.max(...this.players.map(p => p.stats.goals));
-        const topAssister = Math.max(...this.players.map(p => p.stats.assists));
+        // Add safety checks to prevent division by zero
+        const avgGoals = totalMatches > 0 ? (totalGoals / totalMatches).toFixed(2) : '0.0';
+        const avgAssists = totalMatches > 0 ? (totalAssists / totalMatches).toFixed(2) : '0.0';
+        const avgSaves = totalMatches > 0 ? (totalSaves / totalMatches).toFixed(1) : '0.0';
 
-        document.getElementById('avgGoals').textContent = (totalGoals / totalMatches).toFixed(2);
+        const topScorer = Math.max(...this.allPlayers.map(p => p.stats.goals));
+        const topAssister = Math.max(...this.allPlayers.map(p => p.stats.assists));
+
+        // Calculate save percentage safely
+        let savePercentage = '0%';
+        if (totalSaves > 0 && (totalSaves + totalGoalsConceded) > 0) {
+            savePercentage = Math.round((totalSaves / (totalSaves + totalGoalsConceded)) * 100) + '%';
+        }
+
+        document.getElementById('avgGoals').textContent = avgGoals;
         document.getElementById('topScorerGoals').textContent = topScorer;
-        document.getElementById('hatTricks').textContent = this.players.filter(p => p.stats.goals >= 3).length;
+        document.getElementById('hatTricks').textContent = this.allPlayers.filter(p => p.stats.goals >= 3).length;
 
-        document.getElementById('avgAssists').textContent = (totalAssists / totalMatches).toFixed(2);
+        document.getElementById('avgAssists').textContent = avgAssists;
         document.getElementById('topAssister').textContent = topAssister;
         document.getElementById('goalContributions').textContent = totalGoals + totalAssists;
 
-        document.getElementById('avgSaves').textContent = (totalSaves / totalMatches).toFixed(1);
+        document.getElementById('avgSaves').textContent = avgSaves;
         document.getElementById('cleanSheets').textContent = totalCleanSheets;
-        document.getElementById('savePercentage').textContent = totalSaves > 0 ? 
-            Math.round((totalSaves / (totalSaves + totalGoalsConceded)) * 100) + '%' : '0%';
+        document.getElementById('savePercentage').textContent = savePercentage;
     }
 
     exportStats(type) {
@@ -768,68 +621,57 @@ class PlayersManager {
 
         switch (type) {
             case 'goals':
-                data = this.players
+                data = this.topScorers
                     .sort((a, b) => b.stats.goals - a.stats.goals)
-                    .slice(0, 10)
                     .map((player, index) => ({
                         Rank: index + 1,
                         Name: player.name,
                         Team: player.team,
-                        Position: player.position,
                         Goals: player.stats.goals,
-                        Assists: player.stats.assists,
-                        Matches: player.stats.matches,
-                        GoalsPerMatch: (player.stats.goals / player.stats.matches).toFixed(2),
-                        LastGoal: player.stats.lastGoal || 'N/A'
+                        Assist: player.stats.assists,
+                        'G&A': player.stats.goals + player.stats.assists
                     }));
                 filename = 'top_scorers.csv';
-                headers = ['Rank', 'Name', 'Team', 'Position', 'Goals', 'Assists', 'Matches', 'Goals/Match', 'Last Goal'];
+                headers = ['Rank', 'Name', 'Team', 'Goals', 'Assist', 'G&A'];
                 break;
 
             case 'assists':
-                data = this.players
+                data = this.topAssists
                     .sort((a, b) => b.stats.assists - a.stats.assists)
-                    .slice(0, 10)
                     .map((player, index) => ({
                         Rank: index + 1,
                         Name: player.name,
                         Team: player.team,
-                        Position: player.position,
-                        Assists: player.stats.assists,
-                        Goals: player.stats.goals,
-                        Matches: player.stats.matches,
-                        AssistsPerMatch: (player.stats.assists / player.stats.matches).toFixed(2),
-                        KeyPasses: player.stats.keyPasses
+                        Assist: player.stats.assists,
+                        Goals: player.stats.goals
                     }));
                 filename = 'top_assists.csv';
-                headers = ['Rank', 'Name', 'Team', 'Position', 'Assists', 'Goals', 'Matches', 'Assists/Match', 'Key Passes'];
+                headers = ['Rank', 'Name', 'Team', 'Assist', 'Goals'];
                 break;
 
             case 'saves':
-                data = this.players
+                data = this.allPlayers
                     .filter(p => p.position === 'Goalkeeper')
-                    .sort((a, b) => b.stats.saves - a.stats.saves)
-                    .slice(0, 10)
+                    .sort((a, b) => (b.stats.saves || 0) - (a.stats.saves || 0))
                     .map((player, index) => ({
                         Rank: index + 1,
                         Name: player.name,
                         Team: player.team,
-                        Saves: player.stats.saves,
-                        CleanSheets: player.stats.cleanSheets,
+                        Saves: player.stats.saves || 0,
+                        CleanSheets: player.stats.cleanSheets || 0,
                         Matches: player.stats.matches,
-                        SavesPerMatch: (player.stats.saves / player.stats.matches).toFixed(1),
-                        GoalsConceded: player.stats.goalsConceded,
-                        SavePercentage: player.stats.saves > 0 ? 
-                            ((player.stats.saves / (player.stats.saves + player.stats.goalsConceded)) * 100).toFixed(1) + '%' : '0%'
+                        SavesPerMatch: ((player.stats.saves || 0) / player.stats.matches).toFixed(1),
+                        GoalsConceded: player.stats.goalsConceded || 0,
+                        SavePercentage: (player.stats.saves || 0) > 0 ? 
+                            (((player.stats.saves || 0) / ((player.stats.saves || 0) + (player.stats.goalsConceded || 0))) * 100).toFixed(1) + '%' : '0%'
                     }));
                 filename = 'top_saves.csv';
                 headers = ['Rank', 'Name', 'Team', 'Saves', 'Clean Sheets', 'Matches', 'Saves/Match', 'Goals Conceded', 'Save Percentage'];
                 break;
 
             case 'overall':
-                data = this.players
+                data = this.allPlayers
                     .sort((a, b) => b.stats.rating - a.stats.rating)
-                    .slice(0, 10)
                     .map((player, index) => ({
                         Rank: index + 1,
                         Name: player.name,
@@ -838,7 +680,7 @@ class PlayersManager {
                         Rating: player.stats.rating.toFixed(1),
                         Goals: player.stats.goals,
                         Assists: player.stats.assists,
-                        Saves: player.stats.saves,
+                        Saves: player.stats.saves || 0,
                         Matches: player.stats.matches,
                         Points: this.calculatePlayerPoints(player)
                     }));
@@ -927,19 +769,6 @@ class PlayersManager {
 
     hideLoading() {
         document.getElementById('loadingSpinner').style.display = 'none';
-    }
-
-    // Method to update player stats (for live updates)
-    updatePlayerStats(playerId, newStats) {
-        const player = this.players.find(p => p.id === playerId);
-        if (player) {
-            player.stats = { ...player.stats, ...newStats };
-            this.filterPlayers();
-            this.renderCurrentTable();
-            this.renderSpotlight();
-            this.updateOverviewStats();
-            this.updateSummaryStats();
-        }
     }
 }
 

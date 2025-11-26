@@ -390,7 +390,7 @@ class TeamsManager {
                         image:  'images/players/addmore.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
-                        available: false,
+                        available: true,
                         // transferValue: '₦1,000',
                         isCaptain: false
                     },
@@ -507,7 +507,7 @@ class TeamsManager {
                         image:  'images/players/tendo.jpg',
                         stats: { goals: 0, assists: 0, matches: 0 },
                         // skills: ['Shooting', 'Movement', 'Strength'],
-                        available: false,
+                        available: true,
                         // transferValue: '₦1,000',
                         isCaptain: false
                     },

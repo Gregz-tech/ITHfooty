@@ -46,29 +46,29 @@ class FixturesManager {
                 id: 1,
                 matchDay: 1,
                 date: '2025-11-26',
-                time: '10:30',
+                time: 'FT',
                 teamA: { 
                     name: '200 Level', 
                     level: 'ASH', 
-                    score: null,
+                    score: 2,
                     shortName: '200L',
                     logo: null,
-                    stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
+                    stats: { possession: 60, shots: 12, shotsOnTarget: 6, fouls: 2, corners: 5 }
                 },
                 teamB: { 
                     name: '400 Level', 
                     level: 'BLUE', 
-                    score: null,
+                    score: 2,
                     shortName: '400L',
                     logo: null,
-                    stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
+                    stats: { possession: 40, shots: 7, shotsOnTarget: 4, fouls: 1, corners: 3 }
                 },
                 venue: 'Bisi Akande',
-                status: 'upcoming',
+                status: 'completed',
                 group: 'A',
                 referee: 'FINISHER (BMB)',
                 statistics: {
-                    attendance: 0,
+                    attendance: 317,
                     temperature: '',
                     condition: ''
                 }
@@ -77,7 +77,7 @@ class FixturesManager {
                 id: 2,
                 matchDay: 1,
                 date: '2025-11-28',
-                time: '15:00',
+                time: '10:30',
                 teamA: { 
                     name: '100 Level', 
                     level: 'RED', 
@@ -94,12 +94,12 @@ class FixturesManager {
                     logo: null,
                     stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
                 },
-               venue: 'College Field',
+               venue: 'Bisi Akande',
                 status: 'upcoming',
                 group: 'A',
                 referee: 'BEN (NUR)',
                 statistics: {
-                    attendance: 0,
+                    attendance: '',
                     temperature: '',
                     condition: ''
                 }
@@ -233,10 +233,10 @@ class FixturesManager {
         // Standings data
         this.standings = {
             A: [
-                { position: 1, team: '100 Level', level: 'RED', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },
-                { position: 2, team: '200 Level', level: 'ASH', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },
-                { position: 3, team: '300 Level', level: 'BLACK', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },
-                { position: 4, team: '400 Level', level: 'BLUE', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] }
+                { position: 1, team: '200 Level', level: 'ASH', played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 2, goalsAgainst: 2, goalDifference: 0, points: 1, form: ['D'] },
+                { position: 2, team: '400 Level', level: 'BLUE', played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 2, goalsAgainst: 2, goalDifference: 0, points: 1, form: ['D'] },
+                { position: 3, team: '100 Level', level: 'RED', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },
+                { position: 4, team: '300 Level', level: 'BLACK', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] }
             ],
         };
         

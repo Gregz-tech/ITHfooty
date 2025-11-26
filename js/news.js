@@ -124,7 +124,7 @@ class NewsManager {
     <div class="rules-section">
         <h2>7. Fouls & Misconduct</h2>
         
-        <h3>Yellow Card Offences:</h3>
+        <h3>Yellow Card Offences:N200 </h3>
         <ul>
             <li>Reckless play</li>
             <li>Time wasting</li>
@@ -133,7 +133,7 @@ class NewsManager {
             <li>Delaying restart</li>
         </ul>
 
-        <h3>Red Card Offences:</h3>
+        <h3>Red Card Offences: N500 </h3>
         <ul>
             <li>Violent conduct</li>
             <li>Serious foul play</li>

@@ -207,7 +207,7 @@
                         <div class="table-header">
                             <h2 class="table-title">
                                 <i class="fas fa-futbol"></i>
-                                Top 10 Scorers
+                                Top Scorers
                             </h2>
                             <div class="table-actions">
                                 <button class="btn btn-outline" onclick="playersManager.exportStats('goals')">
@@ -224,10 +224,8 @@
                                         <th>Player</th>
                                         <th>Team</th>
                                         <th>Goals</th>
-                                        <th>Assists</th>
-                                        <th>Matches</th>
-                                        <th>Goals/Match</th>
-                                        <th>Last Goal</th>
+                                        <th>Assist</th>
+                                        <th>G&A</th>
                                     </tr>
                                 </thead>
                                 <tbody id="goalsTableBody">
@@ -238,39 +236,37 @@
                     </div>
 
                     <!-- Top Assists Table -->
-                    <div class="stats-table-card">
-                        <div class="table-header">
-                            <h2 class="table-title">
-                                <i class="fas fa-handshake"></i>
-                                Top 10 Assists
-                            </h2>
-                            <div class="table-actions">
-                                <button class="btn btn-outline" onclick="playersManager.exportStats('assists')">
-                                    <i class="fas fa-download"></i>
-                                    Export
-                                </button>
-                            </div>
-                        </div>
-                        <div class="table-container">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Rank</th>
-                                        <th>Player</th>
-                                        <th>Team</th>
-                                        <th>Assists</th>
-                                        <th>Goals</th>
-                                        <th>Matches</th>
-                                        <th>Assists/Match</th>
-                                        <th>Key Passes</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="assistsTableBody">
-                                    <!-- Assists data will be loaded dynamically -->
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                   <!-- Top Assists Table -->
+<div class="stats-table-card">
+    <div class="table-header">
+        <h2 class="table-title">
+            <i class="fas fa-handshake"></i>
+            Top Assists
+        </h2>
+        <div class="table-actions">
+            <button class="btn btn-outline" onclick="playersManager.exportStats('assists')">
+                <i class="fas fa-download"></i>
+                Export
+            </button>
+        </div>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Player</th>
+                    <th>Team</th>
+                    <th>Assist</th>
+                    <th>Goals</th>
+                </tr>
+            </thead>
+            <tbody id="assistsTableBody">
+                <!-- Assists data will be loaded dynamically -->
+            </tbody>
+        </table>
+    </div>
+</div>
                 </div>
             </div>
 
@@ -297,10 +293,8 @@
                                 <th>Player</th>
                                 <th>Team</th>
                                 <th>Goals</th>
-                                <th>Assists</th>
-                                <th>Matches</th>
-                                <th>Goals/Match</th>
-                                <th>Last Goal</th>
+                                <th>Assist</th>
+                              
                             </tr>
                         </thead>
                         <tbody id="goalsTableBodySingle">
@@ -310,40 +304,37 @@
                 </div>
             </div>
 
-            <!-- Assists Table -->
-            <div class="stats-table" id="assistsTable">
-                <div class="table-header">
-                    <h2 class="table-title">
-                        <i class="fas fa-handshake"></i>
-                        Top Assists
-                    </h2>
-                    <div class="table-actions">
-                        <button class="btn btn-outline" onclick="playersManager.exportStats('assists')">
-                            <i class="fas fa-download"></i>
-                            Export
-                        </button>
-                    </div>
-                </div>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Rank</th>
-                                <th>Player</th>
-                                <th>Team</th>
-                                <th>Assists</th>
-                                <th>Goals</th>
-                                <th>Matches</th>
-                                <th>Assists/Match</th>
-                                <th>Key Passes</th>
-                            </tr>
-                        </thead>
-                        <tbody id="assistsTableBodySingle">
-                            <!-- Assists data will be loaded dynamically -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+           <!-- Assists Table -->
+<div class="stats-table" id="assistsTable">
+    <div class="table-header">
+        <h2 class="table-title">
+            <i class="fas fa-handshake"></i>
+            Top Assists
+        </h2>
+        <div class="table-actions">
+            <button class="btn btn-outline" onclick="playersManager.exportStats('assists')">
+                <i class="fas fa-download"></i>
+                Export
+            </button>
+        </div>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Player</th>
+                    <th>Team</th>
+                    <th>Assist</th>
+                    <th>Goals</th>
+                </tr>
+            </thead>
+            <tbody id="assistsTableBodySingle">
+                <!-- Assists data will be loaded dynamically -->
+            </tbody>
+        </table>
+    </div>
+</div>
 
             <!-- Saves Table -->
             <div class="stats-table" id="savesTable">
@@ -550,12 +541,10 @@
                 </div>
             </div>
 
-        <div class="footer-bottom">
-    <p>&copy; 2025/2026 ITH Football Tournament. All rights reserved.</p>
-    <p class="powered-by">Powered by Gregztech</p>
-</div>
-</div>
-</div>
+            <div class="footer-bottom">
+                <p>&copy; 2025/2026 ITH Football Tournament. All rights reserved.</p>
+                <p class="powered-by">Powered by Gregztech</p>
+            </div>
         </div>
     </footer>
 
@@ -568,6 +557,6 @@
     <script src="js/theme.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/scroll-animations.js"></script>
-    <script src="js/statistics.jsSS"></script>
+    <script src="js/statistics.js"></script>
 </body>
 </html>
