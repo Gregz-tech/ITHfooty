@@ -81,25 +81,25 @@ class FixturesManager {
                 teamA: { 
                     name: '100 Level', 
                     level: 'RED', 
-                    score: null,
+                    score: 1,
                     shortName: '100L',
                     logo: null,
-                    stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
+                    stats: { possession: 45, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
                 },
                 teamB: { 
                     name: '300 Level', 
                     level: 'BLACK', 
-                    score: null,
+                    score: 3,
                     shortName: '300L',
                     logo: null,
-                    stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
+                    stats: { possession: 55, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
                 },
                venue: 'Bisi Akande',
-                status: 'upcoming',
+                status: 'completed',
                 group: 'A',
                 referee: 'BEN (NUR)',
                 statistics: {
-                    attendance: '',
+                    attendance: '219',
                     temperature: '',
                     condition: ''
                 }
@@ -233,10 +233,11 @@ class FixturesManager {
         // Standings data
         this.standings = {
             A: [
-                { position: 1, team: '200 Level', level: 'ASH', played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 2, goalsAgainst: 2, goalDifference: 0, points: 1, form: ['D'] },
-                { position: 2, team: '400 Level', level: 'BLUE', played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 2, goalsAgainst: 2, goalDifference: 0, points: 1, form: ['D'] },
-                { position: 3, team: '100 Level', level: 'RED', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] },
-                { position: 4, team: '300 Level', level: 'BLACK', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDifference: 0, points: 0, form: [] }
+                { position: 1, team: '300 Level', level: 'BLACK', played: 1, won: 1, drawn: 0, lost: 0, goalsFor: 3, goalsAgainst: 1, goalDifference: 2, points: 3, form: ['W'] }
+                { position: 2, team: '200 Level', level: 'ASH', played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 2, goalsAgainst: 2, goalDifference: 0, points: 1, form: ['D'] },
+                { position: 3, team: '400 Level', level: 'BLUE', played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 2, goalsAgainst: 2, goalDifference: 0, points: 1, form: ['D'] },
+                { position: 4, team: '100 Level', level: 'RED', played: 1, won: 0, drawn: 0, lost: 1, goalsFor: 1, goalsAgainst: 3, goalDifference: -2, points: 0, form: ['L'] },
+                
             ],
         };
         

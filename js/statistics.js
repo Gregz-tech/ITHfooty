@@ -74,6 +74,53 @@ class PlayersManager {
                     rating: 7.5
                 }
             }
+            {
+                id: 4,
+                name: 'KAYODE',
+                position: 'Forward',
+                level: '300L',
+                team: '300 Level',
+                image: 'images/300Lplayers/kayode.jpg',
+                stats: {
+                    matches: 1,
+                    goals: 1,
+                    assists: 0,
+                    lastGoal: 'MD1 vs 100L',
+                    rating: 8.2
+                }
+            }
+
+            {
+                id: 5,
+                name: 'THAOBAN',
+                position: 'Forward',
+                level: '300L',
+                team: '300 Level',
+                image: 'images/300Lplayers/kayode.jpg',
+                stats: {
+                    matches: 1,
+                    goals: 1,
+                    assists: 0,
+                    lastGoal: 'MD1 vs 100L',
+                    rating: 8.7
+                }
+            }
+
+             {
+                id: 6,
+                name: 'TOMZY',
+                position: 'Defender',
+                level: '300L',
+                team: '300 Level',
+                image: 'images/300Lplayers/tomzy.jpg',
+                stats: {
+                    matches: 1,
+                    goals: 1,
+                    assists: 0,
+                    lastGoal: 'MD1 vs 100L',
+                    rating: 8.3
+                }
+            }
         ];
 
         // Top assists statistics data
@@ -104,8 +151,24 @@ class PlayersManager {
                     matches: 1,
                     goals: 1,
                     assists: 1,
-                    ga: 2,
+                    ga: ,
                     rating: 8.5
+                }
+            },
+
+              {   
+                id: 3,
+                name: 'GREG',
+                position: 'Forward',
+                level: '300L',
+                team: '300 Level',
+                image: 'images/300Lplayers/greg.jpg',
+                stats: {
+                    matches: 1,
+                    goals: 0,
+                    assists: 1,
+                    ga: ,
+                    rating: 7.3
                 }
             }
         ];
