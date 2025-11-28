@@ -120,7 +120,7 @@ class PlayersManager {
                     lastGoal: 'MD1 vs 100L',
                     rating: 8.3
                 }
-            }
+            },
               {
                 id: 7,
                 name: 'ADAM',
@@ -185,6 +185,21 @@ class PlayersManager {
                     assists: 1,
                     ga: 1,
                     rating: 7.3
+                }
+            },
+            {   
+                id: 4,
+                name: 'ABDULWADUD',
+                position: 'Midfielder',
+                level: '100L',
+                team: '100 Level',
+                image: 'images/players/abdulwadud.jpg',
+                stats: {
+                    matches: 1,
+                    goals: 0,
+                    assists: 1,
+                    ga: 1,
+                    rating: 7.1
                 }
             }
         ];

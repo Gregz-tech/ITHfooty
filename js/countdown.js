@@ -48,10 +48,9 @@ class CountdownTimer {
         if (countdownElement) {
             countdownElement.innerHTML = `
                 <div class="countdown-ended">
-                    <h3>🎉 The Tournament Has Started! 🎉</h3>
-                    <p>Follow the action live!</p>
-                    <a href="fixtures.html" class="btn btn-primary">View Live Scores</a>
-                </div>
+                    <h3>The Tournament Has Started!</h3>
+                    
+                  
             `;
         }
     }
