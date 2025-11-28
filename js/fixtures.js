@@ -233,10 +233,10 @@ class FixturesManager {
         // Standings data
         this.standings = {
             A: [
-                { position: 1, team: '300 Level', level: 'BLACK', played: 1, won: 1, drawn: 0, lost: 0, goalsFor: 3, goalsAgainst: 1, goalDifference: 2, points: 3, form: ['W'] }
+                { position: 1, team: '300 Level', level: 'BLACK', played: 1, won: 1, drawn: 0, lost: 0, goalsFor: 3, goalsAgainst: 1, goalDifference: 2, points: 3, form: ['W'] },
                 { position: 2, team: '200 Level', level: 'ASH', played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 2, goalsAgainst: 2, goalDifference: 0, points: 1, form: ['D'] },
                 { position: 3, team: '400 Level', level: 'BLUE', played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 2, goalsAgainst: 2, goalDifference: 0, points: 1, form: ['D'] },
-                { position: 4, team: '100 Level', level: 'RED', played: 1, won: 0, drawn: 0, lost: 1, goalsFor: 1, goalsAgainst: 3, goalDifference: -2, points: 0, form: ['L'] },
+                { position: 4, team: '100 Level', level: 'RED', played: 1, won: 0, drawn: 0, lost: 1, goalsFor: 1, goalsAgainst: 3, goalDifference: -2, points: 0, form: ['L'] }
                 
             ],
         };
