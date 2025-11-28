@@ -73,7 +73,7 @@ class PlayersManager {
                     lastGoal: 'MD1 vs 200L',
                     rating: 7.5
                 }
-            }
+            },
             {
                 id: 4,
                 name: 'KAYODE',
@@ -88,7 +88,7 @@ class PlayersManager {
                     lastGoal: 'MD1 vs 100L',
                     rating: 8.2
                 }
-            }
+            },
 
             {
                 id: 5,
@@ -104,7 +104,7 @@ class PlayersManager {
                     lastGoal: 'MD1 vs 100L',
                     rating: 8.7
                 }
-            }
+            },
 
              {
                 id: 6,
@@ -121,12 +121,43 @@ class PlayersManager {
                     rating: 8.3
                 }
             }
+              {
+                id: 7,
+                name: 'ADAM',
+                position: 'forward',
+                level: '100L',
+                team: '100 Level',
+                image: 'images/players/adam.jpg',
+                stats: {
+                    matches: 1,
+                    goals: 1,
+                    assists: 0,
+                    lastGoal: 'MD1 vs 300L',
+                    rating: 8.3
+                }
+            }
         ];
 
         // Top assists statistics data
         this.topAssists = [
+           
             {   
                 id: 1,
+                name: 'IFE',
+                position: 'Forward',
+                level: '400L',
+                team: '400 Level',
+                image: 'images/400Lplayers/ife.jpg',
+                stats: {
+                    matches: 1,
+                    goals: 1,
+                    assists: 1,
+                    ga: 2,
+                    rating: 8.5
+                }
+            },
+             {   
+                id: 2,
                 name: 'Eloyce',
                 position: 'Forward',
                 level: '400L',
@@ -138,21 +169,6 @@ class PlayersManager {
                     assists: 1,
                     ga: 1,
                     rating: 6.2
-                }
-            },
-            {   
-                id: 2,
-                name: 'IFE',
-                position: 'Forward',
-                level: '400L',
-                team: '400 Level',
-                image: 'images/400Lplayers/ife.jpg',
-                stats: {
-                    matches: 1,
-                    goals: 1,
-                    assists: 1,
-                    ga: ,
-                    rating: 8.5
                 }
             },
 
@@ -167,7 +183,7 @@ class PlayersManager {
                     matches: 1,
                     goals: 0,
                     assists: 1,
-                    ga: ,
+                    ga: 1,
                     rating: 7.3
                 }
             }
