@@ -75,7 +75,7 @@ class FixturesManager {
             },
             {
                 id: 2,
-                matchDay: 1,
+                matchDay: 2,
                 date: '2025-11-28',
                 time: 'FT',
                 teamA: { 
@@ -106,16 +106,16 @@ class FixturesManager {
             },
             {
                 id: 3,
-                matchDay: 2,
+                matchDay: 3,
                 date: '2025-12-03',
-                time: '15:00',
+                time: '10:30',
                 teamA: { 
                     name: '300 Level', 
                     level: 'BLACK', 
                     score: null,
                     shortName: '300L',
                     logo: null,
-                    stats: { possession: 50, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
+                    stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
                 },
                 teamB: { 
                     name: '200 Level', 
@@ -123,9 +123,9 @@ class FixturesManager {
                     score: null,
                     shortName: '200L',
                     logo: null,
-                    stats: { possession: 50, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
+                    stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
                 },
-                venue: 'College Field',
+                venue: 'Bisi Akande',
                 status: 'upcoming',
                 group: 'A',
                 referee: '',
@@ -137,9 +137,9 @@ class FixturesManager {
             },
             {
                 id: 4,
-                matchDay: 2,
+                matchDay: 4,
                 date: '2025-12-05',
-                time: '15:00',
+                time: '10:30',
                 teamA: { 
                     name: '400 Level', 
                     level: 'BLUE', 
@@ -156,7 +156,7 @@ class FixturesManager {
                     logo: null,
                     stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
                 },
-                venue: 'College Field',
+                venue: 'Bisi Akande',
                 status: 'upcoming',
                 group: 'A',
                 referee: '',
@@ -168,9 +168,9 @@ class FixturesManager {
             },
             {
                 id: 5,
-                matchDay: 3,
+                matchDay: 5,
                 date: '2025-12-10',
-                time: '15:00',
+                time: 'TBA',
                 teamA: { 
                     name: '300 Level', 
                     level: 'BLACK', 
@@ -187,7 +187,7 @@ class FixturesManager {
                     logo: null,
                     stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
                 },
-                venue: 'College Field',
+                venue: 'TBA',
                 status: 'upcoming',
                 group: 'A',
                 referee: '',
@@ -199,9 +199,9 @@ class FixturesManager {
             },
             {
                 id: 6,
-                matchDay: 3,
+                matchDay: 6,
                 date: '2025-12-12',
-                time: '15:00',
+                time: 'TBA',
                 teamA: { 
                     name: '100 Level', 
                     level: 'RED', 
@@ -218,7 +218,7 @@ class FixturesManager {
                     logo: null,
                     stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
                 },
-                venue: 'College Field',
+                venue: 'TBA',
                 status: 'upcoming',
                 group: 'A',
                 referee: '',
