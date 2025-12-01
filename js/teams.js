@@ -110,6 +110,20 @@ class TeamsManager {
                         isCaptain: false
                     },
                      {
+                        id: 20,
+                        name: 'OPEYEMI',
+                        number: 22,
+                        position: 'Defender',
+                        level: '100L',
+                        image:  'images/100Lplayers/opeyemi.jpg',
+                        stats: { tackles: 0, interceptions: 0, matches: 0 },
+                        // skills: ['Tackling', 'Strength', 'Aerial'],
+                        available: true,
+                        // transferValue: '₦10,000',
+                        isCaptain: false
+                    },
+                    
+                     {
                         id: 7,
                         name: 'OPEMIPOSI',
                         number: 12,
@@ -170,8 +184,8 @@ class TeamsManager {
                         image:  'images/100Lplayers/olamide.jpg',
                         stats: { tackles: 0, interceptions: 0, matches: 0 },
                         // skills: ['Tackling', 'Strength', 'Aerial'],
-                        available: false,
-                        transferValue: '₦650',
+                        available: true,
+                        // transferValue: '₦650',
                         isCaptain: false
                     },
                     {
@@ -194,6 +208,19 @@ class TeamsManager {
                         position: 'Midfielder',
                         level: '100L',
                         image:  'images/100Lplayers/smith.jpg',
+                        stats: { tackles: 0, interceptions: 0, matches: 0 },
+                        // skills: ['Tackling', 'Strength', 'Aerial'],
+                        available: true,
+                        // transferValue: '₦10,000',
+                        isCaptain: false
+                    },
+                     {
+                        id: 21,
+                        name: 'AYOMIDE',
+                        number: 21,
+                        position: 'Midfielder',
+                        level: '100L',
+                        image:  'images/100Lplayers/ayomide.jpg',
                         stats: { tackles: 0, interceptions: 0, matches: 0 },
                         // skills: ['Tackling', 'Strength', 'Aerial'],
                         available: true,
@@ -248,8 +275,8 @@ class TeamsManager {
                         image:  'images/100Lplayers/waris.jpg',
                         stats: { tackles: 0, interceptions: 0, matches: 0 },
                         // skills: ['Tackling', 'Strength', 'Aerial'],
-                        available: false,
-                        transferValue: '₦600',
+                        available: true,
+                        // transferValue: '₦600',
                         isCaptain: false
                     },
                      {
@@ -261,8 +288,8 @@ class TeamsManager {
                         image:  'images/100Lplayers/godstime.jpg',
                         stats: { tackles: 0, interceptions: 0, matches: 0 },
                         // skills: ['Tackling', 'Strength', 'Aerial'],
-                        available: true,
-                        // transferValue: '₦10,000',
+                        available: false,
+                        transferValue: '₦700',
                         isCaptain: false
                     },
 
@@ -275,8 +302,8 @@ class TeamsManager {
                         image:  'images/100Lplayers/hassan.jpg',
                         stats: { tackles: 0, interceptions: 0, matches: 0 },
                         // skills: ['Tackling', 'Strength', 'Aerial'],
-                        available: true,
-                        // transferValue: '₦10,000',
+                        available: false,
+                        transferValue: '₦650',
                         isCaptain: false
                     },
 

@@ -45,11 +45,11 @@ class TransactionsManager {
 
              {
                 id: 2,
-                name: 'OLAMIDE',
+                name: 'GODSTIME',
                 number: 10,
-                position: 'Midfielder',
+                position: 'STRIKER',
                 level: '100L',
-                image: 'images/100Lplayers/olamide.jpg',
+                image: 'images/100Lplayers/godstime.jpg',
                 stats: { goals: 0, assists: 0, matches: 0, rating: 0.0 },
                 skills: [],
                 transferValue: 650,
@@ -60,11 +60,11 @@ class TransactionsManager {
 
              {
                 id: 3,
-                name: 'ABDULWARIS',
+                name: 'HASSAN',
                 number: 20,
                 position: 'STRIKER',
                 level: '100L',
-                image: 'images/100Lplayers/waris.jpg',
+                image: 'images/100Lplayers/hassan.jpg',
                 stats: { goals: 0, assists: 0, matches: 0, rating: 0.0 },
                 skills: [],
                 transferValue: 600,
