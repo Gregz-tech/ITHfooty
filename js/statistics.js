@@ -37,13 +37,30 @@ class PlayersManager {
                 team: '200 Level',
                 image: 'images/players/ope.jpg',
                 stats: {
-                    matches: 1,
+                    matches: 2,
+                    goals: 6,
+                    assists: 0,
+                    lastGoal: 'MD1 vs 300L',
+                    rating: 9.7
+                }
+            },
+
+             {
+                id: 5,
+                name: 'THAOBAN',
+                position: 'Forward',
+                level: '300L',
+                team: '300 Level',
+                image: 'images/300Lplayers/thaoban.jpg',
+                stats: {
+                    matches: 2,
                     goals: 2,
                     assists: 0,
-                    lastGoal: 'MD1 vs 400L',
+                    lastGoal: 'MD1 vs 200L',
                     rating: 8.7
                 }
             },
+
             {
                 id: 2,
                 name: 'IFE',
@@ -58,6 +75,36 @@ class PlayersManager {
                     lastGoal: 'MD1 vs 200L',
                     rating: 8.5
                 }  
+            },
+             {
+                id: 8,
+                name: 'GREG',
+                position: 'forward',
+                level: '300L',
+                team: '300 Level',
+                image: 'images/300Lplayers/greg.jpg',
+                stats: {
+                    matches: 2,
+                    goals: 1,
+                    assists: 1,
+                    lastGoal: 'MD1 vs 200L',
+                    rating: 8.3
+                }
+            },
+              {
+                id: 4,
+                name: 'KAYODE',
+                position: 'Forward',
+                level: '300L',
+                team: '300 Level',
+                image: 'images/300Lplayers/kayode.jpg',
+                stats: {
+                    matches: 2,
+                    goals: 1,
+                    assists: 1,
+                    lastGoal: 'MD1 vs 200L',
+                    rating: 8.5
+                }
             },
             {
                 id: 3,
@@ -74,38 +121,8 @@ class PlayersManager {
                     rating: 7.5
                 }
             },
-            {
-                id: 4,
-                name: 'KAYODE',
-                position: 'Forward',
-                level: '300L',
-                team: '300 Level',
-                image: 'images/300Lplayers/kayode.jpg',
-                stats: {
-                    matches: 1,
-                    goals: 1,
-                    assists: 0,
-                    lastGoal: 'MD1 vs 100L',
-                    rating: 8.2
-                }
-            },
 
-            {
-                id: 5,
-                name: 'THAOBAN',
-                position: 'Forward',
-                level: '300L',
-                team: '300 Level',
-                image: 'images/300Lplayers/kayode.jpg',
-                stats: {
-                    matches: 1,
-                    goals: 1,
-                    assists: 0,
-                    lastGoal: 'MD1 vs 100L',
-                    rating: 8.7
-                }
-            },
-
+           
              {
                 id: 6,
                 name: 'TOMZY',
@@ -136,6 +153,7 @@ class PlayersManager {
                     rating: 8.3
                 }
             }
+            
         ];
 
         // Top assists statistics data
@@ -157,6 +175,21 @@ class PlayersManager {
                 }
             },
              {   
+                id: 3,
+                name: 'GREG',
+                position: 'Forward',
+                level: '300L',
+                team: '300 Level',
+                image: 'images/300Lplayers/greg.jpg',
+                stats: {
+                    matches: 2,
+                    goals: 1,
+                    assists: 1,
+                    ga: 2,
+                    rating: 7.3
+                }
+            },
+             {   
                 id: 2,
                 name: 'Eloyce',
                 position: 'Forward',
@@ -171,22 +204,7 @@ class PlayersManager {
                     rating: 6.2
                 }
             },
-
-              {   
-                id: 3,
-                name: 'GREG',
-                position: 'Forward',
-                level: '300L',
-                team: '300 Level',
-                image: 'images/300Lplayers/greg.jpg',
-                stats: {
-                    matches: 1,
-                    goals: 0,
-                    assists: 1,
-                    ga: 1,
-                    rating: 7.3
-                }
-            },
+             
             {   
                 id: 4,
                 name: 'ABDULWADUD',
@@ -200,6 +218,36 @@ class PlayersManager {
                     assists: 1,
                     ga: 1,
                     rating: 7.1
+                }
+            },
+             {   
+                id: 5,
+                name: 'ADDMORE',
+                position: 'Forward',
+                level: '200L',
+                team: '200 Level',
+                image: 'images/players/addmore.jpg',
+                stats: {
+                    matches: 1,
+                    goals: 0,
+                    assists: 1,
+                    ga: 1,
+                    rating: 7.3
+                }
+            },
+             {   
+                id: 6,
+                name: 'JAVA',
+                position: 'Forward',
+                level: '200L',
+                team: '200 Level',
+                image: 'images/players/java.jpg',
+                stats: {
+                    matches: 1,
+                    goals: 0,
+                    assists: 1,
+                    ga: 1,
+                    rating: 7.3
                 }
             }
         ];
