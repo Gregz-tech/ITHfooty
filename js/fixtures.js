@@ -108,11 +108,11 @@ class FixturesManager {
                 id: 3,
                 matchDay: 3,
                 date: '2025-12-03',
-                time: '10:30',
+                time: 'FT',
                 teamA: { 
                     name: '300 Level', 
                     level: 'BLACK', 
-                    score: null,
+                    score: 2,
                     shortName: '300L',
                     logo: null,
                     stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
@@ -120,17 +120,17 @@ class FixturesManager {
                 teamB: { 
                     name: '200 Level', 
                     level: 'ASH', 
-                    score: null,
+                    score: 5,
                     shortName: '200L',
                     logo: null,
                     stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
                 },
                 venue: 'Bisi Akande',
-                status: 'upcoming',
+                status: '',
                 group: 'A',
-                referee: '',
+                referee: 'FABRIZIO (MBBS)',
                 statistics: {
-                    attendance: 0,
+                    attendance: 37,
                     temperature: '',
                     condition: ''
                 }
