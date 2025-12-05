@@ -126,7 +126,7 @@ class FixturesManager {
                     stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
                 },
                 venue: 'Bisi Akande',
-                status: '',
+                status: 'completed',
                 group: 'A',
                 referee: 'FABRIZIO (MBBS)',
                 statistics: {
@@ -139,11 +139,11 @@ class FixturesManager {
                 id: 4,
                 matchDay: 4,
                 date: '2025-12-05',
-                time: '10:30',
+                time: 'FT',
                 teamA: { 
                     name: '400 Level', 
                     level: 'BLUE', 
-                    score: null,
+                    score: 1,
                     shortName: '400L',
                     logo: null,
                     stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
@@ -151,15 +151,15 @@ class FixturesManager {
                 teamB: { 
                     name: '100 Level', 
                     level: 'RED', 
-                    score: null,
+                    score: 1,
                     shortName: '100L',
                     logo: null,
                     stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
                 },
                 venue: 'Bisi Akande',
-                status: 'upcoming',
+                status: 'completed',
                 group: 'A',
-                referee: '',
+                referee: 'FINISHER',
                 statistics: {
                     attendance: 0,
                     temperature: '',
