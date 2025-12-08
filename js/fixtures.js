@@ -171,7 +171,7 @@ class FixturesManager {
                 id: 5,
                 matchDay: 5,
                 date: '2025-12-10',
-                time: '2:30',
+                time: '1:30',
                 teamA: { 
                     name: '100 Level', 
                     level: 'RED', 
