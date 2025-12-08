@@ -217,7 +217,22 @@ class PlayersManager {
                     goals: 1,
                     assists: 1,
                     ga: 2,
-                    rating: 7.3
+                    rating: 8.3
+                }
+            },
+               {   
+                id: 7,
+                name: 'KAYODE',
+                position: 'Forward',
+                level: '300L',
+                team: '300 Level',
+                image: 'images/300Lplayers/kayode.jpg',
+                stats: {
+                    matches: 2,
+                    goals: 1,
+                    assists: 1,
+                    ga: 2,
+                    rating: 8.5
                 }
             },
               {   

@@ -166,42 +166,12 @@ class FixturesManager {
                     condition: ''
                 }
             },
+          
             {
                 id: 5,
                 matchDay: 5,
                 date: '2025-12-10',
-                time: 'TBA',
-                teamA: { 
-                    name: '300 Level', 
-                    level: 'BLACK', 
-                    score: null,
-                    shortName: '300L',
-                    logo: null,
-                    stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
-                },
-                teamB: { 
-                    name: '400 Level', 
-                    level: 'BLUE', 
-                    score: null,
-                    shortName: '400L',
-                    logo: null,
-                    stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
-                },
-                venue: 'TBA',
-                status: 'upcoming',
-                group: 'A',
-                referee: '',
-                statistics: {
-                    attendance: 0,
-                    temperature: '',
-                    condition: ''
-                }
-            },
-            {
-                id: 6,
-                matchDay: 6,
-                date: '2025-12-12',
-                time: 'TBA',
+                time: '2:30',
                 teamA: { 
                     name: '100 Level', 
                     level: 'RED', 
@@ -218,10 +188,42 @@ class FixturesManager {
                     logo: null,
                     stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
                 },
-                venue: 'TBA',
+                venue: 'Bisi Akande',
                 status: 'upcoming',
                 group: 'A',
-                referee: '',
+                referee: 'FINISHER (BMB)',
+                statistics: {
+                    attendance: 0,
+                    temperature: '',
+                    condition: ''
+                }
+            },
+
+              {
+                id: 6,
+                matchDay: 5,
+                date: '2025-12-10',
+                time: '3:30',
+                teamA: { 
+                    name: '300 Level', 
+                    level: 'BLACK', 
+                    score: null,
+                    shortName: '300L',
+                    logo: null,
+                    stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
+                },
+                teamB: { 
+                    name: '400 Level', 
+                    level: 'BLUE', 
+                    score: null,
+                    shortName: '400L',
+                    logo: null,
+                    stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
+                },
+                venue: 'Bisi Akande',
+                status: 'upcoming',
+                group: 'A',
+                referee: 'BEN (NUR)',
                 statistics: {
                     attendance: 0,
                     temperature: '',
