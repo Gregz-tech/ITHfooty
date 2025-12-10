@@ -235,10 +235,10 @@ class FixturesManager {
         // Standings data
         this.standings = {
             A: [
-                { position: 1, team: '200 Level', level: 'ASH', played: 2, won: 1, drawn: 1, lost: 0, goalsFor: 7, goalsAgainst: 4, goalDifference: 3, points: 4, form: ['D','W'] },
-                { position: 2, team: '300 Level', level: 'BLACK', played: 2, won: 1, drawn: 0, lost: 1, goalsFor: 5, goalsAgainst: 6, goalDifference: -1, points: 3, form: ['W', 'L'] },
-                { position: 3, team: '400 Level', level: 'BLUE', played: 2, won: 0, drawn: 2, lost: 0, goalsFor: 3, goalsAgainst: 3, goalDifference: 0, points: 2, form: ['D', 'D'] },
-                { position: 4, team: '100 Level', level: 'RED', played: 2, won: 0, drawn: 1, lost: 1, goalsFor: 2, goalsAgainst: 4, goalDifference: -2, points: 1, form: ['L', 'D'] }
+                { position: 1, team: '200 Level', level: 'ASH', played: 3, won: 2, drawn: 1, lost: 0, goalsFor: 9, goalsAgainst: 4, goalDifference: 5, points: 7, form: ['D','W', 'W'] },
+                { position: 2, team: '300 Level', level: 'BLACK', played: 3, won: 2, drawn: 0, lost: 1, goalsFor: 8, goalsAgainst: 8, goalDifference: 0, points: 6, form: ['W', 'L', 'W'] },
+                { position: 3, team: '400 Level', level: 'BLUE', played: 3, won: 0, drawn: 2, lost: 1, goalsFor: 5, goalsAgainst: 6, goalDifference: -1, points: 2, form: ['D', 'D', 'L'] },
+                { position: 4, team: '100 Level', level: 'RED', played: 3, won: 0, drawn: 1, lost: 2, goalsFor: 2, goalsAgainst: 6, goalDifference: -4, points: 1, form: ['L', 'D', 'L'] }
                 
             ],
         };

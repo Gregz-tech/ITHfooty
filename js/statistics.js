@@ -37,11 +37,27 @@ class PlayersManager {
                 team: '200 Level',
                 image: 'images/players/ope.jpg',
                 stats: {
-                    matches: 2,
-                    goals: 6,
+                    matches: 3,
+                    goals: 7,
                     assists: 0,
-                    lastGoal: 'MD1 vs 300L',
+                    lastGoal: 'MD3 vs 100L',
                     rating: 9.7
+                }
+            },
+
+              {
+                id: 4,
+                name: 'KAYODE',
+                position: 'Forward',
+                level: '300L',
+                team: '300 Level',
+                image: 'images/300Lplayers/kayode.jpg',
+                stats: {
+                    matches: 3,
+                    goals: 3,
+                    assists: 1,
+                    lastGoal: 'MD3 vs 400L',
+                    rating: 8.9
                 }
             },
               {
@@ -52,13 +68,14 @@ class PlayersManager {
                 team: '400 Level',
                 image: 'images/400Lplayers/ife.jpg',
                 stats: {
-                    matches: 2,
-                    goals: 2,
+                    matches: 3,
+                    goals: 3,
                     assists: 1,
-                    lastGoal: 'MD1 vs 100L',
+                    lastGoal: 'MD3 vs 300L',
                     rating: 8.5
                 }  
             },
+          
 
              {
                 id: 5,
@@ -68,11 +85,26 @@ class PlayersManager {
                 team: '300 Level',
                 image: 'images/300Lplayers/thaoban.jpg',
                 stats: {
-                    matches: 2,
+                    matches: 3,
                     goals: 2,
                     assists: 0,
                     lastGoal: 'MD1 vs 200L',
                     rating: 8.7
+                }
+            },
+              {
+                id: 10,
+                name: 'ADEWALE',
+                position: 'Midfielder',
+                level: '200L',
+                team: '200 Level',
+                image: 'images/players/adewale.jpg',
+                stats: {
+                    matches: 2,
+                    goals: 2,
+                    assists: 0,
+                    lastGoal: 'MD3 vs 100L',
+                    rating: 8.3
                 }
             },
 
@@ -84,28 +116,14 @@ class PlayersManager {
                 team: '300 Level',
                 image: 'images/300Lplayers/greg.jpg',
                 stats: {
-                    matches: 2,
+                    matches: 3,
                     goals: 1,
-                    assists: 1,
-                    lastGoal: 'MD1 vs 200L',
-                    rating: 8.3
+                    assists: 3,
+                    lastGoal: 'MD3 vs 400L',
+                    rating: 8.7
                 }
             },
-              {
-                id: 4,
-                name: 'KAYODE',
-                position: 'Forward',
-                level: '300L',
-                team: '300 Level',
-                image: 'images/300Lplayers/kayode.jpg',
-                stats: {
-                    matches: 2,
-                    goals: 1,
-                    assists: 1,
-                    lastGoal: 'MD1 vs 200L',
-                    rating: 8.5
-                }
-            },
+              
               {   
                 id: 9,
                 name: 'ABDULWADUD',
@@ -114,7 +132,7 @@ class PlayersManager {
                 team: '100 Level',
                 image: 'images/players/abdulwadud.jpg',
                  stats: {
-                    matches: 2,
+                    matches: 3,
                     goals: 1,
                     assists: 1,
                     lastGoal: 'MD1 vs 400L',
@@ -168,19 +186,20 @@ class PlayersManager {
                     rating: 8.3
                 }
             },
+           
              {
-                id: 10,
-                name: 'ADEWALE',
-                position: 'Midfielder',
-                level: '100L',
-                team: '100 Level',
-                image: 'images/players/adewale.jpg',
+                id: 11,
+                name: 'VICTOR',
+                position: 'Forward',
+                level: '300L',
+                team: '300 Level',
+                image: 'images/300Lplayers/victor.jpg',
                 stats: {
-                    matches: 2,
+                    matches: 3,
                     goals: 1,
                     assists: 0,
-                    lastGoal: 'MD2 vs 300L',
-                    rating: 8.3
+                    lastGoal: 'MD2 vs 400L',
+                    rating: 7.3
                 }
             },
              
@@ -189,6 +208,22 @@ class PlayersManager {
 
         // Top assists statistics data
         this.topAssists = [
+
+             {   
+                id: 3,
+                name: 'GREG',
+                position: 'Forward',
+                level: '300L',
+                team: '300 Level',
+                image: 'images/300Lplayers/greg.jpg',
+                stats: {
+                    matches: 3,
+                    goals: 1,
+                    assists: 3,
+                    ga: 4,
+                    rating: 8.7
+                }
+            },
            
             {   
                 id: 1,
@@ -198,28 +233,14 @@ class PlayersManager {
                 team: '400 Level',
                 image: 'images/400Lplayers/ife.jpg',
                 stats: {
-                    matches: 2,
-                    goals: 2,
+                    matches: 3,
+                    goals: 3,
                     assists: 1,
-                    ga: 3,
+                    ga: 4,
                     rating: 8.5
                 }
             },
-             {   
-                id: 3,
-                name: 'GREG',
-                position: 'Forward',
-                level: '300L',
-                team: '300 Level',
-                image: 'images/300Lplayers/greg.jpg',
-                stats: {
-                    matches: 2,
-                    goals: 1,
-                    assists: 1,
-                    ga: 2,
-                    rating: 8.3
-                }
-            },
+            
                {   
                 id: 7,
                 name: 'KAYODE',
@@ -228,10 +249,10 @@ class PlayersManager {
                 team: '300 Level',
                 image: 'images/300Lplayers/kayode.jpg',
                 stats: {
-                    matches: 2,
-                    goals: 1,
+                    matches: 3,
+                    goals: 3,
                     assists: 1,
-                    ga: 2,
+                    ga: 4,
                     rating: 8.5
                 }
             },
@@ -291,6 +312,36 @@ class PlayersManager {
                 image: 'images/players/java.jpg',
                 stats: {
                     matches: 1,
+                    goals: 0,
+                    assists: 1,
+                    ga: 1,
+                    rating: 7.3
+                }
+            }
+              {   
+                id: 8,
+                name: 'AYOBAMI',
+                position: 'Midfielder',
+                level: '300L',
+                team: '300 Level',
+                image: 'images/300Lplayers/ayobami.jpg',
+                stats: {
+                    matches: 3,
+                    goals: 0,
+                    assists: 1,
+                    ga: 1,
+                    rating: 8.3
+                }
+            },
+              {   
+                id: 9,
+                name: 'TIMI',
+                position: 'Midfielder',
+                level: '200L',
+                team: '200 Level',
+                image: 'images/players/timi.jpg',
+                stats: {
+                    matches: 3,
                     goals: 0,
                     assists: 1,
                     ga: 1,
