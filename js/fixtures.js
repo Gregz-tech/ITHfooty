@@ -171,11 +171,11 @@ class FixturesManager {
                 id: 5,
                 matchDay: 5,
                 date: '2025-12-10',
-                time: '1:30',
+                time: 'FT',
                 teamA: { 
                     name: '100 Level', 
-                    level: 'RED', 
-                    score: null,
+                    level: 'RED',
+                    score: 0,
                     shortName: '100L',
                     logo: null,
                     stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
@@ -183,13 +183,13 @@ class FixturesManager {
                 teamB: { 
                     name: '200 Level', 
                     level: 'ASH', 
-                    score: null,
+                    score: 2,
                     shortName: '200L',
                     logo: null,
                     stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
                 },
                 venue: 'Bisi Akande',
-                status: 'live',
+                status: 'completed',
                 group: 'A',
                 referee: 'FINISHER (BMB)',
                 statistics: {
@@ -203,11 +203,11 @@ class FixturesManager {
                 id: 6,
                 matchDay: 5,
                 date: '2025-12-10',
-                time: '3:30',
+                time: 'FT',
                 teamA: { 
                     name: '300 Level', 
                     level: 'BLACK', 
-                    score: null,
+                    score: 3,
                     shortName: '300L',
                     logo: null,
                     stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
@@ -215,7 +215,7 @@ class FixturesManager {
                 teamB: { 
                     name: '400 Level', 
                     level: 'BLUE', 
-                    score: null,
+                    score: 2,
                     shortName: '400L',
                     logo: null,
                     stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
