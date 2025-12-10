@@ -201,7 +201,7 @@ class PlayersManager {
                     lastGoal: 'MD2 vs 400L',
                     rating: 7.3
                 }
-            },
+            }
              
             
         ];
@@ -222,6 +222,21 @@ class PlayersManager {
                     assists: 3,
                     ga: 4,
                     rating: 8.7
+                }
+            },
+              {   
+                id: 10,
+                name: 'VINCENT',
+                position: 'Forward',
+                level: '400L',
+                team: '400 Level',
+                image: 'images/players/vincent.jpg',
+                stats: {
+                    matches: 3,
+                    goals: 0,
+                    assists: 2,
+                    ga: 2,
+                    rating: 7.2
                 }
             },
            
@@ -286,8 +301,6 @@ class PlayersManager {
                     rating: 6.2
                 }
             },
-             
-          
              {   
                 id: 5,
                 name: 'ADDMORE',
@@ -317,7 +330,7 @@ class PlayersManager {
                     ga: 1,
                     rating: 7.3
                 }
-            }
+            },
               {   
                 id: 8,
                 name: 'AYOBAMI',
