@@ -69,8 +69,8 @@ class PlayersManager {
                 image: 'images/400Lplayers/ife.jpg',
                 stats: {
                     matches: 3,
-                    goals: 3,
-                    assists: 1,
+                    goals: 2,
+                    assists: 2,
                     lastGoal: 'MD3 vs 300L',
                     rating: 8.5
                 }  
@@ -100,7 +100,7 @@ class PlayersManager {
                 team: '200 Level',
                 image: 'images/players/adewale.jpg',
                 stats: {
-                    matches: 2,
+                    matches: 3,
                     goals: 2,
                     assists: 0,
                     lastGoal: 'MD3 vs 100L',
@@ -147,7 +147,7 @@ class PlayersManager {
                 team: '400 Level',
                 image: 'images/400Lplayers/vincent.jpg',
                 stats: {
-                    matches: 1,
+                    matches: 3,
                     goals: 1,
                     assists: 0,
                     lastGoal: 'MD1 vs 200L',
@@ -164,7 +164,7 @@ class PlayersManager {
                 team: '300 Level',
                 image: 'images/300Lplayers/tomzy.jpg',
                 stats: {
-                    matches: 1,
+                    matches: 3,
                     goals: 1,
                     assists: 0,
                     lastGoal: 'MD1 vs 100L',
@@ -179,7 +179,7 @@ class PlayersManager {
                 team: '100 Level',
                 image: 'images/players/adam.jpg',
                 stats: {
-                    matches: 1,
+                    matches: 3,
                     goals: 1,
                     assists: 0,
                     lastGoal: 'MD1 vs 300L',
@@ -224,23 +224,7 @@ class PlayersManager {
                     rating: 8.7
                 }
             },
-              {   
-                id: 10,
-                name: 'VINCENT',
-                position: 'Forward',
-                level: '400L',
-                team: '400 Level',
-                image: 'images/players/vincent.jpg',
-                stats: {
-                    matches: 3,
-                    goals: 0,
-                    assists: 2,
-                    ga: 2,
-                    rating: 7.2
-                }
-            },
-           
-            {   
+               {   
                 id: 1,
                 name: 'IFE',
                 position: 'Forward',
@@ -249,8 +233,8 @@ class PlayersManager {
                 image: 'images/400Lplayers/ife.jpg',
                 stats: {
                     matches: 3,
-                    goals: 3,
-                    assists: 1,
+                    goals: 2,
+                    assists: 2,
                     ga: 4,
                     rating: 8.5
                 }
@@ -284,6 +268,22 @@ class PlayersManager {
                     assists: 1,
                     ga: 2,
                     rating: 7.1
+                }
+            },
+
+             {   
+                id: 10,
+                name: 'VINCENT',
+                position: 'Forward',
+                level: '400L',
+                team: '400 Level',
+                image: 'images/players/vincent.jpg',
+                stats: {
+                    matches: 3,
+                    goals: 0,
+                    assists: 1,
+                    ga: 1,
+                    rating: 7.2
                 }
             },
              {   
@@ -360,7 +360,22 @@ class PlayersManager {
                     ga: 1,
                     rating: 7.3
                 }
-            }
+            },
+             {   
+                id: 11,
+                name: 'YASEER',
+                position: 'Midfielder',
+                level: '400L',
+                team: '400 Level',
+                image: 'images/400Lplayers/yaser.jpg',
+                stats: {
+                    matches: 3,
+                    goals: 0,
+                    assists: 1,
+                    ga: 1,
+                    rating: 7.2
+                }
+            },
         ];
 
         // Combine all players for overall stats
