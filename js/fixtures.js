@@ -189,7 +189,7 @@ class FixturesManager {
                     stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
                 },
                 venue: 'Bisi Akande',
-                status: 'upcoming',
+                status: 'live',
                 group: 'A',
                 referee: 'FINISHER (BMB)',
                 statistics: {
@@ -221,7 +221,7 @@ class FixturesManager {
                     stats: { possession: 0, shots: 0, shotsOnTarget: 0, fouls: 0, corners: 0 }
                 },
                 venue: 'Bisi Akande',
-                status: 'upcoming',
+                status: 'live',
                 group: 'A',
                 referee: 'BEN (NUR)',
                 statistics: {
